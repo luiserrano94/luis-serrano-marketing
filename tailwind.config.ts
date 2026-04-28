@@ -9,8 +9,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#0A0A0A",
+        surface: "#1A1A1A",
+        accent: "#C5F82A",
+        "mid-gray": "#A0A0A0",
+        "light-gray": "#E5E5E5",
+      },
+      fontFamily: {
+        poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        bebas: ["var(--font-bebas)", "Impact", "sans-serif"],
+      },
+      animation: {
+        "pulse-ring": "pulse-ring 2s ease-out infinite",
+        float: "float 3s ease-in-out infinite",
+      },
+      keyframes: {
+        "pulse-ring": {
+          "0%": { transform: "scale(1)", opacity: "0.6" },
+          "100%": { transform: "scale(1.7)", opacity: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
     },
   },
