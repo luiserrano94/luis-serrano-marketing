@@ -6,12 +6,10 @@ export default function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
-  if (
-    !gaId ||
-    gaId === "G-XXXXXXXXXX" ||
-    !pixelId ||
-    pixelId === "XXXXXXXXXXXXXXX"
-  ) {
+  const hasGa = gaId && gaId !== "G-XXXXXXXXXX";
+  const hasPixel = pixelId && pixelId !== "XXXXXXXXXXXXXXX";
+
+  if (!hasGa && !hasPixel) {
     return null;
   }
 
