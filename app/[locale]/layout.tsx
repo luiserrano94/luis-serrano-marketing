@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Bebas_Neue } from "next/font/google";
+import { Poppins, Bebas_Neue } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "../globals.css";
@@ -8,10 +8,10 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Analytics from "@/components/Analytics";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-geist-sans",
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -77,7 +77,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={params.locale}
-      className={`${inter.variable} ${bebasNeue.variable}`}
+      className={`${poppins.variable} ${bebasNeue.variable}`}
     >
       <head>
         <script
@@ -85,7 +85,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-background text-white antialiased font-sans">
+      <body className="bg-background text-white antialiased font-poppins">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>{children}</main>

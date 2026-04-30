@@ -38,7 +38,7 @@ function CategoryCard({
           </span>
         </div>
 
-        <h3 className="font-sans font-semibold text-2xl lg:text-3xl text-white mb-3 tracking-tight leading-tight">
+        <h3 className="font-bebas text-3xl lg:text-4xl text-white mb-3 tracking-tight leading-tight">
           {title}
         </h3>
         <p className="text-mid-gray text-sm leading-relaxed mb-8">{subtitle}</p>
@@ -116,7 +116,7 @@ export default function ServiceCategoriesGrid() {
     <section className="py-32 sm:py-40 bg-surface/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="font-sans font-semibold text-4xl sm:text-5xl lg:text-6xl text-white mb-5 leading-[1.05] tracking-tight">
+          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-white mb-5 leading-[1.0] tracking-tight">
             {t("categories_title")}
           </h2>
           <p className="text-mid-gray text-base sm:text-lg leading-relaxed">

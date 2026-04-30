@@ -69,7 +69,7 @@ export default function ResultsMetrics() {
     <section className="py-32 sm:py-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="font-sans font-semibold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight">
+          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.0] tracking-tight">
             {t("results_title").split("\n").map((line, i) => (
               <span key={i} className="block">
                 {line}
