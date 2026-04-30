@@ -10,14 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         background: "#0A0A0A",
-        surface: "#1A1A1A",
+        surface: "#141414",
+        "surface-2": "#1A1A1A",
         accent: "#C5F82A",
         "mid-gray": "#A0A0A0",
         "light-gray": "#E5E5E5",
       },
       fontFamily: {
-        poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        geist: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
         bebas: ["var(--font-bebas)", "Impact", "sans-serif"],
+        poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
       animation: {
         "pulse-ring": "pulse-ring 2s ease-out infinite",
@@ -37,4 +41,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

@@ -28,15 +28,15 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   return {
-    metadataBase: new URL("https://luisserranomarketing.com"),
+    metadataBase: new URL("https://luisserranomkt.com"),
     title: {
       default: "Luis Serrano Marketing Services",
       template: "%s | Luis Serrano Marketing Services",
     },
     description:
       params.locale === "es"
-        ? "Servicios profesionales de marketing digital, branding, sitios web y más."
-        : "Professional marketing services: digital marketing, branding, websites and more.",
+        ? "Sitios web que generan clientes. Marketing digital y branding para México y EE.UU."
+        : "Websites that generate clients. Digital marketing and branding for Mexico and the U.S.",
     openGraph: {
       siteName: "Luis Serrano Marketing Services",
       locale: params.locale === "es" ? "es_MX" : "en_US",
@@ -56,14 +56,13 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   const messages = await getMessages();
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Luis Serrano Marketing Services",
     email: "serranoluis94.ls@gmail.com",
     telephone: "+52-662-336-1906",
-    url: "https://luisserranomarketing.com",
+    url: "https://luisserranomkt.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Juárez",
@@ -72,7 +71,7 @@ export default async function LocaleLayout({
     },
     sameAs: ["https://www.linkedin.com/in/luis-serrano-50b231138/"],
     description:
-      "Marketing digital, branding, sitios web y estrategia para empresas en México y EE.UU.",
+      "Sitios web y marketing digital diseñados para convertir. México y EE.UU.",
   };
 
   return (

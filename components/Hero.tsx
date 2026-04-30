@@ -12,85 +12,69 @@ export default function Hero() {
 
   const whatsappMsg = encodeURIComponent(
     locale === "es"
-      ? "Hola Luis, vi tu sitio web y me interesa cotizar mi sitio web..."
-      : "Hi Luis, I saw your website and I'm interested in getting a quote for my website..."
+      ? "Hola Luis, vi tu sitio web y me gustaría empezar mi proyecto."
+      : "Hi Luis, I saw your website and I'd like to start my project."
   );
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background grid */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
           backgroundImage:
             "linear-gradient(#C5F82A 1px, transparent 1px), linear-gradient(90deg, #C5F82A 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          backgroundSize: "80px 80px",
         }}
       />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-accent/[0.04] rounded-full blur-3xl pointer-events-none" />
 
-      {/* Accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-mid-gray text-xs font-medium mb-10 tracking-wide"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-          Luis Serrano Marketing Services
+          {t("hero_badge")}
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-bebas text-5xl sm:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight text-white mb-6"
+          className="font-bebas text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.0] tracking-tight text-white mb-6 max-w-4xl mx-auto"
         >
-          {t("hero_title").split(" ").map((word, i) => (
-            <span key={i}>
-              {word === "DINERO." || word === "MONEY." ? (
-                <span className="text-accent">{word}</span>
-              ) : (
-                word
-              )}
-              {i < t("hero_title").split(" ").length - 1 ? " " : ""}
-            </span>
-          ))}
+          {t("hero_title")}
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-mid-gray text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="text-mid-gray text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           {t("hero_subtitle")}
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 bg-accent text-background font-bold text-base rounded-full hover:bg-accent/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-accent/20"
+            className="w-full sm:w-auto px-7 py-3.5 bg-accent text-background font-semibold text-sm rounded-full hover:bg-accent/90 transition-all duration-200 shadow-lg shadow-accent/10"
           >
             {t("hero_cta_primary")}
           </a>
           <Link
-            href={`/${locale}/services`}
-            className="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-semibold text-base rounded-full hover:border-white/60 hover:bg-white/5 transition-all duration-200"
+            href={`/${locale}#results`}
+            className="w-full sm:w-auto px-7 py-3.5 border border-white/15 text-white font-medium text-sm rounded-full hover:border-white/40 hover:bg-white/[0.03] transition-all duration-200"
           >
             {t("hero_cta_secondary")}
           </Link>
