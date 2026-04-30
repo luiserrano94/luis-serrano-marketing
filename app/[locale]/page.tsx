@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Hero from "@/components/Hero";
 import FeaturedService from "@/components/sections/FeaturedService";
-import ServicesGrid from "@/components/sections/ServicesGrid";
+import ServiceCategoriesGrid from "@/components/sections/ServiceCategoriesGrid";
 import ClientLogos from "@/components/sections/ClientLogos";
 import ResultsMetrics from "@/components/sections/ResultsMetrics";
 import HomeCTA from "@/components/sections/HomeCTA";
@@ -17,17 +17,17 @@ export async function generateMetadata({
     title: t("meta_title"),
     description: t("meta_description"),
     alternates: {
-      canonical: `https://luisserranomarketing.com/${params.locale}`,
+      canonical: `https://luisserranomkt.com/${params.locale}`,
       languages: {
-        es: "https://luisserranomarketing.com/es",
-        en: "https://luisserranomarketing.com/en",
-        "x-default": "https://luisserranomarketing.com/es",
+        es: "https://luisserranomkt.com/es",
+        en: "https://luisserranomkt.com/en",
+        "x-default": "https://luisserranomkt.com/es",
       },
     },
     openGraph: {
       title: t("meta_title"),
       description: t("meta_description"),
-      url: `https://luisserranomarketing.com/${params.locale}`,
+      url: `https://luisserranomkt.com/${params.locale}`,
     },
   };
 }
@@ -36,10 +36,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <FeaturedService />
-      <ServicesGrid />
+      <div id="results">
+        <ResultsMetrics />
+      </div>
       <ClientLogos />
-      <ResultsMetrics />
+      <FeaturedService />
+      <ServiceCategoriesGrid />
       <HomeCTA />
     </>
   );
