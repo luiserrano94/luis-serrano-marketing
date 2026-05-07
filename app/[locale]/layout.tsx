@@ -29,6 +29,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   return {
     metadataBase: new URL("https://luisserranomkt.com"),
+    icons: {
+      icon: "/favicon.svg",
+      shortcut: "/favicon.svg",
+    },
     title: {
       default: "Luis Serrano Marketing Services",
       template: "%s | Luis Serrano Marketing Services",
