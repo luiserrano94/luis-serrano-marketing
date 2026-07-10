@@ -46,7 +46,7 @@ const ICON_MAP: Record<ServiceIconName, LucideIcon> = {
   RefreshCcw,
 };
 
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 interface ServiceCardProps {
   iconName: ServiceIconName;
@@ -72,7 +72,7 @@ export default function ServiceCard({
   const locale = useLocale();
   void locale;
   const Icon = ICON_MAP[iconName];
-  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+  const href = waLink(whatsappMessage);
 
   return (
     <div

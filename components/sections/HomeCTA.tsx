@@ -2,15 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
-
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 export default function HomeCTA() {
   const t = useTranslations("home");
   const tc = useTranslations("common");
 
-  const whatsappMsg = encodeURIComponent(tc("whatsapp_cta"));
-  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
+  const whatsappHref = waLink(tc("whatsapp_cta"));
 
   return (
     <section className="py-32 sm:py-40">

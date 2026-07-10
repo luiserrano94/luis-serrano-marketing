@@ -28,11 +28,11 @@ export async function generateMetadata({
     title: t("meta_title"),
     description: t("meta_description"),
     alternates: {
-      canonical: `https://luisserranomarketing.com/${params.locale}/services`,
+      canonical: `https://luisserranomkt.com/${params.locale}/services`,
       languages: {
-        es: "https://luisserranomarketing.com/es/services",
-        en: "https://luisserranomarketing.com/en/services",
-        "x-default": "https://luisserranomarketing.com/es/services",
+        es: "https://luisserranomkt.com/es/services",
+        en: "https://luisserranomkt.com/en/services",
+        "x-default": "https://luisserranomkt.com/es/services",
       },
     },
   };

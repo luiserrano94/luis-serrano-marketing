@@ -29,10 +29,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   return {
     metadataBase: new URL("https://luisserranomkt.com"),
-    icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
-    },
     title: {
       default: "Luis Serrano Marketing Services",
       template: "%s | Luis Serrano Marketing Services",
@@ -44,7 +40,6 @@ export async function generateMetadata({
     openGraph: {
       siteName: "Luis Serrano Marketing Services",
       locale: params.locale === "es" ? "es_MX" : "en_US",
-      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
