@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Bebas_Neue } from "next/font/google";
 import "../globals.css";
 import LandingLeadForm from "@/components/LandingLeadForm";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -121,6 +122,18 @@ export default function WebDesignPage() {
       lang="en"
       className={`${poppins.variable} ${bebasNeue.variable}`}
     >
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-704568380"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-ads-wd" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-704568380');
+        `}</Script>
+      </head>
       <body
         className="bg-background text-white antialiased font-poppins"
         style={{ backgroundColor: "#0A0A0A" }}
