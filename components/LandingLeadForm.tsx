@@ -81,6 +81,13 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
       if (json.success) {
         setStatus("success");
         form.reset();
+        // Google Ads conversion — "Website lead"
+        const w = window as Window & { gtag?: (...args: unknown[]) => void };
+        if (typeof w.gtag === "function") {
+          w.gtag("event", "conversion", {
+            send_to: "AW-704568380/1feqCLLe8rMBELy4-88C",
+          });
+        }
       } else {
         setStatus("error");
       }
