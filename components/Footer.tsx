@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import Logo from "./Logo";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { LinkedInIcon, InstagramIcon, FacebookIcon } from "./SocialIcons";
 
 export default async function Footer() {
@@ -86,7 +87,7 @@ export default async function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/526623361906"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-mid-gray hover:text-white transition-colors text-sm flex items-center gap-2"

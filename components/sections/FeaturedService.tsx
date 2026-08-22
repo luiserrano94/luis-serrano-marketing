@@ -1,19 +1,17 @@
 import { useTranslations, useLocale } from "next-intl";
 import { CheckCircle2, Globe, Zap } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 export default function FeaturedService() {
   const t = useTranslations("home");
   const locale = useLocale();
 
-  const whatsappMsg = encodeURIComponent(
+  const whatsappHref = waLink(
     locale === "es"
       ? "Hola Luis, me interesa cotizar un sitio web profesional..."
       : "Hi Luis, I'm interested in getting a quote for a professional website..."
   );
-  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
 
   const bullets = [
     t("featured_bullet_1"),

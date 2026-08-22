@@ -16,6 +16,7 @@ import {
   RefreshCcw,
   LucideIcon,
 } from "lucide-react";
+import { waLink } from "@/lib/constants";
 
 export type ServiceIconName =
   | "Globe"
@@ -46,8 +47,6 @@ const ICON_MAP: Record<ServiceIconName, LucideIcon> = {
   RefreshCcw,
 };
 
-const WHATSAPP_NUMBER = "526623361906";
-
 interface ServiceCardProps {
   iconName: ServiceIconName;
   title: string;
@@ -72,7 +71,7 @@ export default function ServiceCard({
   const locale = useLocale();
   void locale;
   const Icon = ICON_MAP[iconName];
-  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+  const href = waLink(whatsappMessage);
 
   return (
     <div

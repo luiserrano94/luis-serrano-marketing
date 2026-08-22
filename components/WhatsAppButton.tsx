@@ -1,13 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 export default function WhatsAppButton() {
   const t = useTranslations("common");
-  const message = encodeURIComponent(t("whatsapp_cta"));
-  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  const href = waLink(t("whatsapp_cta"));
 
   return (
     <a

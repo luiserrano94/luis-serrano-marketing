@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 import { LinkedInIcon } from "@/components/SocialIcons";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export async function generateMetadata({
   params,
@@ -70,7 +71,7 @@ export default async function ContactPage({
                   icon: Phone,
                   label: "WhatsApp",
                   value: t("direct_whatsapp"),
-                  href: "https://wa.me/526623361906",
+                  href: `https://wa.me/${WHATSAPP_NUMBER}`,
                 },
                 {
                   icon: MapPin,

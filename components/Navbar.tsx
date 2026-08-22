@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import LanguageToggle from "./LanguageToggle";
-
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -29,12 +28,11 @@ export default function Navbar() {
     { href: `/${locale}/contact`, label: t("contact") },
   ];
 
-  const whatsappMsg = encodeURIComponent(
+  const whatsappHref = waLink(
     locale === "es"
       ? "Hola Luis, vi tu sitio web y me interesa cotizar..."
       : "Hi Luis, I saw your website and I'm interested in getting a quote..."
   );
-  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
 
   return (
     <>

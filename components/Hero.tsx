@@ -3,19 +3,17 @@
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 export default function Hero() {
   const t = useTranslations("home");
   const locale = useLocale();
 
-  const whatsappMsg = encodeURIComponent(
+  const whatsappHref = waLink(
     locale === "es"
       ? "Hola Luis, vi tu sitio web y me gustaría empezar mi proyecto."
       : "Hi Luis, I saw your website and I'd like to start my project."
   );
-  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
