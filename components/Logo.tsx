@@ -25,13 +25,7 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
       {/* Letter I */}
       <rect x="10" y="10" width="5" height="24" fill="#C5F82A" />
 
-      {/* Letter S — formed with diagonal cut */}
-      <path
-        d="M20 10 H36 L28 22 H36 V34 H20 L28 22 H20 V10Z"
-        fill="#C5F82A"
-        fillRule="evenodd"
-      />
-      {/* Clean S shape */}
+      {/* Letter S */}
       <path
         d="M20 10H36V16H26L36 26V34H20V28H30L20 18V10Z"
         fill="#C5F82A"

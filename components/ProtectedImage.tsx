@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-
 interface ProtectedImageProps {
   src: string;
   alt: string;
@@ -15,25 +11,8 @@ export default function ProtectedImage({
   className = "",
   watermarkText = "IS",
 }: ProtectedImageProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const preventSave = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === "s") {
-        e.preventDefault();
-      }
-    };
-
-    container.addEventListener("keydown", preventSave);
-    return () => container.removeEventListener("keydown", preventSave);
-  }, []);
-
   return (
     <div
-      ref={containerRef}
       role="img"
       aria-label={alt}
       className={`relative overflow-hidden select-none ${className}`}
