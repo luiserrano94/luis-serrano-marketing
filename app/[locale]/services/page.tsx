@@ -64,7 +64,7 @@ export default async function ServicesPage({
       {/* Hero */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <AnimatedSection>
-          <h1 className="font-bebas text-6xl sm:text-7xl lg:text-8xl text-ink mb-4">
+          <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-ink mb-4">
             {t("hero_title")}
           </h1>
           <p className="text-mid-gray text-xl max-w-2xl mx-auto">{t("hero_subtitle")}</p>

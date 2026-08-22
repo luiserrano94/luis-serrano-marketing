@@ -100,18 +100,18 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
     <section className="max-w-6xl mx-auto px-5 py-24">
       <div className="max-w-xl mx-auto">
         {/* Badge */}
-        <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3 text-center">
+        <p className="text-accent text-xs font-semibold font-body tracking-widest uppercase mb-3 text-center">
           {c.badge}
         </p>
-        <h2 className="font-bebas text-5xl md:text-6xl text-ink text-center mb-3">
+        <h2 className="font-display text-5xl md:text-6xl text-ink text-center mb-3">
           {c.title}
         </h2>
-        <p className="text-mid-gray text-sm font-poppins text-center mb-10">
+        <p className="text-mid-gray text-sm font-body text-center mb-10">
           {c.subtitle}
         </p>
 
         {status === "success" ? (
-          <div className="border border-accent/30 bg-accent/5 rounded-2xl p-10 text-center">
+          <div className="border border-accent/30 bg-accent/5 rounded-sm p-10 text-center">
             <svg
               className="w-10 h-10 text-accent mx-auto mb-4"
               viewBox="0 0 24 24"
@@ -124,20 +124,20 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
               <circle cx="12" cy="12" r="10" />
               <path d="M8 12l3 3 5-5" />
             </svg>
-            <p className="text-ink font-semibold font-poppins text-lg">
+            <p className="text-ink font-semibold font-body text-lg">
               {c.success}
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="border border-line bg-surface rounded-2xl p-8 flex flex-col gap-5"
+            className="border border-line bg-surface rounded-sm p-8 flex flex-col gap-5"
           >
             {/* Name */}
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="ld-name"
-                className="text-ink text-sm font-semibold font-poppins"
+                className="text-ink text-sm font-semibold font-body"
               >
                 {c.name}
               </label>
@@ -147,7 +147,7 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
                 type="text"
                 required
                 placeholder={c.namePlaceholder}
-                className="bg-background border border-line rounded-lg px-4 py-3 text-ink text-sm font-poppins placeholder-mid-gray/50 focus:outline-none focus:border-accent/50 transition-colors"
+                className="bg-background border border-line rounded-lg px-4 py-3 text-ink text-sm font-body placeholder-mid-gray/50 focus:outline-none focus:border-accent/50 transition-colors"
               />
             </div>
 
@@ -155,7 +155,7 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="ld-email"
-                className="text-ink text-sm font-semibold font-poppins"
+                className="text-ink text-sm font-semibold font-body"
               >
                 {c.email}
               </label>
@@ -165,7 +165,7 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
                 type="email"
                 required
                 placeholder={c.emailPlaceholder}
-                className="bg-background border border-line rounded-lg px-4 py-3 text-ink text-sm font-poppins placeholder-mid-gray/50 focus:outline-none focus:border-accent/50 transition-colors"
+                className="bg-background border border-line rounded-lg px-4 py-3 text-ink text-sm font-body placeholder-mid-gray/50 focus:outline-none focus:border-accent/50 transition-colors"
               />
             </div>
 
@@ -173,7 +173,7 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="ld-message"
-                className="text-ink text-sm font-semibold font-poppins"
+                className="text-ink text-sm font-semibold font-body"
               >
                 {c.message}
               </label>
@@ -183,7 +183,7 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
                 required
                 rows={4}
                 placeholder={c.messagePlaceholder}
-                className="bg-background border border-line rounded-lg px-4 py-3 text-ink text-sm font-poppins placeholder-mid-gray/50 focus:outline-none focus:border-accent/50 transition-colors resize-none"
+                className="bg-background border border-line rounded-lg px-4 py-3 text-ink text-sm font-body placeholder-mid-gray/50 focus:outline-none focus:border-accent/50 transition-colors resize-none"
               />
             </div>
 
@@ -192,14 +192,14 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
 
             {/* Error */}
             {status === "error" && (
-              <p className="text-red-400 text-xs font-poppins">{c.error}</p>
+              <p className="text-red-400 text-xs font-body">{c.error}</p>
             )}
 
             {/* Submit */}
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-accent text-white font-semibold font-poppins py-4 rounded-lg hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
+              className="w-full bg-accent text-white font-semibold font-body py-4 rounded-lg hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
             >
               {status === "sending" ? c.sending : c.submit}
             </button>

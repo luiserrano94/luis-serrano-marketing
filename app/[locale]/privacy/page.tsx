@@ -29,7 +29,7 @@ export default async function PrivacyPage({
     <div className="pt-24 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
-          <h1 className="font-bebas text-5xl sm:text-6xl text-ink mb-2">{t("title")}</h1>
+          <h1 className="font-display text-5xl sm:text-6xl text-ink mb-2">{t("title")}</h1>
           <p className="text-mid-gray text-sm">{t("last_updated")}</p>
         </div>
 

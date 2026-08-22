@@ -35,7 +35,7 @@ export default function ProtectedImage({
 
       {/* Subtle watermark */}
       <div
-        className="absolute bottom-4 right-4 z-20 pointer-events-none font-bebas"
+        className="absolute bottom-4 right-4 z-20 pointer-events-none font-display"
         style={{
           fontSize: "28px",
           color: "rgba(255,255,255,0.15)",

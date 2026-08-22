@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #FAFAF9;
+  --background: #FBF9F6;
   --surface: #FFFFFF;
-  --ink: #0C0A09;
+  --ink: #1A1614;
   --accent: #4D7C0F;
+  --terracotta: #C2410C;
 }
 
 * {
@@ -18,9 +19,9 @@ html {
 }
 
 body {
-  background-color: #FAFAF9;
-  color: #0C0A09;
-  font-family: var(--font-poppins), system-ui, sans-serif;
+  background-color: #FBF9F6;
+  color: #1A1614;
+  font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,10 +31,10 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F5F4;
+  background: #F4EFE8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6D3D1;
+  background: #D9CFC1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -42,8 +43,8 @@ body {
 
 /* Text selection */
 ::selection {
-  background-color: #0C0A09;
-  color: #FAFAF9;
+  background-color: #1A1614;
+  color: #FBF9F6;
 }
 
 @layer utilities {
@@ -51,8 +52,25 @@ body {
     text-wrap: balance;
   }
 
-  .font-bebas {
-    font-family: var(--font-bebas), Impact, sans-serif;
-    letter-spacing: 0.02em;
+  /* Editorial display type — high-contrast serif, tight and large */
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  /* Oversized editorial headline */
+  .text-editorial {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  /* Small caps label used above section titles */
+  .label-editorial {
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }

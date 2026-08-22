@@ -33,7 +33,7 @@ export default function FeaturedService() {
               {t("featured_badge")}
             </span>
 
-            <h2 className="font-bebas text-5xl lg:text-6xl xl:text-7xl text-ink leading-tight mb-4">
+            <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl text-ink leading-tight mb-4">
               {t("featured_title").split("\n").map((line, i) => (
                 <span key={i} className={i === 0 ? "block" : "block text-accent"}>
                   {line}
@@ -73,34 +73,30 @@ export default function FeaturedService() {
           {/* Right: Visual */}
           <AnimatedSection direction="right" delay={0.15}>
             <div className="relative">
-              {/* Browser frame with real screenshot */}
-              <div className="bg-surface rounded-2xl border border-line overflow-hidden shadow-lift">
-                {/* Browser bar */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-surface-2 border-b border-line">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
-                  <div className="flex-1 mx-4 bg-surface rounded-md px-3 py-1 text-xs text-mid-gray border border-line">
-                    tuempresa.com
-                  </div>
-                </div>
+              {/* Editorial image — offset terracotta plate behind */}
+              <div className="absolute -top-5 -right-5 w-full h-full bg-terracotta/15 rounded-sm hidden sm:block" />
+
+              <div className="relative rounded-sm overflow-hidden shadow-editorial">
                 <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1495466746667-894969fec21f?w=1200&q=85"
                   alt={
                     locale === "es"
-                      ? "Panel de analíticas de un sitio web"
-                      : "Website analytics dashboard"
+                      ? "Arquitectura editorial contra cielo azul"
+                      : "Editorial architecture against blue sky"
                   }
                   width={1200}
-                  height={800}
+                  height={900}
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-[380px] lg:h-[460px] object-cover"
                 />
               </div>
 
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lift">
-                ✓ {locale === "es" ? "Entrega en 14 días" : "Delivered in 14 days"}
+              {/* Magazine-style credit block */}
+              <div className="absolute -bottom-6 left-5 bg-surface border border-line px-6 py-4 shadow-lift">
+                <p className="font-display text-3xl text-ink leading-none">14</p>
+                <p className="label-editorial text-mid-gray mt-1">
+                  {locale === "es" ? "días a producción" : "days to launch"}
+                </p>
               </div>
             </div>
           </AnimatedSection>

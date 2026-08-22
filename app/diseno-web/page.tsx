@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Poppins, Bebas_Neue } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "../globals.css";
 import LandingLeadForm from "@/components/LandingLeadForm";
 import Script from "next/script";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
-const bebasNeue = Bebas_Neue({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-bebas",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -127,7 +127,7 @@ function MailIcon({ size = 20 }: { size?: number }) {
 
 export default function DisenoWebPage() {
   return (
-    <html lang="es" className={`${poppins.variable} ${bebasNeue.variable}`}>
+    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-704568380"
@@ -141,7 +141,7 @@ export default function DisenoWebPage() {
         `}</Script>
       </head>
       <body
-        className="bg-background text-ink antialiased font-poppins"
+        className="bg-background text-ink antialiased font-body"
         style={{ backgroundColor: "#FAFAF9" }}
       >
         {/* ── NAVBAR ── */}
@@ -156,14 +156,14 @@ export default function DisenoWebPage() {
               <Isotipo />
             </a>
             <div className="flex items-center gap-4">
-              <span className="hidden md:block text-mid-gray text-sm font-poppins">
+              <span className="hidden md:block text-mid-gray text-sm font-body">
                 {EMAIL}
               </span>
               <a
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-lg hover:brightness-110 transition-all"
+                className="bg-accent text-white text-sm font-semibold font-body px-5 py-2.5 rounded-lg hover:brightness-110 transition-all"
               >
                 Comenzar
               </a>
@@ -174,12 +174,12 @@ export default function DisenoWebPage() {
         <main>
           {/* ── HERO ── */}
           <section className="max-w-6xl mx-auto px-5 pt-20 pb-24 text-center">
-            <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/5 text-accent text-xs font-semibold font-poppins tracking-widest uppercase px-4 py-2 rounded-full mb-8 animate-pulse">
+            <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/5 text-accent text-xs font-semibold font-body tracking-widest uppercase px-4 py-2 rounded-full mb-8 animate-pulse">
               <span className="w-2 h-2 rounded-full bg-accent inline-block" />
               Entrega en 14 Días — Cupos Limitados
             </div>
 
-            <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-wide mb-6">
+            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-wide mb-6">
               Tu Sitio Web.
               <br />
               <span className="text-accent">Listo en 14 Días.</span>
@@ -187,7 +187,7 @@ export default function DisenoWebPage() {
               Hecho para Conseguirte Clientes.
             </h1>
 
-            <p className="text-mid-gray text-lg font-poppins mb-10">
+            <p className="text-mid-gray text-lg font-body mb-10">
               Sitio web profesional y enfocado en conversión desde{" "}
               <span className="text-ink font-semibold">$2,599 USD</span>.
             </p>
@@ -197,14 +197,14 @@ export default function DisenoWebPage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-poppins px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-body px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
               >
                 <WAIcon size={20} />
                 Comenzar por WhatsApp
               </a>
               <a
                 href={EMAIL_LINK}
-                className="inline-flex items-center gap-2 border border-line text-ink font-semibold font-poppins px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 border border-line text-ink font-semibold font-body px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
               >
                 <MailIcon size={20} />
                 Enviar un Correo
@@ -221,10 +221,10 @@ export default function DisenoWebPage() {
                   key={s.label}
                   className="border border-line bg-surface rounded-xl p-5"
                 >
-                  <p className="font-bebas text-3xl text-accent leading-none mb-1">
+                  <p className="font-display text-3xl text-accent leading-none mb-1">
                     {s.value}
                   </p>
-                  <p className="text-mid-gray text-xs font-poppins">{s.label}</p>
+                  <p className="text-mid-gray text-xs font-body">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -233,7 +233,7 @@ export default function DisenoWebPage() {
           {/* ── SOCIAL PROOF ── */}
           <section className="border-y border-line bg-surface py-14">
             <div className="max-w-6xl mx-auto px-5 text-center">
-              <p className="text-mid-gray text-xs font-semibold font-poppins tracking-widest uppercase mb-6">
+              <p className="text-mid-gray text-xs font-semibold font-body tracking-widest uppercase mb-6">
                 Desarrollado para
               </p>
               <a
@@ -242,10 +242,10 @@ export default function DisenoWebPage() {
                 rel="noopener noreferrer"
                 className="inline-block group"
               >
-                <p className="text-ink text-xl font-semibold font-poppins group-hover:text-accent transition-colors">
+                <p className="text-ink text-xl font-semibold font-body group-hover:text-accent transition-colors">
                   Un Corazón Internship
                 </p>
-                <p className="text-mid-gray text-sm font-poppins mt-1">
+                <p className="text-mid-gray text-sm font-body mt-1">
                   Organización Sin Fines de Lucro — El Paso, TX
                 </p>
               </a>
@@ -255,10 +255,10 @@ export default function DisenoWebPage() {
           {/* ── QUÉ INCLUYE ── */}
           <section className="max-w-6xl mx-auto px-5 py-24">
             <div className="text-center mb-14">
-              <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3">
+              <p className="text-accent text-xs font-semibold font-body tracking-widest uppercase mb-3">
                 Lo que obtienes
               </p>
-              <h2 className="font-bebas text-5xl md:text-6xl text-ink">
+              <h2 className="font-display text-5xl md:text-6xl text-ink">
                 Todo Incluido
               </h2>
             </div>
@@ -273,10 +273,10 @@ export default function DisenoWebPage() {
                     <CheckIcon />
                   </div>
                   <div>
-                    <h3 className="text-ink font-semibold font-poppins mb-1">
+                    <h3 className="text-ink font-semibold font-body mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-mid-gray text-sm font-poppins leading-relaxed">
+                    <p className="text-mid-gray text-sm font-body leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -293,17 +293,17 @@ export default function DisenoWebPage() {
               </div>
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h3 className="text-ink font-semibold font-poppins">
+                  <h3 className="text-ink font-semibold font-body">
                     Portal de Clientes / Sistema de Login
                   </h3>
-                  <span className="text-xs font-semibold font-poppins text-accent border border-accent/30 bg-accent/5 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-semibold font-body text-accent border border-accent/30 bg-accent/5 px-2 py-0.5 rounded-full">
                     Add-on
                   </span>
                 </div>
-                <p className="text-mid-gray text-sm font-poppins leading-relaxed mb-2">
+                <p className="text-mid-gray text-sm font-body leading-relaxed mb-2">
                   Autenticación personalizada, dashboards y contenido exclusivo para miembros — integrado directamente en tu sitio.
                 </p>
-                <p className="text-mid-gray/60 text-xs font-poppins">
+                <p className="text-mid-gray/60 text-xs font-body">
                   Precio personalizado — contáctanos para cotizar
                 </p>
               </div>
@@ -314,10 +314,10 @@ export default function DisenoWebPage() {
           <section className="border-y border-line bg-surface py-24">
             <div className="max-w-6xl mx-auto px-5">
               <div className="text-center mb-14">
-                <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3">
+                <p className="text-accent text-xs font-semibold font-body tracking-widest uppercase mb-3">
                   El proceso
                 </p>
-                <h2 className="font-bebas text-5xl md:text-6xl text-ink">
+                <h2 className="font-display text-5xl md:text-6xl text-ink">
                   Cómo Funciona
                 </h2>
               </div>
@@ -326,15 +326,15 @@ export default function DisenoWebPage() {
                 {PASOS.map((paso) => (
                   <div key={paso.num} className="relative">
                     <p
-                      className="font-bebas text-7xl leading-none mb-4 select-none"
+                      className="font-display text-7xl leading-none mb-4 select-none"
                       style={{ color: "rgba(12,10,9,0.06)" }}
                     >
                       {paso.num}
                     </p>
-                    <h3 className="font-bebas text-3xl text-ink mb-2 -mt-6">
+                    <h3 className="font-display text-3xl text-ink mb-2 -mt-6">
                       {paso.title}
                     </h3>
-                    <p className="text-mid-gray text-sm font-poppins leading-relaxed">
+                    <p className="text-mid-gray text-sm font-body leading-relaxed">
                       {paso.desc}
                     </p>
                   </div>
@@ -346,21 +346,21 @@ export default function DisenoWebPage() {
           {/* ── PRECIO ── */}
           <section className="max-w-6xl mx-auto px-5 py-24">
             <div className="text-center mb-14">
-              <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3">
+              <p className="text-accent text-xs font-semibold font-body tracking-widest uppercase mb-3">
                 Inversión
               </p>
-              <h2 className="font-bebas text-5xl md:text-6xl text-ink">
+              <h2 className="font-display text-5xl md:text-6xl text-ink">
                 Precio Único y Transparente
               </h2>
             </div>
 
-            <div className="max-w-xl mx-auto border border-line bg-surface rounded-2xl p-8">
+            <div className="max-w-xl mx-auto border border-line bg-surface rounded-sm p-8">
               <div className="mb-6">
-                <p className="font-bebas text-6xl text-ink leading-none">
+                <p className="font-display text-6xl text-ink leading-none">
                   $2,599{" "}
                   <span className="text-mid-gray text-3xl">USD</span>
                 </p>
-                <p className="text-accent font-semibold font-poppins text-sm mt-1">
+                <p className="text-accent font-semibold font-body text-sm mt-1">
                   Entregado en 14 días
                 </p>
               </div>
@@ -369,7 +369,7 @@ export default function DisenoWebPage() {
                 {INCLUIDO.map((item) => (
                   <li key={item.title} className="flex items-center gap-3">
                     <CheckIcon />
-                    <span className="text-ink text-sm font-poppins">
+                    <span className="text-ink text-sm font-body">
                       {item.title}
                     </span>
                   </li>
@@ -381,14 +381,14 @@ export default function DisenoWebPage() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold font-poppins px-6 py-4 rounded-lg hover:brightness-110 transition-all text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold font-body px-6 py-4 rounded-lg hover:brightness-110 transition-all text-sm"
                 >
                   <WAIcon size={18} />
                   Comenzar por WhatsApp
                 </a>
                 <a
                   href={EMAIL_LINK}
-                  className="w-full inline-flex items-center justify-center gap-2 border border-line text-ink font-semibold font-poppins px-6 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-line text-ink font-semibold font-body px-6 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-sm"
                 >
                   <MailIcon size={18} />
                   Enviar un Correo
@@ -400,12 +400,12 @@ export default function DisenoWebPage() {
           {/* ── CTA FINAL ── */}
           <section className="border-t border-line bg-surface py-24">
             <div className="max-w-6xl mx-auto px-5 text-center">
-              <h2 className="font-bebas text-5xl md:text-7xl text-ink leading-none mb-6">
+              <h2 className="font-display text-5xl md:text-7xl text-ink leading-none mb-6">
                 ¿Listo para Tener Tu
                 <br />
                 <span className="text-accent">Sitio Web?</span>
               </h2>
-              <p className="text-mid-gray font-poppins text-base max-w-md mx-auto mb-10">
+              <p className="text-mid-gray font-body text-base max-w-md mx-auto mb-10">
                 Sin agencias. Sin sorpresas. Sitio web profesional y enfocado en
                 conversión, listo en 14 días y a precio fijo.
               </p>
@@ -414,14 +414,14 @@ export default function DisenoWebPage() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-poppins px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
+                  className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-body px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
                 >
                   <WAIcon size={20} />
                   Comenzar por WhatsApp
                 </a>
                 <a
                   href={EMAIL_LINK}
-                  className="inline-flex items-center gap-2 border border-line text-ink font-semibold font-poppins px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
+                  className="inline-flex items-center gap-2 border border-line text-ink font-semibold font-body px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
                 >
                   <MailIcon size={20} />
                   Enviar un Correo
@@ -436,7 +436,7 @@ export default function DisenoWebPage() {
 
         {/* ── FOOTER MÍNIMO ── */}
         <footer className="border-t border-line bg-background py-8">
-          <div className="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-mid-gray text-xs font-poppins">
+          <div className="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-mid-gray text-xs font-body">
             <p>
               © {new Date().getFullYear()} Luis Serrano Marketing Services. Todos los
               derechos reservados.

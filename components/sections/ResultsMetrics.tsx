@@ -41,9 +41,9 @@ function MetricCard({ value, label, client, delay = 0 }: MetricCardProps) {
   return (
     <div
       ref={ref}
-      className="text-center p-6 lg:p-8 bg-surface rounded-2xl border border-line shadow-soft hover:shadow-lift hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
+      className="text-center p-6 lg:p-8 bg-surface rounded-sm border border-line shadow-soft hover:shadow-lift hover:border-accent/30 hover:-translate-y-1 transition-all duration-300"
     >
-      <div className="font-bebas text-5xl lg:text-6xl text-accent mb-3 leading-none">
+      <div className="font-display text-5xl lg:text-6xl text-accent mb-3 leading-none">
         {prefix}
         {displayValue}
         {suffix}
@@ -69,7 +69,7 @@ export default function ResultsMetrics() {
     <section className="py-32 sm:py-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-ink leading-[1.0] tracking-tight">
+          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-ink leading-[1.0] tracking-tight">
             {t("results_title").split("\n").map((line, i) => (
               <span key={i} className="block">
                 {line}

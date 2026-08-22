@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Bebas_Neue } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "../globals.css";
@@ -8,17 +8,17 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Analytics from "@/components/Analytics";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
-const bebasNeue = Bebas_Neue({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-bebas",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -76,7 +76,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={params.locale}
-      className={`${poppins.variable} ${bebasNeue.variable}`}
+      className={`${inter.variable} ${playfair.variable}`}
     >
       <head>
         <script
@@ -84,7 +84,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-background text-ink antialiased font-poppins">
+      <body className="bg-background text-ink antialiased font-body">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>{children}</main>

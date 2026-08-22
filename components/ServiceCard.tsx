@@ -76,7 +76,7 @@ export default function ServiceCard({
 
   return (
     <div
-      className={`relative flex flex-col p-6 rounded-2xl border transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 group ${
+      className={`relative flex flex-col p-6 rounded-sm border transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 group ${
         featured
           ? "bg-surface border-accent/50 shadow-lg shadow-accent/10"
           : "bg-surface border-line shadow-soft hover:shadow-lift"
