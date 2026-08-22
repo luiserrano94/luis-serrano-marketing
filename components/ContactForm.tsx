@@ -96,11 +96,11 @@ export default function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
         <CheckCircle size={48} className="text-accent" />
-        <h3 className="text-2xl font-bold text-white">{t("form_success_title")}</h3>
+        <h3 className="text-2xl font-bold text-ink">{t("form_success_title")}</h3>
         <p className="text-mid-gray max-w-sm">{t("form_success_desc")}</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-4 px-6 py-2 border border-white/10 text-light-gray rounded-full text-sm hover:border-accent hover:text-accent transition-colors"
+          className="mt-4 px-6 py-2 border border-line text-light-gray rounded-full text-sm hover:border-accent hover:text-accent transition-colors"
         >
           {locale === "es" ? "Enviar otro mensaje" : "Send another message"}
         </button>
@@ -109,7 +109,7 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-[#111] border border-white/10 text-white placeholder-mid-gray px-4 py-3 rounded-xl focus:outline-none focus:border-accent transition-colors text-sm";
+    "w-full bg-surface border border-line text-ink placeholder-mid-gray px-4 py-3 rounded-xl focus:outline-none focus:border-accent transition-colors text-sm";
   const labelClass = "block text-sm font-medium text-light-gray mb-1.5";
   const errorClass = "text-red-400 text-xs mt-1";
 
@@ -145,7 +145,7 @@ export default function ContactForm() {
           <select
             value={dialCode}
             onChange={(e) => setDialCode(e.target.value)}
-            className="bg-[#111] border border-white/10 text-white px-3 py-3 rounded-xl focus:outline-none focus:border-accent transition-colors text-sm w-32 shrink-0"
+            className="bg-surface border border-line text-ink px-3 py-3 rounded-xl focus:outline-none focus:border-accent transition-colors text-sm w-32 shrink-0"
           >
             {COUNTRIES.map((c) => (
               <option key={c.code} value={c.dialCode}>
@@ -238,7 +238,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-accent text-background font-bold rounded-xl hover:bg-accent/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? (
           <>

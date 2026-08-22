@@ -16,7 +16,7 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0A0A0A",
+          backgroundColor: "#FAFAF9",
           position: "relative",
           fontFamily: "sans-serif",
         }}
@@ -27,7 +27,7 @@ export default function OGImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(197,248,42,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(197,248,42,0.04) 1px, transparent 1px)",
+              "linear-gradient(rgba(12,10,9,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(12,10,9,0.05) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
@@ -39,7 +39,7 @@ export default function OGImage() {
             width: 600,
             height: 400,
             borderRadius: "50%",
-            background: "rgba(197,248,42,0.06)",
+            background: "rgba(132,204,22,0.16)",
             filter: "blur(80px)",
             top: "50%",
             left: "50%",
@@ -56,11 +56,11 @@ export default function OGImage() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect width="44" height="44" rx="4" fill="#1A1A1A" />
-            <rect x="10" y="10" width="5" height="24" fill="#C5F82A" />
+            <rect width="44" height="44" rx="4" fill="#0C0A09" />
+            <rect x="10" y="10" width="5" height="24" fill="#84CC16" />
             <path
               d="M20 10H36V16H26L36 26V34H20V28H30L20 18V10Z"
-              fill="#C5F82A"
+              fill="#84CC16"
             />
           </svg>
         </div>
@@ -70,7 +70,7 @@ export default function OGImage() {
           style={{
             fontSize: 68,
             fontWeight: 700,
-            color: "#FFFFFF",
+            color: "#0C0A09",
             letterSpacing: "-1px",
             lineHeight: 1.1,
             textAlign: "center",
@@ -81,7 +81,7 @@ export default function OGImage() {
           }}
         >
           Luis Serrano{" "}
-          <span style={{ color: "#C5F82A", marginLeft: 16 }}>
+          <span style={{ color: "#4D7C0F", marginLeft: 16 }}>
             Marketing
           </span>
         </div>
@@ -90,7 +90,7 @@ export default function OGImage() {
         <div
           style={{
             fontSize: 26,
-            color: "#A0A0A0",
+            color: "#57534E",
             marginTop: 20,
             textAlign: "center",
           }}
@@ -102,11 +102,11 @@ export default function OGImage() {
         <div
           style={{
             marginTop: 40,
-            border: "1px solid rgba(197,248,42,0.3)",
+            border: "1px solid rgba(77,124,15,0.35)",
             borderRadius: 100,
             padding: "10px 28px",
             fontSize: 18,
-            color: "#C5F82A",
+            color: "#4D7C0F",
           }}
         >
           luisserranomkt.com

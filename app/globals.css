@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0A0A;
-  --surface: #1A1A1A;
-  --accent: #C5F82A;
+  --background: #FAFAF9;
+  --surface: #FFFFFF;
+  --ink: #0C0A09;
+  --accent: #4D7C0F;
 }
 
 * {
@@ -17,8 +18,8 @@ html {
 }
 
 body {
-  background-color: #0A0A0A;
-  color: #ffffff;
+  background-color: #FAFAF9;
+  color: #0C0A09;
   font-family: var(--font-poppins), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,20 +30,20 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #F5F5F4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #D6D3D1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5F82A;
+  background: #4D7C0F;
 }
 
 /* Text selection */
 ::selection {
-  background-color: #C5F82A;
-  color: #0A0A0A;
+  background-color: #0C0A09;
+  color: #FAFAF9;
 }
 
 @layer utilities {

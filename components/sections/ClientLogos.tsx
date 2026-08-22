@@ -16,7 +16,7 @@ export default function ClientLogos() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-20 border-y border-white/5">
+    <section className="py-20 border-y border-line bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <p className="text-center text-mid-gray text-sm uppercase tracking-widest mb-10">

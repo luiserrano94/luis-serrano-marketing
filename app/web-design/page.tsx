@@ -84,10 +84,10 @@ function CheckIcon() {
       fill="none"
       aria-hidden="true"
     >
-      <circle cx="9" cy="9" r="9" fill="#C5F82A" fillOpacity="0.12" />
+      <circle cx="9" cy="9" r="9" fill="#84CC16" fillOpacity="0.12" />
       <path
         d="M5 9.5L7.5 12L13 6.5"
-        stroke="#C5F82A"
+        stroke="#4D7C0F"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -106,11 +106,11 @@ function Isotipo() {
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Luis Serrano"
     >
-      <rect width="44" height="44" rx="4" fill="#1A1A1A" />
-      <rect x="10" y="10" width="5" height="24" fill="#C5F82A" />
+      <rect width="44" height="44" rx="4" fill="#0C0A09" />
+      <rect x="10" y="10" width="5" height="24" fill="#84CC16" />
       <path
         d="M20 10H36V16H26L36 26V34H20V28H30L20 18V10Z"
-        fill="#C5F82A"
+        fill="#84CC16"
       />
     </svg>
   );
@@ -135,11 +135,11 @@ export default function WebDesignPage() {
         `}</Script>
       </head>
       <body
-        className="bg-background text-white antialiased font-poppins"
-        style={{ backgroundColor: "#0A0A0A" }}
+        className="bg-background text-ink antialiased font-poppins"
+        style={{ backgroundColor: "#FAFAF9" }}
       >
         {/* ── NAVBAR ── */}
-        <header className="border-b border-white/5 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
+        <header className="border-b border-line bg-background/95 backdrop-blur-sm sticky top-0 z-50">
           <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
             {/* Isotipo */}
             <a
@@ -160,7 +160,7 @@ export default function WebDesignPage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-black text-sm font-semibold font-poppins px-5 py-2.5 rounded-lg hover:brightness-110 transition-all"
+                className="bg-accent text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-lg hover:brightness-110 transition-all"
               >
                 Get Started
               </a>
@@ -189,7 +189,7 @@ export default function WebDesignPage() {
             {/* Price */}
             <p className="text-mid-gray text-lg font-poppins mb-10">
               Professional, conversion-focused website starting at{" "}
-              <span className="text-white font-semibold">$2,599 USD</span>.
+              <span className="text-ink font-semibold">$2,599 USD</span>.
             </p>
 
             {/* CTAs */}
@@ -198,7 +198,7 @@ export default function WebDesignPage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-black font-semibold font-poppins px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-poppins px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
               >
                 {/* WhatsApp icon */}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -209,7 +209,7 @@ export default function WebDesignPage() {
               </a>
               <a
                 href={EMAIL_LINK}
-                className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold font-poppins px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 border border-line text-ink font-semibold font-poppins px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
               >
                 {/* Email icon */}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -229,7 +229,7 @@ export default function WebDesignPage() {
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="border border-white/8 bg-surface rounded-xl p-5"
+                  className="border border-line bg-surface rounded-xl p-5"
                 >
                   <p className="font-bebas text-3xl text-accent leading-none mb-1">
                     {s.value}
@@ -241,7 +241,7 @@ export default function WebDesignPage() {
           </section>
 
           {/* ── SOCIAL PROOF ── */}
-          <section className="border-y border-white/5 bg-surface py-14">
+          <section className="border-y border-line bg-surface py-14">
             <div className="max-w-6xl mx-auto px-5 text-center">
               <p className="text-mid-gray text-xs font-semibold font-poppins tracking-widest uppercase mb-6">
                 Built for
@@ -252,7 +252,7 @@ export default function WebDesignPage() {
                 rel="noopener noreferrer"
                 className="inline-block group"
               >
-                <p className="text-white text-xl font-semibold font-poppins group-hover:text-accent transition-colors">
+                <p className="text-ink text-xl font-semibold font-poppins group-hover:text-accent transition-colors">
                   Un Corazón Internship
                 </p>
                 <p className="text-mid-gray text-sm font-poppins mt-1">
@@ -268,7 +268,7 @@ export default function WebDesignPage() {
               <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3">
                 What you get
               </p>
-              <h2 className="font-bebas text-5xl md:text-6xl text-white">
+              <h2 className="font-bebas text-5xl md:text-6xl text-ink">
                 Everything Included
               </h2>
             </div>
@@ -278,13 +278,13 @@ export default function WebDesignPage() {
               {INCLUDED.map((item) => (
                 <div
                   key={item.title}
-                  className="border border-white/8 bg-surface rounded-xl p-6 flex gap-4"
+                  className="border border-line bg-surface rounded-xl p-6 flex gap-4"
                 >
                   <div className="mt-0.5 flex-shrink-0">
                     <CheckIcon />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold font-poppins mb-1">
+                    <h3 className="text-ink font-semibold font-poppins mb-1">
                       {item.title}
                     </h3>
                     <p className="text-mid-gray text-sm font-poppins leading-relaxed">
@@ -299,13 +299,13 @@ export default function WebDesignPage() {
             <div className="border border-accent/20 bg-surface rounded-xl p-6 flex flex-col sm:flex-row sm:items-start gap-4">
               <div className="mt-0.5 flex-shrink-0">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <circle cx="9" cy="9" r="9" fill="#C5F82A" fillOpacity="0.12" />
-                  <path d="M9 5v4M9 13h.01" stroke="#C5F82A" strokeWidth="1.8" strokeLinecap="round" />
+                  <circle cx="9" cy="9" r="9" fill="#84CC16" fillOpacity="0.12" />
+                  <path d="M9 5v4M9 13h.01" stroke="#4D7C0F" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
               </div>
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h3 className="text-white font-semibold font-poppins">
+                  <h3 className="text-ink font-semibold font-poppins">
                     Client Portal / Login System
                   </h3>
                   <span className="text-xs font-semibold font-poppins text-accent border border-accent/30 bg-accent/5 px-2 py-0.5 rounded-full">
@@ -324,13 +324,13 @@ export default function WebDesignPage() {
           </section>
 
           {/* ── HOW IT WORKS ── */}
-          <section className="border-y border-white/5 bg-surface py-24">
+          <section className="border-y border-line bg-surface py-24">
             <div className="max-w-6xl mx-auto px-5">
               <div className="text-center mb-14">
                 <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3">
                   The process
                 </p>
-                <h2 className="font-bebas text-5xl md:text-6xl text-white">
+                <h2 className="font-bebas text-5xl md:text-6xl text-ink">
                   How It Works
                 </h2>
               </div>
@@ -340,11 +340,11 @@ export default function WebDesignPage() {
                   <div key={step.num} className="relative">
                     <p
                       className="font-bebas text-7xl leading-none mb-4 select-none"
-                      style={{ color: "rgba(197,248,42,0.08)" }}
+                      style={{ color: "rgba(12,10,9,0.06)" }}
                     >
                       {step.num}
                     </p>
-                    <h3 className="font-bebas text-3xl text-white mb-2 -mt-6">
+                    <h3 className="font-bebas text-3xl text-ink mb-2 -mt-6">
                       {step.title}
                     </h3>
                     <p className="text-mid-gray text-sm font-poppins leading-relaxed">
@@ -362,15 +362,15 @@ export default function WebDesignPage() {
               <p className="text-accent text-xs font-semibold font-poppins tracking-widest uppercase mb-3">
                 Investment
               </p>
-              <h2 className="font-bebas text-5xl md:text-6xl text-white">
+              <h2 className="font-bebas text-5xl md:text-6xl text-ink">
                 Simple, Flat Pricing
               </h2>
             </div>
 
-            <div className="max-w-xl mx-auto border border-white/10 bg-surface rounded-2xl p-8">
+            <div className="max-w-xl mx-auto border border-line bg-surface rounded-2xl p-8">
               {/* Price */}
               <div className="mb-6">
-                <p className="font-bebas text-6xl text-white leading-none">
+                <p className="font-bebas text-6xl text-ink leading-none">
                   $2,599{" "}
                   <span className="text-mid-gray text-3xl">USD</span>
                 </p>
@@ -384,7 +384,7 @@ export default function WebDesignPage() {
                 {INCLUDED.map((item) => (
                   <li key={item.title} className="flex items-center gap-3">
                     <CheckIcon />
-                    <span className="text-white text-sm font-poppins">
+                    <span className="text-ink text-sm font-poppins">
                       {item.title}
                     </span>
                   </li>
@@ -397,7 +397,7 @@ export default function WebDesignPage() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-accent text-black font-semibold font-poppins px-6 py-4 rounded-lg hover:brightness-110 transition-all text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold font-poppins px-6 py-4 rounded-lg hover:brightness-110 transition-all text-sm"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -407,7 +407,7 @@ export default function WebDesignPage() {
                 </a>
                 <a
                   href={EMAIL_LINK}
-                  className="w-full inline-flex items-center justify-center gap-2 border border-white/20 text-white font-semibold font-poppins px-6 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-line text-ink font-semibold font-poppins px-6 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-sm"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -420,9 +420,9 @@ export default function WebDesignPage() {
           </section>
 
           {/* ── FINAL CTA ── */}
-          <section className="border-t border-white/5 bg-surface py-24">
+          <section className="border-t border-line bg-surface py-24">
             <div className="max-w-6xl mx-auto px-5 text-center">
-              <h2 className="font-bebas text-5xl md:text-7xl text-white leading-none mb-6">
+              <h2 className="font-bebas text-5xl md:text-7xl text-ink leading-none mb-6">
                 Ready to Get Your
                 <br />
                 <span className="text-accent">Website Done?</span>
@@ -436,7 +436,7 @@ export default function WebDesignPage() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent text-black font-semibold font-poppins px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
+                  className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-poppins px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -446,7 +446,7 @@ export default function WebDesignPage() {
                 </a>
                 <a
                   href={EMAIL_LINK}
-                  className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold font-poppins px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
+                  className="inline-flex items-center gap-2 border border-line text-ink font-semibold font-poppins px-8 py-4 rounded-lg hover:border-accent/50 hover:text-accent transition-all text-base w-full sm:w-auto justify-center"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -463,7 +463,7 @@ export default function WebDesignPage() {
         <LandingLeadForm lang="en" />
 
         {/* ── FOOTER MÍNIMO ── */}
-        <footer className="border-t border-white/5 bg-background py-8">
+        <footer className="border-t border-line bg-background py-8">
           <div className="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-mid-gray text-xs font-poppins">
             <p>
               © {new Date().getFullYear()} Luis Serrano Marketing Services. All

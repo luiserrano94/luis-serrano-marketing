@@ -112,7 +112,7 @@ export default async function AboutPage({
             <span className="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">
               {t("hero_tagline")}
             </span>
-            <h1 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-8">
+            <h1 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-8">
               {t("hero_title")}
             </h1>
             <div className="space-y-4">
@@ -136,24 +136,24 @@ export default async function AboutPage({
         <AnimatedSection className="mb-20">
           <div className="flex items-center gap-3 mb-10">
             <Briefcase className="text-accent" size={24} />
-            <h2 className="font-bebas text-4xl text-white">{t("experience_title")}</h2>
+            <h2 className="font-bebas text-4xl text-ink">{t("experience_title")}</h2>
           </div>
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-white/10 hidden sm:block" />
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-surface-2 hidden sm:block" />
             <div className="space-y-8">
               {experience.map((exp, i) => (
                 <AnimatedSection key={i} delay={i * 0.07}>
                   <div className="sm:pl-12 relative">
                     {/* Dot */}
                     <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-accent hidden sm:block" />
-                    <div className="bg-surface rounded-2xl p-6 border border-white/5 hover:border-accent/20 transition-colors">
+                    <div className="bg-surface rounded-2xl p-6 border border-line hover:border-accent/20 transition-colors">
                       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                         <div>
-                          <h3 className="text-white font-semibold text-lg">{exp.company}</h3>
+                          <h3 className="text-ink font-semibold text-lg">{exp.company}</h3>
                           <p className="text-accent text-sm font-medium">{exp.role}</p>
                         </div>
-                        <span className="text-mid-gray text-sm shrink-0 bg-white/5 px-3 py-1 rounded-full">
+                        <span className="text-mid-gray text-sm shrink-0 bg-surface-2 px-3 py-1 rounded-full">
                           {exp.period}
                         </span>
                       </div>
@@ -170,16 +170,16 @@ export default async function AboutPage({
         <AnimatedSection className="mb-20">
           <div className="flex items-center gap-3 mb-10">
             <GraduationCap className="text-accent" size={24} />
-            <h2 className="font-bebas text-4xl text-white">{t("education_title")}</h2>
+            <h2 className="font-bebas text-4xl text-ink">{t("education_title")}</h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {education.map((edu, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="bg-surface rounded-2xl p-6 border border-white/5 hover:border-accent/20 transition-colors h-full">
+                <div className="bg-surface rounded-2xl p-6 border border-line hover:border-accent/20 transition-colors h-full">
                   <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">
                     {edu.year}
                   </p>
-                  <h3 className="text-white font-semibold mb-1">{edu.school}</h3>
+                  <h3 className="text-ink font-semibold mb-1">{edu.school}</h3>
                   <p className="text-mid-gray text-sm">{edu.degree}</p>
                 </div>
               </AnimatedSection>
@@ -191,13 +191,13 @@ export default async function AboutPage({
         <AnimatedSection className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <Wrench className="text-accent" size={24} />
-            <h2 className="font-bebas text-4xl text-white">{t("skills_title")}</h2>
+            <h2 className="font-bebas text-4xl text-ink">{t("skills_title")}</h2>
           </div>
           <div className="flex flex-wrap gap-3">
             {SKILLS.map((skill) => (
               <span
                 key={skill}
-                className="px-4 py-2 bg-surface border border-white/10 text-light-gray text-sm rounded-full hover:border-accent/40 hover:text-white transition-colors"
+                className="px-4 py-2 bg-surface border border-line text-light-gray text-sm rounded-full hover:border-accent/40 hover:text-ink transition-colors"
               >
                 {skill}
               </span>
@@ -207,8 +207,8 @@ export default async function AboutPage({
 
         {/* Philosophy */}
         <AnimatedSection>
-          <div className="bg-surface rounded-3xl p-10 border border-white/5">
-            <h2 className="font-bebas text-4xl text-white mb-6">{t("philosophy_title")}</h2>
+          <div className="bg-surface rounded-3xl p-10 border border-line">
+            <h2 className="font-bebas text-4xl text-ink mb-6">{t("philosophy_title")}</h2>
             <div className="space-y-4">
               <p className="text-light-gray leading-relaxed">{t("philosophy_p1")}</p>
               <p className="text-mid-gray leading-relaxed">{t("philosophy_p2")}</p>

@@ -28,7 +28,7 @@ export default function LanguageToggle() {
         className={`px-1 py-0.5 transition-colors ${
           locale === "es"
             ? "text-accent font-semibold"
-            : "text-mid-gray hover:text-white"
+            : "text-mid-gray hover:text-ink"
         }`}
         aria-label="Cambiar a español"
       >
@@ -40,7 +40,7 @@ export default function LanguageToggle() {
         className={`px-1 py-0.5 transition-colors ${
           locale === "en"
             ? "text-accent font-semibold"
-            : "text-mid-gray hover:text-white"
+            : "text-mid-gray hover:text-ink"
         }`}
         aria-label="Switch to English"
       >

@@ -9,7 +9,7 @@ export default async function Footer() {
   const t = await getTranslations("footer");
 
   return (
-    <footer className="bg-[#050505] border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-[#050505] border-t border-line pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -23,7 +23,7 @@ export default async function Footer() {
 
           {/* Col 2: Nav */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-widest">
+            <h3 className="text-ink font-semibold text-sm mb-4 uppercase tracking-widest">
               {t("col1_title")}
             </h3>
             <ul className="space-y-3">
@@ -36,7 +36,7 @@ export default async function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-mid-gray hover:text-white transition-colors text-sm"
+                    className="text-mid-gray hover:text-ink transition-colors text-sm"
                   >
                     {label}
                   </Link>
@@ -47,7 +47,7 @@ export default async function Footer() {
 
           {/* Col 3: Services */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-widest">
+            <h3 className="text-ink font-semibold text-sm mb-4 uppercase tracking-widest">
               {t("col2_title")}
             </h3>
             <ul className="space-y-3">
@@ -60,7 +60,7 @@ export default async function Footer() {
                 <li key={service}>
                   <Link
                     href={`/${locale}/services`}
-                    className="text-mid-gray hover:text-white transition-colors text-sm"
+                    className="text-mid-gray hover:text-ink transition-colors text-sm"
                   >
                     {service}
                   </Link>
@@ -71,14 +71,14 @@ export default async function Footer() {
 
           {/* Col 4: Contact + Social */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-widest">
+            <h3 className="text-ink font-semibold text-sm mb-4 uppercase tracking-widest">
               {t("col3_title")}
             </h3>
             <ul className="space-y-3 mb-6">
               <li>
                 <a
                   href="mailto:serranoluis94.ls@gmail.com"
-                  className="text-mid-gray hover:text-white transition-colors text-sm flex items-center gap-2"
+                  className="text-mid-gray hover:text-ink transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail size={14} />
                   serranoluis94.ls@gmail.com
@@ -89,7 +89,7 @@ export default async function Footer() {
                   href="https://wa.me/526623361906"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-mid-gray hover:text-white transition-colors text-sm flex items-center gap-2"
+                  className="text-mid-gray hover:text-ink transition-colors text-sm flex items-center gap-2"
                 >
                   <span className="text-xs">📱</span>
                   +52 662 336 1906
@@ -101,7 +101,7 @@ export default async function Footer() {
               </li>
             </ul>
 
-            <h3 className="text-white font-semibold text-sm mb-3 uppercase tracking-widest">
+            <h3 className="text-ink font-semibold text-sm mb-3 uppercase tracking-widest">
               {t("col4_title")}
             </h3>
             <div className="flex items-center gap-4">
@@ -137,11 +137,11 @@ export default async function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mid-gray">
+        <div className="border-t border-line pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-mid-gray">
           <p>{t("copyright")}</p>
           <Link
             href={`/${locale}/privacy`}
-            className="hover:text-white transition-colors"
+            className="hover:text-ink transition-colors"
           >
             {t("privacy")}
           </Link>

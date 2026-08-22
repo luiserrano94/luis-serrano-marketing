@@ -84,7 +84,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-background text-white antialiased font-poppins">
+      <body className="bg-background text-ink antialiased font-poppins">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>{children}</main>

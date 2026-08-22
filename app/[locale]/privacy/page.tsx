@@ -29,7 +29,7 @@ export default async function PrivacyPage({
     <div className="pt-24 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
-          <h1 className="font-bebas text-5xl sm:text-6xl text-white mb-2">{t("title")}</h1>
+          <h1 className="font-bebas text-5xl sm:text-6xl text-ink mb-2">{t("title")}</h1>
           <p className="text-mid-gray text-sm">{t("last_updated")}</p>
         </div>
 
@@ -38,7 +38,7 @@ export default async function PrivacyPage({
 
           {sections.map((section, i) => (
             <div key={i} className="mb-8">
-              <h2 className="text-white font-semibold text-lg mb-3">{section.title}</h2>
+              <h2 className="text-ink font-semibold text-lg mb-3">{section.title}</h2>
               <p className="text-mid-gray leading-relaxed text-sm">{section.body}</p>
             </div>
           ))}

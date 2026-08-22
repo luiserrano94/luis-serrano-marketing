@@ -42,7 +42,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-background/90 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20"
+            ? "bg-background/90 backdrop-blur-md border-b border-line shadow-lg shadow-ink/5"
             : "bg-transparent"
         }`}
       >
@@ -59,7 +59,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className="text-sm font-medium text-light-gray hover:text-white transition-colors duration-200"
+                  className="text-sm font-medium text-light-gray hover:text-ink transition-colors duration-200"
                 >
                   {label}
                 </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 bg-accent text-background font-semibold text-sm rounded-full hover:bg-accent/90 transition-colors duration-200"
+                className="px-5 py-2.5 bg-accent text-white font-semibold text-sm rounded-full hover:bg-accent/90 transition-colors duration-200"
               >
                 {t("cta_quote")}
               </a>
@@ -84,7 +84,7 @@ export default function Navbar() {
               <LanguageToggle />
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="p-2 text-white"
+                className="p-2 text-ink"
                 aria-label="Abrir menú"
               >
                 {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -110,7 +110,7 @@ export default function Navbar() {
                   key={href}
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-2xl font-semibold text-white hover:text-accent transition-colors"
+                  className="text-2xl font-semibold text-ink hover:text-accent transition-colors"
                 >
                   {label}
                 </Link>
@@ -120,7 +120,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className="mt-4 inline-block px-6 py-3 bg-accent text-background font-bold text-lg rounded-full text-center hover:bg-accent/90 transition-colors"
+                className="mt-4 inline-block px-6 py-3 bg-accent text-white font-bold text-lg rounded-full text-center hover:bg-accent/90 transition-colors"
               >
                 {t("cta_quote")}
               </a>

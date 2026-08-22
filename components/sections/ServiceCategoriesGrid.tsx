@@ -28,7 +28,7 @@ function CategoryCard({
 }: CategoryCardProps) {
   return (
     <AnimatedSection delay={delay}>
-      <div className="group relative h-full p-8 lg:p-10 bg-surface rounded-3xl border border-white/[0.06] hover:border-white/15 transition-all duration-300 flex flex-col">
+      <div className="group relative h-full p-8 lg:p-10 bg-surface rounded-3xl border border-line hover:border-line transition-all duration-300 flex flex-col">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
             <Icon size={20} strokeWidth={1.75} />
@@ -38,7 +38,7 @@ function CategoryCard({
           </span>
         </div>
 
-        <h3 className="font-bebas text-3xl lg:text-4xl text-white mb-3 tracking-tight leading-tight">
+        <h3 className="font-bebas text-3xl lg:text-4xl text-ink mb-3 tracking-tight leading-tight">
           {title}
         </h3>
         <p className="text-mid-gray text-sm leading-relaxed mb-8">{subtitle}</p>
@@ -57,7 +57,7 @@ function CategoryCard({
 
         <Link
           href={href}
-          className="inline-flex items-center gap-1.5 text-white text-sm font-medium hover:text-accent transition-colors"
+          className="inline-flex items-center gap-1.5 text-ink text-sm font-medium hover:text-accent transition-colors"
         >
           {cta}
           <span className="transition-transform group-hover:translate-x-0.5">
@@ -116,7 +116,7 @@ export default function ServiceCategoriesGrid() {
     <section className="py-32 sm:py-40 bg-surface/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-white mb-5 leading-[1.0] tracking-tight">
+          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-ink mb-5 leading-[1.0] tracking-tight">
             {t("categories_title")}
           </h2>
           <p className="text-mid-gray text-base sm:text-lg leading-relaxed">

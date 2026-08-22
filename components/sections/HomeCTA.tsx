@@ -14,7 +14,7 @@ export default function HomeCTA() {
     <section className="py-32 sm:py-40">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimatedSection>
-          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-white mb-5 leading-[1.0] tracking-tight">
+          <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-ink mb-5 leading-[1.0] tracking-tight">
             {t("cta_title")}
           </h2>
           <p className="text-mid-gray text-base sm:text-lg mb-10 max-w-xl mx-auto">
@@ -24,7 +24,7 @@ export default function HomeCTA() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-background font-semibold text-base rounded-full hover:bg-accent/90 transition-all duration-200 shadow-lg shadow-accent/10"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-semibold text-base rounded-full hover:bg-accent/90 transition-all duration-200 shadow-lg shadow-accent/10"
           >
             <svg
               width="18"

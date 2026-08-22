@@ -1,19 +1,18 @@
 import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
 import { CheckCircle2, Globe, Zap } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-
-const WHATSAPP_NUMBER = "526623361906";
+import { waLink } from "@/lib/constants";
 
 export default function FeaturedService() {
   const t = useTranslations("home");
   const locale = useLocale();
 
-  const whatsappMsg = encodeURIComponent(
+  const whatsappHref = waLink(
     locale === "es"
       ? "Hola Luis, me interesa cotizar un sitio web profesional..."
       : "Hi Luis, I'm interested in getting a quote for a professional website..."
   );
-  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
 
   const bullets = [
     t("featured_bullet_1"),
@@ -24,7 +23,7 @@ export default function FeaturedService() {
   ];
 
   return (
-    <section className="py-24 bg-surface">
+    <section className="py-32 sm:py-40 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
@@ -34,7 +33,7 @@ export default function FeaturedService() {
               {t("featured_badge")}
             </span>
 
-            <h2 className="font-bebas text-5xl lg:text-6xl xl:text-7xl text-white leading-tight mb-4">
+            <h2 className="font-bebas text-5xl lg:text-6xl xl:text-7xl text-ink leading-tight mb-4">
               {t("featured_title").split("\n").map((line, i) => (
                 <span key={i} className={i === 0 ? "block" : "block text-accent"}>
                   {line}
@@ -64,7 +63,7 @@ export default function FeaturedService() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-background font-bold rounded-full hover:bg-accent/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-accent/20"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-bold rounded-full hover:bg-accent/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-accent/20"
             >
               <Globe size={18} />
               {t("featured_cta")}
@@ -74,33 +73,33 @@ export default function FeaturedService() {
           {/* Right: Visual */}
           <AnimatedSection direction="right" delay={0.15}>
             <div className="relative">
-              {/* Browser mockup */}
-              <div className="bg-[#111] rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+              {/* Browser frame with real screenshot */}
+              <div className="bg-surface rounded-2xl border border-line overflow-hidden shadow-lift">
                 {/* Browser bar */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-[#0D0D0D] border-b border-white/5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/60" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/60" />
-                  <div className="flex-1 mx-4 bg-white/5 rounded-md px-3 py-1 text-xs text-mid-gray">
+                <div className="flex items-center gap-2 px-4 py-3 bg-surface-2 border-b border-line">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-green-400" />
+                  <div className="flex-1 mx-4 bg-surface rounded-md px-3 py-1 text-xs text-mid-gray border border-line">
                     tuempresa.com
                   </div>
                 </div>
-                {/* Mock content */}
-                <div className="p-6 space-y-4">
-                  <div className="h-6 w-3/4 bg-white/10 rounded-md" />
-                  <div className="h-4 w-full bg-white/5 rounded-md" />
-                  <div className="h-4 w-5/6 bg-white/5 rounded-md" />
-                  <div className="h-10 w-40 bg-accent/30 rounded-full mt-6" />
-                  <div className="grid grid-cols-3 gap-3 mt-8">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="aspect-square bg-white/5 rounded-xl" />
-                    ))}
-                  </div>
-                </div>
+                <Image
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
+                  alt={
+                    locale === "es"
+                      ? "Panel de analíticas de un sitio web"
+                      : "Website analytics dashboard"
+                  }
+                  width={1200}
+                  height={800}
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                  className="w-full h-auto object-cover"
+                />
               </div>
 
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 bg-accent text-background px-4 py-2 rounded-xl font-bold text-sm shadow-lg">
+              <div className="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lift">
                 ✓ {locale === "es" ? "Entrega en 14 días" : "Delivered in 14 days"}
               </div>
             </div>

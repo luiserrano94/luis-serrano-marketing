@@ -20,25 +20,25 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
       aria-label="Luis Serrano Marketing Services"
     >
       {/* Monogram "IS" box */}
-      <rect x="0" y="0" width="44" height="44" rx="4" fill="#1A1A1A" />
+      <rect x="0" y="0" width="44" height="44" rx="4" fill="#0C0A09" />
 
       {/* Letter I */}
-      <rect x="10" y="10" width="5" height="24" fill="#C5F82A" />
+      <rect x="10" y="10" width="5" height="24" fill="#84CC16" />
 
       {/* Letter S */}
       <path
         d="M20 10H36V16H26L36 26V34H20V28H30L20 18V10Z"
-        fill="#C5F82A"
+        fill="#84CC16"
       />
 
       {/* Vertical separator */}
-      <rect x="52" y="6" width="1.5" height="32" fill="#333333" />
+      <rect x="52" y="6" width="1.5" height="32" fill="#E7E5E4" />
 
       {/* LUIS SERRANO text */}
       <text
         x="62"
         y="22"
-        fill="#FFFFFF"
+        fill="#0C0A09"
         fontFamily="system-ui, sans-serif"
         fontWeight="700"
         fontSize="13"
@@ -51,11 +51,11 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
       <text
         x="62"
         y="36"
-        fill="#A0A0A0"
+        fill="#57534E"
         fontFamily="system-ui, sans-serif"
         fontWeight="400"
-        fontSize="8"
-        letterSpacing="2.5"
+        fontSize="7.5"
+        letterSpacing="1.4"
       >
         MARKETING SERVICES
       </text>
