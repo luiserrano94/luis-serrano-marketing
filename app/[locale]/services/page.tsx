@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ServiceCard, { ServiceIconName } from "@/components/ServiceCard";
 import AnimatedSection from "@/components/AnimatedSection";
-import SectionBackdrop from "@/components/SectionBackdrop";
+import PageTitleHero from "@/components/PageTitleHero";
 import { PAGE_BG } from "@/lib/images";
 
 const ICON_NAMES: ServiceIconName[] = [
@@ -62,17 +62,13 @@ export default async function ServicesPage({
   }));
 
   return (
-    <div className="relative pt-24 pb-20">
-      <SectionBackdrop src={PAGE_BG.services} />
-      {/* Hero */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <AnimatedSection>
-          <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-ink mb-4">
-            {t("hero_title")}
-          </h1>
-          <p className="text-mid-gray text-xl max-w-2xl mx-auto">{t("hero_subtitle")}</p>
-        </AnimatedSection>
-      </div>
+    <div className="pb-20">
+      <PageTitleHero
+        src={PAGE_BG.services}
+        title={t("hero_title")}
+        subtitle={t("hero_subtitle")}
+      />
+      <div className="h-16" />
 
       {/* Featured service */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">

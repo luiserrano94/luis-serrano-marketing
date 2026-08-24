@@ -1,10 +1,9 @@
 import { useTranslations, useLocale } from "next-intl";
 import { CheckCircle2, Globe, Zap } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import SectionBackdrop from "@/components/SectionBackdrop";
 import LaptopMockup from "@/components/LaptopMockup";
 import { waLink } from "@/lib/constants";
-import { SECTION_BG, LAPTOP_SCREEN } from "@/lib/images";
+import {LAPTOP_SCREEN } from "@/lib/images";
 
 export default function FeaturedService() {
   const t = useTranslations("home");
@@ -26,8 +25,7 @@ export default function FeaturedService() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <SectionBackdrop src={SECTION_BG.featured} />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <AnimatedSection direction="left">

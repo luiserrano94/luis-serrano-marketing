@@ -32,10 +32,13 @@ export const SECTION_BG = {
 };
 
 /** Page title backdrops. */
+/**
+ * Title-band backdrops. These need mid-to-dark tone under the headline —
+ * the leopard's white field kills white type, so it stays hero-only.
+ */
 export const PAGE_BG = {
-  about: "/images/editorial/page-product.jpg",
-  services: "/images/editorial/hero-leopard.jpg",
-  privacy: "/images/editorial/hero-interior.jpg",
+  about: "/images/editorial/hero-interior.jpg",
+  services: "/images/editorial/page-product.jpg",
 };
 
 /** Shown inside the laptop screen on the featured-service section. */

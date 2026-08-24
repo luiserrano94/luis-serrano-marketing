@@ -3,8 +3,6 @@
 import { useTranslations } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { waLink } from "@/lib/constants";
-import SectionBackdrop from "@/components/SectionBackdrop";
-import { SECTION_BG } from "@/lib/images";
 
 export default function HomeCTA() {
   const t = useTranslations("home");
@@ -14,8 +12,7 @@ export default function HomeCTA() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <SectionBackdrop src={SECTION_BG.cta} />
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimatedSection>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-ink mb-5 leading-[1.0] tracking-tight">
             {t("cta_title")}

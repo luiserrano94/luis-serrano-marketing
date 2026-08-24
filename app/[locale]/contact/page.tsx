@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 import { LinkedInIcon } from "@/components/SocialIcons";
-import SectionBackdrop from "@/components/SectionBackdrop";
+import PageTitleHero from "@/components/PageTitleHero";
 import { CONTACT_BG } from "@/lib/images";
 
 export async function generateMetadata({
@@ -35,16 +35,13 @@ export default async function ContactPage({
   const t = await getTranslations({ locale: params.locale, namespace: "contact" });
 
   return (
-    <div className="relative min-h-screen pt-24 pb-20">
-      <SectionBackdrop src={CONTACT_BG} />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <AnimatedSection className="text-center mb-16">
-          <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-ink mb-4">
-            {t("hero_title")}
-          </h1>
-          <p className="text-mid-gray text-xl max-w-xl mx-auto">{t("hero_subtitle")}</p>
-        </AnimatedSection>
+    <div className="pb-20">
+      <PageTitleHero
+        src={CONTACT_BG}
+        title={t("hero_title")}
+        subtitle={t("hero_subtitle")}
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Form (wider) */}

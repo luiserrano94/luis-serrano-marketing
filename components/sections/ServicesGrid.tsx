@@ -3,8 +3,6 @@
 import { useTranslations, useLocale } from "next-intl";
 import ServiceCard, { ServiceIconName } from "@/components/ServiceCard";
 import AnimatedSection from "@/components/AnimatedSection";
-import SectionBackdrop from "@/components/SectionBackdrop";
-import { SECTION_BG } from "@/lib/images";
 
 const ICON_NAMES: ServiceIconName[] = [
   "Globe",
@@ -41,8 +39,7 @@ export default function ServicesGrid() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <SectionBackdrop src={SECTION_BG.services} />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-14">
           <h2 className="font-display text-5xl lg:text-6xl text-ink mb-4">
             {t("services_title")}
