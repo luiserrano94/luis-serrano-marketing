@@ -1,37 +1,45 @@
 /**
  * Editorial imagery — single source of truth.
- * Swap a URL here and it updates everywhere it's used.
+ * Local files live in /public/images/editorial (JPEG, max 2000px wide).
  */
-
-const u = (id: string, w = 1600, q = 82) =>
-  `https://images.unsplash.com/${id}?w=${w}&q=${q}`;
 
 export const HERO_SLIDES = [
   {
-    src: u("photo-1602582332477-2e82e54d6596", 2000),
-    alt: "Retrato editorial contra cielo azul",
+    src: "/images/editorial/hero-leopard.jpg",
+    alt: "Leopardo en blanco y negro sobre fondo claro",
   },
   {
-    src: u("photo-1540827109409-17f40944f276", 2000),
-    alt: "Moda editorial en naranja saturado",
+    src: "/images/editorial/hero-beach.jpg",
+    alt: "Retrato editorial en la playa al atardecer",
   },
   {
-    src: u("photo-1620281488183-138c20077ba7", 2000),
-    alt: "Retrato editorial entre vegetación",
+    src: "/images/editorial/hero-diner.jpg",
+    alt: "Retrato editorial en un diner con luces de neón",
+  },
+  {
+    src: "/images/editorial/hero-interior.jpg",
+    alt: "Retrato editorial en un interior con luz natural",
   },
 ];
 
-/** Section backdrops — sit behind a burgundy scrim, so texture over subject. */
+/** Section backdrops — held under a burgundy scrim. */
 export const SECTION_BG = {
-  results: u("photo-1571771710201-0dca31239529"),
-  clients: u("photo-1495466746667-894969fec21f"),
-  featured: u("photo-1519872775884-29a6fea271ca"),
-  services: u("photo-1540827109409-17f40944f276"),
-  cta: u("photo-1602582332477-2e82e54d6596"),
+  results: "/images/editorial/hero-interior.jpg",
+  clients: "/images/editorial/page-product.jpg",
+  featured: "/images/editorial/hero-diner.jpg",
+  services: "/images/editorial/hero-beach.jpg",
+  cta: "/images/editorial/page-product.jpg",
+};
+
+/** Page title backdrops. */
+export const PAGE_BG = {
+  about: "/images/editorial/page-product.jpg",
+  services: "/images/editorial/hero-leopard.jpg",
+  privacy: "/images/editorial/hero-interior.jpg",
 };
 
 /** Shown inside the laptop screen on the featured-service section. */
-export const LAPTOP_SCREEN = u("photo-1540827109409-17f40944f276", 1200);
+export const LAPTOP_SCREEN = "/images/editorial/hero-beach.jpg";
 
 /** Full-bleed backdrop for the contact page. */
-export const CONTACT_BG = u("photo-1571771710201-0dca31239529", 2000);
+export const CONTACT_BG = "/images/editorial/contact-nova.jpg";

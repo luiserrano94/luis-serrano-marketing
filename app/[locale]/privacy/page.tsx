@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { PAGE_BG } from "@/lib/images";
 
 export async function generateMetadata({
   params,
@@ -26,8 +28,9 @@ export default async function PrivacyPage({
   }));
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative pt-24 pb-20">
+      <SectionBackdrop src={PAGE_BG.privacy} />
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
           <h1 className="font-display text-5xl sm:text-6xl text-ink mb-2">{t("title")}</h1>
           <p className="text-mid-gray text-sm">{t("last_updated")}</p>

@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { GraduationCap, Briefcase, Wrench } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ProtectedImage from "@/components/ProtectedImage";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { PAGE_BG } from "@/lib/images";
 
 export async function generateMetadata({
   params,
@@ -104,8 +106,9 @@ export default async function AboutPage({
   ];
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative pt-24 pb-20">
+      <SectionBackdrop src={PAGE_BG.about} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero section */}
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
           <AnimatedSection direction="left">
