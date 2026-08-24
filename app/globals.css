@@ -88,13 +88,14 @@ body {
       linear-gradient(rgba(96, 33, 46, 0.22), rgba(96, 33, 46, 0.22));
   }
 
-  /* Section backdrops sit further back — readable, but the texture shows */
+  /* Section backdrops: open enough that the photograph reads, still 5.9:1+
+     for white body copy against the brightest imagery we use. */
   .scrim-section {
     background: linear-gradient(
       to bottom,
-      rgba(96, 33, 46, 0.90) 0%,
-      rgba(96, 33, 46, 0.78) 50%,
-      rgba(96, 33, 46, 0.90) 100%
+      rgba(96, 33, 46, 0.80) 0%,
+      rgba(96, 33, 46, 0.64) 50%,
+      rgba(96, 33, 46, 0.80) 100%
     );
   }
 }
