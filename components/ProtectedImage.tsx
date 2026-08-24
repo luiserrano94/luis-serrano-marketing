@@ -1,3 +1,5 @@
+"use client";
+
 interface ProtectedImageProps {
   src: string;
   alt: string;
