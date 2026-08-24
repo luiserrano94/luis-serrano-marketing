@@ -73,7 +73,7 @@ export default function Navbar() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 bg-accent text-white font-semibold text-sm rounded-full hover:bg-accent/90 transition-colors duration-200"
+                className="px-5 py-2.5 bg-sand text-background font-semibold text-sm rounded-full hover:bg-accent/90 transition-colors duration-200"
               >
                 {t("cta_quote")}
               </a>
@@ -120,7 +120,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
-                className="mt-4 inline-block px-6 py-3 bg-accent text-white font-bold text-lg rounded-full text-center hover:bg-accent/90 transition-colors"
+                className="mt-4 inline-block px-6 py-3 bg-sand text-background font-bold text-lg rounded-full text-center hover:bg-accent/90 transition-colors"
               >
                 {t("cta_quote")}
               </a>

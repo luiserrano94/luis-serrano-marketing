@@ -4,6 +4,8 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Hammer, TrendingUp, Search } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { SECTION_BG } from "@/lib/images";
 
 interface CategoryCardProps {
   label: string;
@@ -113,8 +115,9 @@ export default function ServiceCategoriesGrid() {
   ];
 
   return (
-    <section className="py-32 sm:py-40 bg-surface/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-32 sm:py-40">
+      <SectionBackdrop src={SECTION_BG.services} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-ink mb-5 leading-[1.0] tracking-tight">
             {t("categories_title")}

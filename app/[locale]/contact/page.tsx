@@ -4,6 +4,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 import { LinkedInIcon } from "@/components/SocialIcons";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { CONTACT_BG } from "@/lib/images";
 
 export async function generateMetadata({
   params,
@@ -33,8 +35,9 @@ export default async function ContactPage({
   const t = await getTranslations({ locale: params.locale, namespace: "contact" });
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen pt-24 pb-20">
+      <SectionBackdrop src={CONTACT_BG} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
           <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-ink mb-4">

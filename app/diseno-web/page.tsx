@@ -163,7 +163,7 @@ export default function DisenoWebPage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent text-white text-sm font-semibold font-body px-5 py-2.5 rounded-lg hover:brightness-110 transition-all"
+                className="bg-sand text-background text-sm font-semibold font-body px-5 py-2.5 rounded-lg hover:brightness-110 transition-all"
               >
                 Comenzar
               </a>
@@ -197,7 +197,7 @@ export default function DisenoWebPage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-body px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-2 bg-sand text-background font-semibold font-body px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
               >
                 <WAIcon size={20} />
                 Comenzar por WhatsApp
@@ -381,7 +381,7 @@ export default function DisenoWebPage() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold font-body px-6 py-4 rounded-lg hover:brightness-110 transition-all text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-sand text-background font-semibold font-body px-6 py-4 rounded-lg hover:brightness-110 transition-all text-sm"
                 >
                   <WAIcon size={18} />
                   Comenzar por WhatsApp
@@ -414,7 +414,7 @@ export default function DisenoWebPage() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent text-white font-semibold font-body px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
+                  className="inline-flex items-center gap-2 bg-sand text-background font-semibold font-body px-8 py-4 rounded-lg hover:brightness-110 transition-all text-base w-full sm:w-auto justify-center"
                 >
                   <WAIcon size={20} />
                   Comenzar por WhatsApp

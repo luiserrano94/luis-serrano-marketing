@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { SECTION_BG } from "@/lib/images";
 
 interface MetricCardProps {
   value: string;
@@ -66,8 +68,9 @@ export default function ResultsMetrics() {
   ];
 
   return (
-    <section className="py-32 sm:py-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-32 sm:py-40">
+      <SectionBackdrop src={SECTION_BG.results} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-ink leading-[1.0] tracking-tight">
             {t("results_title").split("\n").map((line, i) => (

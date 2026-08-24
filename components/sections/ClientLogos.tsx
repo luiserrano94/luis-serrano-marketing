@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { SECTION_BG } from "@/lib/images";
 
 const CLIENTS = [
   "Ranching4Profit LATAM",
@@ -16,8 +18,9 @@ export default function ClientLogos() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-20 border-y border-line bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20">
+      <SectionBackdrop src={SECTION_BG.clients} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <p className="text-center text-mid-gray text-sm uppercase tracking-widest mb-10">
             {t("clients_title")}

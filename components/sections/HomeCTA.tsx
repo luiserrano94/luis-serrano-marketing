@@ -3,6 +3,8 @@
 import { useTranslations } from "next-intl";
 import AnimatedSection from "@/components/AnimatedSection";
 import { waLink } from "@/lib/constants";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import { SECTION_BG } from "@/lib/images";
 
 export default function HomeCTA() {
   const t = useTranslations("home");
@@ -11,8 +13,9 @@ export default function HomeCTA() {
   const whatsappHref = waLink(tc("whatsapp_cta"));
 
   return (
-    <section className="py-32 sm:py-40">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative py-32 sm:py-40">
+      <SectionBackdrop src={SECTION_BG.cta} />
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimatedSection>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-ink mb-5 leading-[1.0] tracking-tight">
             {t("cta_title")}
@@ -24,7 +27,7 @@ export default function HomeCTA() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-semibold text-base rounded-full hover:bg-accent/90 transition-all duration-200 shadow-lg shadow-accent/10"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-sand text-background font-semibold text-base rounded-full hover:bg-accent/90 transition-all duration-200 shadow-lg shadow-accent/10"
           >
             <svg
               width="18"

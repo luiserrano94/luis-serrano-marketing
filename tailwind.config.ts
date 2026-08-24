@@ -9,21 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Editorial palette — warm cream, sun-baked neutrals, olive + terracotta
-        background: "#FBF9F6",
-        surface: "#FFFFFF",
-        "surface-2": "#F4EFE8",
-        ink: "#1A1614",
-        "ink-soft": "#3D362F",
-        line: "#E5DDD2",
-        accent: "#4D7C0F",
-        "accent-deep": "#3F6212",
-        "accent-soft": "#ECFCCB",
-        terracotta: "#C2410C",
-        "terracotta-soft": "#FFEDD5",
-        sky: "#7FA8C9",
-        "mid-gray": "#6B6259",
-        "light-gray": "#3D362F",
+        // Burgundy ground + sand, sky blue, white
+        background: "#60212E",
+        "background-deep": "#4A1923",
+        surface: "#6E2836",
+        "surface-2": "#7C2F3E",
+        ink: "#FFFFFF",
+        sand: "#D8D1BD",
+        "sand-dim": "#B8AF98",
+        sky: "#69ACC2",
+        accent: "#69ACC2",
+        line: "#8A4453",
+        // legacy aliases kept so existing markup stays readable on burgundy
+        "mid-gray": "#D8D1BD",
+        "light-gray": "#EDE8DC",
+        "ink-soft": "#F3EFE6",
+        "accent-soft": "#9BC8D8",
+        "accent-deep": "#4E8FA6",
+        terracotta: "#69ACC2",
       },
       fontFamily: {
         sans: ["var(--font-body)", "system-ui", "sans-serif"],
@@ -31,13 +34,14 @@ const config: Config = {
         display: ["var(--font-display)", "Georgia", "serif"],
       },
       boxShadow: {
-        soft: "0 1px 3px rgba(26,22,20,0.04), 0 8px 24px -8px rgba(26,22,20,0.08)",
-        lift: "0 2px 6px rgba(26,22,20,0.06), 0 18px 40px -12px rgba(26,22,20,0.16)",
-        editorial: "0 30px 70px -24px rgba(26,22,20,0.28)",
+        soft: "0 1px 3px rgba(0,0,0,0.16), 0 8px 24px -8px rgba(0,0,0,0.28)",
+        lift: "0 2px 6px rgba(0,0,0,0.20), 0 18px 40px -12px rgba(0,0,0,0.40)",
+        editorial: "0 30px 70px -24px rgba(0,0,0,0.55)",
       },
       animation: {
         "pulse-ring": "pulse-ring 2s ease-out infinite",
         float: "float 3s ease-in-out infinite",
+        "ken-burns": "ken-burns 12s ease-out both",
       },
       keyframes: {
         "pulse-ring": {
@@ -47,6 +51,10 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
+        },
+        "ken-burns": {
+          "0%": { transform: "scale(1.06)" },
+          "100%": { transform: "scale(1.16)" },
         },
       },
     },

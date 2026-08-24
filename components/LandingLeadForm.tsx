@@ -199,7 +199,7 @@ export default function LandingLeadForm({ lang = "en" }: Props) {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-accent text-white font-semibold font-body py-4 rounded-lg hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
+              className="w-full bg-sand text-background font-semibold font-body py-4 rounded-lg hover:brightness-110 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-sm"
             >
               {status === "sending" ? c.sending : c.submit}
             </button>

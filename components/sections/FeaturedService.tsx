@@ -1,8 +1,10 @@
 import { useTranslations, useLocale } from "next-intl";
-import Image from "next/image";
 import { CheckCircle2, Globe, Zap } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import SectionBackdrop from "@/components/SectionBackdrop";
+import LaptopMockup from "@/components/LaptopMockup";
 import { waLink } from "@/lib/constants";
+import { SECTION_BG, LAPTOP_SCREEN } from "@/lib/images";
 
 export default function FeaturedService() {
   const t = useTranslations("home");
@@ -23,8 +25,9 @@ export default function FeaturedService() {
   ];
 
   return (
-    <section className="py-32 sm:py-40 bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-32 sm:py-40">
+      <SectionBackdrop src={SECTION_BG.featured} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <AnimatedSection direction="left">
@@ -63,7 +66,7 @@ export default function FeaturedService() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white font-bold rounded-full hover:bg-accent/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-accent/20"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-sand text-background font-bold rounded-full hover:bg-accent/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-accent/20"
             >
               <Globe size={18} />
               {t("featured_cta")}
@@ -73,28 +76,23 @@ export default function FeaturedService() {
           {/* Right: Visual */}
           <AnimatedSection direction="right" delay={0.15}>
             <div className="relative">
-              {/* Editorial image — offset terracotta plate behind */}
-              <div className="absolute -top-5 -right-5 w-full h-full bg-terracotta/15 rounded-sm hidden sm:block" />
-
-              <div className="relative rounded-sm overflow-hidden shadow-editorial">
-                <Image
-                  src="https://images.unsplash.com/photo-1495466746667-894969fec21f?w=1200&q=85"
-                  alt={
-                    locale === "es"
-                      ? "Arquitectura editorial contra cielo azul"
-                      : "Editorial architecture against blue sky"
-                  }
-                  width={1200}
-                  height={900}
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                  className="w-full h-[380px] lg:h-[460px] object-cover"
-                />
-              </div>
+              <LaptopMockup
+                src={LAPTOP_SCREEN}
+                alt={
+                  locale === "es"
+                    ? "Sitio web editorial mostrado en una laptop"
+                    : "Editorial website shown on a laptop"
+                }
+                label={locale === "es" ? "Colección" : "Collection"}
+                headline={
+                  locale === "es" ? "Tu marca, en su mejor versión." : "Your brand, at its best."
+                }
+              />
 
               {/* Magazine-style credit block */}
-              <div className="absolute -bottom-6 left-5 bg-surface border border-line px-6 py-4 shadow-lift">
-                <p className="font-display text-3xl text-ink leading-none">14</p>
-                <p className="label-editorial text-mid-gray mt-1">
+              <div className="absolute -bottom-7 left-4 bg-sand text-background px-6 py-4 shadow-lift">
+                <p className="font-display text-3xl leading-none">14</p>
+                <p className="label-editorial mt-1 opacity-80">
                   {locale === "es" ? "días a producción" : "days to launch"}
                 </p>
               </div>

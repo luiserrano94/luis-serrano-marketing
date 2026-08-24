@@ -83,7 +83,7 @@ export default function ServiceCard({
       }`}
     >
       {badge && (
-        <span className="absolute -top-3 left-6 px-3 py-1 bg-accent text-white text-xs font-bold rounded-full">
+        <span className="absolute -top-3 left-6 px-3 py-1 bg-sand text-background text-xs font-bold rounded-full">
           {badge}
         </span>
       )}
@@ -114,7 +114,7 @@ export default function ServiceCard({
         rel="noopener noreferrer"
         className={`mt-5 inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
           featured
-            ? "bg-accent text-white hover:bg-accent/90"
+            ? "bg-sand text-background hover:bg-accent/90"
             : "border border-line text-light-gray hover:border-accent hover:text-accent"
         }`}
       >

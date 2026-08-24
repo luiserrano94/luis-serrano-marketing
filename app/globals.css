@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #FBF9F6;
-  --surface: #FFFFFF;
-  --ink: #1A1614;
-  --accent: #4D7C0F;
-  --terracotta: #C2410C;
+  --background: #60212E;
+  --surface: #6E2836;
+  --ink: #FFFFFF;
+  --sand: #D8D1BD;
+  --sky: #69ACC2;
 }
 
 * {
@@ -16,11 +16,12 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #60212E;
 }
 
 body {
-  background-color: #FBF9F6;
-  color: #1A1614;
+  background-color: #60212E;
+  color: #FFFFFF;
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,20 +32,20 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4EFE8;
+  background: #4A1923;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D9CFC1;
+  background: #8A4453;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4D7C0F;
+  background: #69ACC2;
 }
 
 /* Text selection */
 ::selection {
-  background-color: #1A1614;
-  color: #FBF9F6;
+  background-color: #69ACC2;
+  color: #60212E;
 }
 
 @layer utilities {
@@ -52,7 +53,7 @@ body {
     text-wrap: balance;
   }
 
-  /* Editorial display type — high-contrast serif, tight and large */
+  /* Editorial display type — high-contrast serif */
   .font-display {
     font-family: var(--font-display), Georgia, serif;
     letter-spacing: -0.02em;
@@ -61,16 +62,39 @@ body {
 
   /* Oversized editorial headline */
   .text-editorial {
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(2.75rem, 7.5vw, 6.5rem);
     line-height: 0.95;
     letter-spacing: -0.035em;
   }
 
-  /* Small caps label used above section titles */
+  /* Tracked small-caps label */
   .label-editorial {
     font-size: 0.6875rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 500;
+  }
+
+  /* Burgundy scrim — heavy where the copy sits, light up top so the
+     photograph still reads as the subject. */
+  .scrim {
+    background:
+      linear-gradient(
+        to top,
+        rgba(74, 25, 35, 0.90) 0%,
+        rgba(74, 25, 35, 0.55) 40%,
+        rgba(74, 25, 35, 0.10) 100%
+      ),
+      linear-gradient(rgba(96, 33, 46, 0.22), rgba(96, 33, 46, 0.22));
+  }
+
+  /* Section backdrops sit further back — readable, but the texture shows */
+  .scrim-section {
+    background: linear-gradient(
+      to bottom,
+      rgba(96, 33, 46, 0.90) 0%,
+      rgba(96, 33, 46, 0.78) 50%,
+      rgba(96, 33, 46, 0.90) 100%
+    );
   }
 }

@@ -3,11 +3,9 @@
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-import Image from "next/image";
 import { waLink } from "@/lib/constants";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1620281488183-138c20077ba7?w=1400&q=85";
+import HeroSlideshow from "./HeroSlideshow";
+import { HERO_SLIDES } from "@/lib/images";
 
 export default function Hero() {
   const t = useTranslations("home");
@@ -22,30 +20,32 @@ export default function Hero() {
   const parts = t("hero_title").split(". ");
 
   return (
-    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Eyebrow */}
+    <section className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
+      {/* Full-bleed cycling background */}
+      <HeroSlideshow images={HERO_SLIDES} />
+
+      {/* Content sits on top of the imagery */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-14 lg:pb-20 pt-32">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="label-editorial text-mid-gray mb-8 flex items-center gap-3"
+          className="label-editorial text-sand mb-7 flex items-center gap-3"
         >
-          <span className="w-8 h-px bg-terracotta inline-block" />
+          <span className="w-10 h-px bg-sky inline-block" />
           {t("hero_badge")}
         </motion.p>
 
-        {/* Oversized editorial headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-editorial text-ink max-w-5xl mb-10"
+          transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-editorial text-ink max-w-5xl mb-8 drop-shadow-[0_2px_24px_rgba(74,25,35,0.5)]"
         >
           {parts.map((part, i) => (
             <span key={i} className="block">
               {i === 1 ? (
-                <em className="not-italic text-terracotta">
+                <em className="not-italic text-sky">
                   {part.replace(/\.$/, "")}.
                 </em>
               ) : (
@@ -55,51 +55,13 @@ export default function Hero() {
           ))}
         </motion.h1>
 
-        {/* Editorial image band */}
-        <motion.div
-          initial={{ opacity: 0, scale: 1.02 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-sm overflow-hidden shadow-editorial mb-12"
-        >
-          <Image
-            src={HERO_IMAGE}
-            alt={
-              locale === "es"
-                ? "Retrato editorial de dos profesionales"
-                : "Editorial portrait of two professionals"
-            }
-            width={1400}
-            height={800}
-            priority
-            sizes="(max-width: 1280px) 100vw, 1216px"
-            className="w-full h-[46vh] min-h-[320px] max-h-[560px] lg:h-[58vh] lg:max-h-[620px] object-cover object-center"
-          />
-
-          {/* Caption strip — magazine credit line */}
-          <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-6 p-5 sm:p-7 bg-gradient-to-t from-ink/70 to-transparent">
-            <p className="label-editorial text-white/90 max-w-xs hidden sm:block">
-              {locale === "es"
-                ? "Diseño con estándar editorial"
-                : "Design held to an editorial standard"}
-            </p>
-            <p className="font-display text-white text-4xl sm:text-5xl leading-none ml-auto">
-              14
-              <span className="label-editorial ml-2 align-super">
-                {locale === "es" ? "días" : "days"}
-              </span>
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Subtitle + CTAs in an editorial two-column footer */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end border-t border-line pt-8"
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end border-t border-sand/25 pt-7"
         >
-          <p className="text-mid-gray text-base sm:text-lg max-w-2xl leading-relaxed">
+          <p className="text-sand text-base sm:text-lg max-w-xl leading-relaxed">
             {t("hero_subtitle")}
           </p>
 
@@ -108,13 +70,13 @@ export default function Hero() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-ink text-white font-medium text-sm rounded-full hover:bg-terracotta transition-colors duration-300 text-center"
+              className="px-8 py-4 bg-sand text-background font-medium text-sm rounded-full hover:bg-sky transition-colors duration-300 text-center"
             >
               {t("hero_cta_primary")}
             </a>
             <Link
               href={`/${locale}#results`}
-              className="px-8 py-4 border border-ink/20 text-ink font-medium text-sm rounded-full hover:border-ink hover:bg-surface transition-all duration-300 text-center"
+              className="px-8 py-4 border border-sand/40 text-ink font-medium text-sm rounded-full hover:border-sand hover:bg-sand/10 transition-all duration-300 text-center"
             >
               {t("hero_cta_secondary")}
             </Link>
