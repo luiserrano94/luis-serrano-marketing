@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
@@ -10,6 +11,7 @@ import { HERO_SLIDES } from "@/lib/images";
 export default function Hero() {
   const t = useTranslations("home");
   const locale = useLocale();
+  const [active, setActive] = useState(0);
 
   const whatsappHref = waLink(
     locale === "es"
@@ -18,21 +20,40 @@ export default function Hero() {
   );
 
   const parts = t("hero_title").split(". ");
+  const light = HERO_SLIDES[active]?.tone === "light";
+
+  // Copy colours flip with the frame behind them
+  const heading = light ? "text-background" : "text-ink";
+  const accentWord = light ? "text-accent-deep" : "text-sky";
+  const body = light ? "text-background/85" : "text-sand";
+  const eyebrow = light ? "text-background/70" : "text-sand";
+  const rule = light ? "bg-background/50" : "bg-sky";
+  const divider = light ? "border-background/25" : "border-sand/25";
+  const primaryBtn = light
+    ? "bg-background text-ink hover:bg-background/90"
+    : "bg-sand text-background hover:bg-sky";
+  const secondaryBtn = light
+    ? "border-background/40 text-background hover:border-background hover:bg-background/10"
+    : "border-sand/40 text-ink hover:border-sand hover:bg-sand/10";
 
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
-      {/* Full-bleed cycling background */}
-      <HeroSlideshow images={HERO_SLIDES} />
+      <HeroSlideshow
+        images={HERO_SLIDES}
+        active={active}
+        onChange={setActive}
+      />
 
-      {/* Content sits on top of the imagery */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-14 lg:pb-20 pt-32">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="label-editorial text-sand mb-7 flex items-center gap-3"
+          className={`label-editorial mb-7 flex items-center gap-3 transition-colors duration-700 ${eyebrow}`}
         >
-          <span className="w-10 h-px bg-sky inline-block" />
+          <span
+            className={`w-10 h-px inline-block transition-colors duration-700 ${rule}`}
+          />
           {t("hero_badge")}
         </motion.p>
 
@@ -40,12 +61,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-editorial text-ink max-w-5xl mb-8 drop-shadow-[0_2px_24px_rgba(74,25,35,0.5)]"
+          className={`font-display text-editorial max-w-5xl mb-8 transition-colors duration-700 ${heading}`}
         >
           {parts.map((part, i) => (
             <span key={i} className="block">
               {i === 1 ? (
-                <em className="not-italic text-sky">
+                <em
+                  className={`not-italic transition-colors duration-700 ${accentWord}`}
+                >
                   {part.replace(/\.$/, "")}.
                 </em>
               ) : (
@@ -59,9 +82,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end border-t border-sand/25 pt-7"
+          className={`grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end border-t pt-7 transition-colors duration-700 ${divider}`}
         >
-          <p className="text-sand text-base sm:text-lg max-w-xl leading-relaxed">
+          <p
+            className={`text-base sm:text-lg max-w-xl leading-relaxed transition-colors duration-700 ${body}`}
+          >
             {t("hero_subtitle")}
           </p>
 
@@ -70,13 +95,13 @@ export default function Hero() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-sand text-background font-medium text-sm rounded-full hover:bg-sky transition-colors duration-300 text-center"
+              className={`px-8 py-4 font-medium text-sm rounded-full transition-colors duration-300 text-center ${primaryBtn}`}
             >
               {t("hero_cta_primary")}
             </a>
             <Link
               href={`/${locale}#results`}
-              className="px-8 py-4 border border-sand/40 text-ink font-medium text-sm rounded-full hover:border-sand hover:bg-sand/10 transition-all duration-300 text-center"
+              className={`px-8 py-4 border font-medium text-sm rounded-full transition-all duration-300 text-center ${secondaryBtn}`}
             >
               {t("hero_cta_secondary")}
             </Link>

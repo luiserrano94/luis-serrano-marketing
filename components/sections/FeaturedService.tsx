@@ -1,9 +1,10 @@
 import { useTranslations, useLocale } from "next-intl";
-import { CheckCircle2, Globe, Zap } from "lucide-react";
+import { CheckCircle2, Globe } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import LaptopMockup from "@/components/LaptopMockup";
+import SectionBackdrop from "@/components/SectionBackdrop";
 import { waLink } from "@/lib/constants";
-import {LAPTOP_SCREEN } from "@/lib/images";
+import { LAPTOP_SCREEN, SECTION_BG } from "@/lib/images";
 
 export default function FeaturedService() {
   const t = useTranslations("home");
@@ -25,14 +26,11 @@ export default function FeaturedService() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionBackdrop src={SECTION_BG.featured} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <AnimatedSection direction="left">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 border border-accent/20 text-accent text-xs font-semibold rounded-full uppercase tracking-widest mb-6">
-              <Zap size={12} />
-              {t("featured_badge")}
-            </span>
 
             <h2 className="font-display text-5xl lg:text-6xl xl:text-7xl text-ink leading-tight mb-4">
               {t("featured_title").split("\n").map((line, i) => (

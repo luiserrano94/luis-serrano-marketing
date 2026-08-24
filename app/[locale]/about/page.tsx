@@ -114,11 +114,29 @@ export default async function AboutPage({
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         {/* Bio + portrait */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
+        <div className="grid lg:grid-cols-2 gap-14 items-start mb-24">
           <AnimatedSection direction="left">
             <div className="space-y-4">
               <p className="text-light-gray leading-relaxed">{t("bio_p1")}</p>
               <p className="text-mid-gray leading-relaxed">{t("bio_p2")}</p>
+            </div>
+
+            {/* Skills sit here so the column matches the portrait's height */}
+            <div className="mt-10">
+              <div className="flex items-center gap-3 mb-5">
+                <Wrench className="text-accent" size={20} />
+                <h2 className="font-display text-2xl text-ink">{t("skills_title")}</h2>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {SKILLS.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3.5 py-1.5 bg-surface border border-line text-light-gray text-xs rounded-full hover:border-accent/40 hover:text-ink transition-colors"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </AnimatedSection>
 
@@ -184,24 +202,6 @@ export default async function AboutPage({
                   <p className="text-mid-gray text-sm">{edu.degree}</p>
                 </div>
               </AnimatedSection>
-            ))}
-          </div>
-        </AnimatedSection>
-
-        {/* Skills */}
-        <AnimatedSection className="mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Wrench className="text-accent" size={24} />
-            <h2 className="font-display text-4xl text-ink">{t("skills_title")}</h2>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {SKILLS.map((skill) => (
-              <span
-                key={skill}
-                className="px-4 py-2 bg-surface border border-line text-light-gray text-sm rounded-full hover:border-accent/40 hover:text-ink transition-colors"
-              >
-                {skill}
-              </span>
             ))}
           </div>
         </AnimatedSection>

@@ -85,4 +85,15 @@ body {
       rgba(20, 12, 10, 0.12) 100%
     );
   }
+
+  /* Section backdrops: burgundy-tinted so the section still reads as part
+     of the site, open enough that the photograph shows through. */
+  .scrim-section {
+    background: linear-gradient(
+      to bottom,
+      rgba(96, 33, 46, 0.86) 0%,
+      rgba(96, 33, 46, 0.72) 50%,
+      rgba(96, 33, 46, 0.86) 100%
+    );
+  }
 }

@@ -1,32 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 
+export interface Slide {
+  src: string;
+  alt: string;
+  tone: "light" | "dark";
+}
+
 interface Props {
-  images: { src: string; alt: string }[];
+  images: Slide[];
+  active: number;
+  onChange: (i: number) => void;
   intervalMs?: number;
 }
 
 /**
- * Cross-fading full-bleed background slideshow.
- * First slide is eager + priority so LCP isn't waiting on JS.
+ * Cross-fading full-bleed background slideshow. The parent owns `active`
+ * so it can restyle the copy for light vs dark frames.
  */
-export default function HeroSlideshow({ images, intervalMs = 6000 }: Props) {
-  const [active, setActive] = useState(0);
-
+export default function HeroSlideshow({
+  images,
+  active,
+  onChange,
+  intervalMs = 6000,
+}: Props) {
   useEffect(() => {
     if (images.length < 2) return;
-
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduce.matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const id = setInterval(
-      () => setActive((i) => (i + 1) % images.length),
+      () => onChange((active + 1) % images.length),
       intervalMs
     );
     return () => clearInterval(id);
-  }, [images.length, intervalMs]);
+  }, [active, images.length, intervalMs, onChange]);
+
+  const tone = images[active]?.tone ?? "dark";
 
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -48,8 +59,16 @@ export default function HeroSlideshow({ images, intervalMs = 6000 }: Props) {
         </div>
       ))}
 
-      {/* Burgundy scrim keeps the headline readable over any frame */}
-      <div className="absolute inset-0 scrim" />
+      {/* Scrim flips with the frame so the copy always has something to sit on */}
+      <div
+        className="absolute inset-0 transition-[background] duration-[1400ms]"
+        style={{
+          background:
+            tone === "light"
+              ? "linear-gradient(to top, rgba(250,247,242,0.90) 0%, rgba(250,247,242,0.70) 45%, rgba(250,247,242,0.22) 100%)"
+              : "linear-gradient(to top, rgba(20,12,10,0.78) 0%, rgba(20,12,10,0.42) 42%, rgba(20,12,10,0.12) 100%)",
+        }}
+      />
     </div>
   );
 }

@@ -3,22 +3,30 @@
  * Local files live in /public/images/editorial (JPEG, max 2000px wide).
  */
 
+/**
+ * `tone` describes the frame behind the headline: "light" frames get
+ * burgundy type on a pale scrim, "dark" frames get white type.
+ */
 export const HERO_SLIDES = [
   {
     src: "/images/editorial/hero-leopard.jpg",
     alt: "Leopardo en blanco y negro sobre fondo claro",
+    tone: "light" as const,
   },
   {
     src: "/images/editorial/hero-beach.jpg",
     alt: "Retrato editorial en la playa al atardecer",
+    tone: "dark" as const,
   },
   {
     src: "/images/editorial/hero-diner.jpg",
     alt: "Retrato editorial en un diner con luces de neón",
+    tone: "dark" as const,
   },
   {
     src: "/images/editorial/hero-interior.jpg",
     alt: "Retrato editorial en un interior con luz natural",
+    tone: "dark" as const,
   },
 ];
 
