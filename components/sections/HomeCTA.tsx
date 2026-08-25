@@ -14,7 +14,9 @@ export default function HomeCTA() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <SectionBackdrop src={SECTION_BG.cta} />
+      {/* The handset occupies 27–65% of the frame's height; at this section's
+          aspect it stays whole between 16% and 66%, and 41% centres it. */}
+      <SectionBackdrop src={SECTION_BG.cta} position="center 41%" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <AnimatedSection>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-ink mb-5 leading-[1.0] tracking-tight">
