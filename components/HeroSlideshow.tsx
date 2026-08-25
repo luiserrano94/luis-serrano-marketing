@@ -13,6 +13,8 @@ interface Props {
   images: Slide[];
   active: number;
   onChange: (i: number) => void;
+  /** Held tone from the parent — crosses at the midpoint of the fade. */
+  tone: "light" | "dark";
   intervalMs?: number;
 }
 
@@ -24,6 +26,7 @@ export default function HeroSlideshow({
   images,
   active,
   onChange,
+  tone,
   intervalMs = 6000,
 }: Props) {
   useEffect(() => {
@@ -36,8 +39,6 @@ export default function HeroSlideshow({
     );
     return () => clearInterval(id);
   }, [active, images.length, intervalMs, onChange]);
-
-  const tone = images[active]?.tone ?? "dark";
 
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">

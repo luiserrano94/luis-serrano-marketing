@@ -50,7 +50,7 @@ export const PAGE_BG = {
 };
 
 /** Shown inside the laptop screen on the featured-service section. */
-export const LAPTOP_SCREEN = "/images/editorial/hero-beach.jpg";
+export const LAPTOP_SCREEN = "/images/editorial/laptop-screen.jpg";
 
 /** Full-bleed backdrop for the contact page. */
 export const CONTACT_BG = "/images/editorial/contact-nova.jpg";
