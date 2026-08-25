@@ -32,11 +32,8 @@ export const HERO_SLIDES = [
 
 /** Section backdrops — held under a burgundy scrim. */
 export const SECTION_BG = {
-  results: "/images/editorial/hero-interior.jpg",
-  clients: "/images/editorial/page-product.jpg",
-  featured: "/images/editorial/hero-diner.jpg",
-  services: "/images/editorial/hero-beach.jpg",
-  cta: "/images/editorial/page-product.jpg",
+  clients: "/images/editorial/section-clients.jpg",
+  featured: "/images/editorial/section-featured.jpg",
 };
 
 /** Page title backdrops. */

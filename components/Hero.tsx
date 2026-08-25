@@ -35,6 +35,23 @@ export default function Hero() {
 
   const light = tone === "light";
 
+  /** Publish the tone so the fixed navbar (rendered outside this tree) can
+   *  follow it while it sits over the hero. Reset on unmount so other pages
+   *  keep the flat-burgundy defaults. */
+  useEffect(() => {
+    const s = document.documentElement.style;
+    s.setProperty("--nav-fg", light ? "#60212E" : "#FFFFFF");
+    s.setProperty("--nav-fg-dim", light ? "rgba(96,33,46,0.78)" : "#D8D1BD");
+    s.setProperty("--nav-btn-bg", light ? "#60212E" : "#D8D1BD");
+    s.setProperty("--nav-btn-fg", light ? "#FFFFFF" : "#60212E");
+    return () => {
+      s.removeProperty("--nav-fg");
+      s.removeProperty("--nav-fg-dim");
+      s.removeProperty("--nav-btn-bg");
+      s.removeProperty("--nav-btn-fg");
+    };
+  }, [light]);
+
   // Copy colours flip with the frame behind them
   const heading = light ? "text-background" : "text-ink";
   const accentWord = light ? "text-accent-deep" : "text-sky";

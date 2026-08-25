@@ -30,14 +30,14 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
         y="0.6"
         width="42.8"
         height="42.8"
-        stroke="#D8D1BD"
+        stroke="currentColor"
         strokeWidth="1.2"
       />
       <text
         x="22"
         y="30.5"
         textAnchor="middle"
-        fill="#D8D1BD"
+        fill="currentColor"
         fontFamily="Georgia, 'Times New Roman', serif"
         fontWeight="400"
         fontSize="21"
@@ -53,7 +53,7 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
       <text
         x="68"
         y="21"
-        fill="#FFFFFF"
+        fill="currentColor"
         fontFamily="Georgia, 'Times New Roman', serif"
         fontWeight="400"
         fontSize="15"
@@ -66,7 +66,7 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
       <text
         x="68.5"
         y="35"
-        fill="#D8D1BD"
+        fill="currentColor"
         fontFamily="system-ui, sans-serif"
         fontWeight="500"
         fontSize="6.5"

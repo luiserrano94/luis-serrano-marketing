@@ -49,7 +49,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href={`/${locale}`} aria-label="Inicio">
+            <Link
+              href={`/${locale}`}
+              aria-label="Inicio"
+              className="transition-colors duration-500"
+              style={{ color: scrolled ? "#FFFFFF" : "var(--nav-fg)" }}
+            >
               <Logo size="sm" />
             </Link>
 
@@ -59,7 +64,8 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className="text-sm font-medium text-light-gray hover:text-ink transition-colors duration-200"
+                  className="text-sm font-medium transition-colors duration-500 hover:opacity-100 opacity-90"
+                  style={{ color: scrolled ? "#D8D1BD" : "var(--nav-fg-dim)" }}
                 >
                   {label}
                 </Link>
@@ -73,7 +79,11 @@ export default function Navbar() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 bg-sand text-background font-semibold text-sm rounded-full hover:bg-accent/90 transition-colors duration-200"
+                className="px-5 py-2.5 font-semibold text-sm rounded-full transition-colors duration-500 hover:opacity-90"
+                style={{
+                  backgroundColor: scrolled ? "#D8D1BD" : "var(--nav-btn-bg)",
+                  color: scrolled ? "#60212E" : "var(--nav-btn-fg)",
+                }}
               >
                 {t("cta_quote")}
               </a>
@@ -84,7 +94,8 @@ export default function Navbar() {
               <LanguageToggle />
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="p-2 text-ink"
+                className="p-2 transition-colors duration-500"
+                style={{ color: scrolled ? "#FFFFFF" : "var(--nav-fg)" }}
                 aria-label="Abrir menú"
               >
                 {menuOpen ? <X size={22} /> : <Menu size={22} />}
