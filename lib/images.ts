@@ -34,6 +34,7 @@ export const HERO_SLIDES = [
 export const SECTION_BG = {
   clients: "/images/editorial/section-clients.jpg",
   featured: "/images/editorial/section-featured.jpg",
+  cta: "/images/editorial/section-cta.jpg",
 };
 
 /** Page title backdrops. */

@@ -8,6 +8,13 @@
   --ink: #FFFFFF;
   --sand: #D8D1BD;
   --sky: #69ACC2;
+
+  /* Navbar-over-hero colours. The hero overrides these per slide; every
+     other page keeps the defaults (navbar sits on flat burgundy). */
+  --nav-fg: #FFFFFF;
+  --nav-fg-dim: #D8D1BD;
+  --nav-btn-bg: #D8D1BD;
+  --nav-btn-fg: #60212E;
 }
 
 * {
@@ -91,9 +98,9 @@ body {
   .scrim-section {
     background: linear-gradient(
       to bottom,
-      rgba(96, 33, 46, 0.86) 0%,
-      rgba(96, 33, 46, 0.72) 50%,
-      rgba(96, 33, 46, 0.86) 100%
+      rgba(96, 33, 46, 0.88) 0%,
+      rgba(96, 33, 46, 0.80) 50%,
+      rgba(96, 33, 46, 0.88) 100%
     );
   }
 }
