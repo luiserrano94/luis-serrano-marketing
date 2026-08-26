@@ -73,6 +73,7 @@ export default function ServiceCard({
   void locale;
   const Icon = ICON_MAP[iconName];
   const href = waLink(whatsappMessage);
+  const Heading = featured ? "h2" : "h3";
 
   return (
     <div
@@ -103,7 +104,9 @@ export default function ServiceCard({
         />
       </div>
 
-      <h3 className="text-ink font-semibold text-lg mb-2">{title}</h3>
+      {/* The featured card is the page's first subsection, so it takes h2.
+          Anything else is an h3 nested under a section heading. */}
+      <Heading className="text-ink font-semibold text-lg mb-2">{title}</Heading>
       <p className="text-mid-gray text-sm leading-relaxed flex-1">{description}</p>
 
       {price && <p className="text-accent font-bold text-base mt-3">{price}</p>}

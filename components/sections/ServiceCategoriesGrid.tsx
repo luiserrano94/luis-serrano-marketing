@@ -84,6 +84,7 @@ export default function ServiceCategoriesGrid() {
         t("category_build_item_3"),
         t("category_build_item_4"),
       ],
+      cta: t("category_build_cta"),
       Icon: Hammer,
     },
     {
@@ -96,6 +97,7 @@ export default function ServiceCategoriesGrid() {
         t("category_grow_item_3"),
         t("category_grow_item_4"),
       ],
+      cta: t("category_grow_cta"),
       Icon: TrendingUp,
     },
     {
@@ -108,6 +110,7 @@ export default function ServiceCategoriesGrid() {
         t("category_audit_item_3"),
         t("category_audit_item_4"),
       ],
+      cta: t("category_audit_cta"),
       Icon: Search,
     },
   ];
@@ -130,7 +133,6 @@ export default function ServiceCategoriesGrid() {
               key={i}
               {...cat}
               href={`/${locale}/services`}
-              cta={t("category_cta")}
               delay={i * 0.08}
             />
           ))}

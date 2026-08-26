@@ -1,51 +1,41 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
-import { useTransition } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+const LOCALES = [
+  { code: "es", label: "ES", aria: "Cambiar a español" },
+  { code: "en", label: "EN", aria: "Switch to English" },
+];
 
 export default function LanguageToggle() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
-
-  const switchLocale = (newLocale: string) => {
-    if (newLocale === locale) return;
-    // Replace current locale prefix in pathname
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
-    startTransition(() => {
-      router.replace(newPath);
-    });
-  };
 
   return (
-    <div
-      className={`flex items-center gap-1 text-sm font-medium ${isPending ? "opacity-60" : ""}`}
-    >
-      <button
-        onClick={() => switchLocale("es")}
-        className={`px-1 py-0.5 transition-colors ${
-          locale === "es"
-            ? "text-accent font-semibold"
-            : "text-mid-gray hover:text-ink"
-        }`}
-        aria-label="Cambiar a español"
-      >
-        ES
-      </button>
-      <span className="text-mid-gray">|</span>
-      <button
-        onClick={() => switchLocale("en")}
-        className={`px-1 py-0.5 transition-colors ${
-          locale === "en"
-            ? "text-accent font-semibold"
-            : "text-mid-gray hover:text-ink"
-        }`}
-        aria-label="Switch to English"
-      >
-        EN
-      </button>
+    <div className="flex items-center gap-1 text-sm font-medium">
+      {LOCALES.map(({ code, label, aria }, i) => (
+        <span key={code} className="flex items-center gap-1">
+          {i > 0 && <span className="text-mid-gray">|</span>}
+          {code === locale ? (
+            <span className="px-1 py-0.5 text-accent font-semibold">
+              {label}
+            </span>
+          ) : (
+            // A real <a> so crawlers follow it — the old <button> left the
+            // other locale with zero internal links.
+            <Link
+              href={pathname.replace(`/${locale}`, `/${code}`)}
+              hrefLang={code}
+              aria-label={aria}
+              className="px-1 py-0.5 transition-colors text-mid-gray hover:text-ink"
+            >
+              {label}
+            </Link>
+          )}
+        </span>
+      ))}
     </div>
   );
 }

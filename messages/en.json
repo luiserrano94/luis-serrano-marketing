@@ -7,7 +7,7 @@
     "cta_quote": "Start"
   },
   "home": {
-    "meta_title": "Luis Serrano Marketing Services | Websites that generate clients",
+    "meta_title": "Websites that generate clients | Luis Serrano",
     "meta_description": "Professional websites live in 14 days, built to convert visits into sales. Digital marketing and branding for businesses in Mexico and the United States.",
     "hero_badge": "Luis Serrano Marketing Services",
     "hero_title": "Your website. Live in 14 days. Built to generate clients.",
@@ -49,7 +49,6 @@
     "category_audit_item_2": "Hourly consulting",
     "category_audit_item_3": "Team training",
     "category_audit_item_4": "Campaign validation",
-    "category_cta": "See details",
     "clients_title": "Brands that trust my work",
     "results_title": "Real results.\nReal numbers.",
     "results_subtitle": "Every project is measured. These are real results from real brands I've worked with.",
@@ -70,12 +69,15 @@
     "result_5_client": "Rancho El 17",
     "cta_title": "Ready to start?",
     "cta_subtitle": "15 minutes on WhatsApp. I'll tell you if we're a fit before charging you a cent.",
-    "cta_button": "Talk on WhatsApp"
+    "cta_button": "Talk on WhatsApp",
+    "category_build_cta": "See websites and branding",
+    "category_grow_cta": "See ads management and strategy",
+    "category_audit_cta": "See audits and consulting"
   },
   "services": {
-    "meta_title": "Services | Luis Serrano Marketing Services",
+    "meta_title": "Digital marketing & web design services | Luis Serrano",
     "meta_description": "Websites, branding, ads, strategy and consulting. Marketing solutions designed to convert and scale businesses in Mexico and the U.S.",
-    "hero_title": "SERVICES",
+    "hero_title": "Digital marketing services",
     "hero_subtitle": "Build, Grow, Audit. Three ways to work together. Twelve services to find the right one for your brand.",
     "cta_quote": "Get a free quote",
     "service_1_title": "Professional websites",
@@ -106,7 +108,7 @@
     "service_12_desc": "Continuous monthly support. An experienced CMO for your brand, without hiring one full-time."
   },
   "about": {
-    "meta_title": "About | Luis Serrano Marketing Services",
+    "meta_title": "About — bilingual CMO, 10+ years | Luis Serrano",
     "meta_description": "Bilingual CMO with over 10 years of experience building brands that generate measurable results in Mexico and the United States.",
     "hero_tagline": "CMO · Digital Strategist · Bilingual",
     "hero_title": "Over 10 years building brands that generate results.",
@@ -153,9 +155,9 @@
     "philosophy_p2": "My process always starts with data and ends with narrative. I measure everything, iterate fast and communicate clearly. If we work together, you'll know exactly what we're doing, why, and the results."
   },
   "contact": {
-    "meta_title": "Contact | Luis Serrano Marketing Services",
+    "meta_title": "Contact — get a quote | Luis Serrano",
     "meta_description": "Start your project. 15 minutes on WhatsApp and I'll tell you if we're a fit before charging you a cent.",
-    "hero_title": "GET STARTED",
+    "hero_title": "Let's start your project",
     "hero_subtitle": "Tell me about your project. The first conversation happens on WhatsApp and costs you nothing.",
     "form_title": "Send me a message",
     "form_name": "Full name",
@@ -198,7 +200,7 @@
     "services_option_other": "Other"
   },
   "privacy": {
-    "meta_title": "Privacy Policy | Luis Serrano Marketing Services",
+    "meta_title": "Privacy policy | Luis Serrano",
     "title": "Privacy Policy",
     "last_updated": "Last updated: January 2026",
     "intro": "Luis Serrano Marketing Services (hereinafter, \"the Controller\") is committed to protecting the privacy of its users and clients. This Privacy Policy describes how we collect, use and protect the personal information you provide.",

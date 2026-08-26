@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/constants";
 import Logo from "./Logo";
 import { LinkedInIcon, InstagramIcon, FacebookIcon } from "./SocialIcons";
 
@@ -52,17 +53,21 @@ export default async function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                t("service_web"),
-                t("service_branding"),
-                t("service_digital"),
-                t("service_ads"),
-              ].map((service) => (
-                <li key={service}>
+                // The web-design landing was orphaned: no page linked to it.
+                {
+                  label: t("service_web"),
+                  href: locale === "es" ? "/diseno-web" : "/web-design",
+                },
+                { label: t("service_branding"), href: `/${locale}/services` },
+                { label: t("service_digital"), href: `/${locale}/services` },
+                { label: t("service_ads"), href: `/${locale}/services` },
+              ].map(({ label, href }) => (
+                <li key={label}>
                   <Link
-                    href={`/${locale}/services`}
+                    href={href}
                     className="text-mid-gray hover:text-ink transition-colors text-sm"
                   >
-                    {service}
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -77,7 +82,7 @@ export default async function Footer() {
             <ul className="space-y-3 mb-6">
               <li>
                 <a
-                  href="mailto:serranoluis94.ls@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="text-mid-gray hover:text-ink transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail size={14} />
@@ -86,7 +91,7 @@ export default async function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/526623361906"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-mid-gray hover:text-ink transition-colors text-sm flex items-center gap-2"

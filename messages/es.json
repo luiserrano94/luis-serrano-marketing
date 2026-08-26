@@ -7,7 +7,7 @@
     "cta_quote": "Empezar"
   },
   "home": {
-    "meta_title": "Luis Serrano Marketing Services | Sitios web que generan clientes",
+    "meta_title": "Sitios web que generan clientes | Luis Serrano",
     "meta_description": "Sitios web profesionales listos en 14 días, diseñados para convertir visitas en ventas. Marketing digital y branding para negocios en México y Estados Unidos.",
     "hero_badge": "Luis Serrano Marketing Services",
     "hero_title": "Tu sitio web. Vivo en 14 días. Listo para generar clientes.",
@@ -49,7 +49,6 @@
     "category_audit_item_2": "Consultorías por hora",
     "category_audit_item_3": "Capacitación a equipos",
     "category_audit_item_4": "Validación de campañas",
-    "category_cta": "Ver detalle",
     "clients_title": "Marcas que confían en mi trabajo",
     "results_title": "Resultados reales.\nNúmeros reales.",
     "results_subtitle": "Cada proyecto se mide. Estos son resultados de marcas reales con las que he trabajado.",
@@ -70,12 +69,15 @@
     "result_5_client": "Rancho El 17",
     "cta_title": "¿Listo para empezar?",
     "cta_subtitle": "15 minutos por WhatsApp. Te digo si encajamos antes de cobrarte un peso.",
-    "cta_button": "Hablar por WhatsApp"
+    "cta_button": "Hablar por WhatsApp",
+    "category_build_cta": "Ver sitios web y branding",
+    "category_grow_cta": "Ver manejo de Ads y estrategia",
+    "category_audit_cta": "Ver auditorías y consultoría"
   },
   "services": {
-    "meta_title": "Servicios | Luis Serrano Marketing Services",
+    "meta_title": "Servicios de marketing digital y diseño web | Luis Serrano",
     "meta_description": "Sitios web, branding, ads, estrategia y consultoría. Soluciones de marketing diseñadas para convertir y escalar negocios en México y EE.UU.",
-    "hero_title": "SERVICIOS",
+    "hero_title": "Servicios de marketing digital",
     "hero_subtitle": "Build, Grow, Audit. Tres formas de trabajar juntos. Doce servicios para encontrar el que tu marca necesita.",
     "cta_quote": "Cotizar gratis",
     "service_1_title": "Sitios web profesionales",
@@ -106,7 +108,7 @@
     "service_12_desc": "Acompañamiento mensual continuo. Un CMO experimentado para tu marca, sin contratar uno de tiempo completo."
   },
   "about": {
-    "meta_title": "Sobre mí | Luis Serrano Marketing Services",
+    "meta_title": "Sobre mí — CMO bilingüe, 10+ años | Luis Serrano",
     "meta_description": "CMO bilingüe con más de 10 años de experiencia construyendo marcas que generan resultados medibles en México y Estados Unidos.",
     "hero_tagline": "CMO · Estratega Digital · Bilingüe",
     "hero_title": "Más de 10 años construyendo marcas que generan resultados.",
@@ -153,9 +155,9 @@
     "philosophy_p2": "Mi proceso siempre empieza con datos y termina con narrativa. Mido todo, itero rápido y comunico con claridad. Si trabajamos juntos, sabrás exactamente qué estamos haciendo, por qué y cuáles son los resultados."
   },
   "contact": {
-    "meta_title": "Contacto | Luis Serrano Marketing Services",
+    "meta_title": "Contacto — cotiza tu proyecto | Luis Serrano",
     "meta_description": "Empieza tu proyecto. 15 minutos por WhatsApp y te digo si encajamos antes de cobrarte un peso.",
-    "hero_title": "EMPEZAR",
+    "hero_title": "Empecemos tu proyecto",
     "hero_subtitle": "Cuéntame sobre tu proyecto. La primera conversación es por WhatsApp y no cuesta nada.",
     "form_title": "Envíame un mensaje",
     "form_name": "Nombre completo",
@@ -198,7 +200,7 @@
     "services_option_other": "Otro"
   },
   "privacy": {
-    "meta_title": "Política de Privacidad | Luis Serrano Marketing Services",
+    "meta_title": "Política de privacidad | Luis Serrano",
     "title": "Política de Privacidad",
     "last_updated": "Última actualización: enero 2026",
     "intro": "Luis Serrano Marketing Services (en adelante, \"el Responsable\") se compromete a proteger la privacidad de sus usuarios y clientes. La presente Política de Privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas.",

@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "../globals.css";
 import LandingLeadForm from "@/components/LandingLeadForm";
 import Script from "next/script";
+import { SITE_URL, CONTACT_EMAIL } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,15 +20,58 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Diseño Web Profesional — Listo en 14 Días | Luis Serrano",
   description:
     "Sitio web profesional y enfocado en conversión, listo en 14 días. Desde $2,599 USD. Contáctanos para empezar.",
-  robots: { index: false, follow: false },
+  alternates: {
+    canonical: `${SITE_URL}/diseno-web`,
+    languages: {
+      es: `${SITE_URL}/diseno-web`,
+      en: `${SITE_URL}/web-design`,
+      "x-default": `${SITE_URL}/diseno-web`,
+    },
+  },
+  openGraph: {
+    title: "Diseño Web Profesional — Listo en 14 Días | Luis Serrano",
+    description:
+      "Sitio web profesional y enfocado en conversión, listo en 14 días. Desde $2,599 USD. Contáctanos para empezar.",
+    url: `${SITE_URL}/diseno-web`,
+    locale: "es_MX",
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+// Priced, deliverable offer — the most citable thing on the site.
+const offerLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Diseño de sitio web profesional",
+  description:
+    "Sitio web profesional enfocado en conversión, entregado y en línea en 14 días. Incluye diseño personalizado, dominio, hosting, formulario de contacto y SEO básico.",
+  serviceType: "Diseño web",
+  url: `${SITE_URL}/diseno-web`,
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Luis Serrano Marketing Services",
+    url: SITE_URL,
+  },
+  areaServed: [
+    { "@type": "Country", name: "MX" },
+    { "@type": "Country", name: "US" },
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "2599",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/diseno-web`,
+  },
 };
 
 const WA_LINK =
   "https://wa.me/526623361906?text=Hola%20Luis%2C%20vi%20tu%20servicio%20de%20diseño%20web%20y%20me%20interesa%20cotizar%20mi%20proyecto.";
-const EMAIL = "serranoluis94.ls@gmail.com";
+const EMAIL = CONTACT_EMAIL;
 const EMAIL_LINK = `mailto:${EMAIL}?subject=Proyecto%20Sitio%20Web`;
 
 const INCLUIDO = [
@@ -129,6 +173,10 @@ export default function DisenoWebPage() {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(offerLd) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-704568380"
           strategy="afterInteractive"

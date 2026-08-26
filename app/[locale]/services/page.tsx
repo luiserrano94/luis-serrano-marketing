@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import ServiceCard, { ServiceIconName } from "@/components/ServiceCard";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageTitleHero from "@/components/PageTitleHero";
 import { PAGE_BG } from "@/lib/images";
-import { waLink } from "@/lib/constants";
+import { waLink, localeAlternates } from "@/lib/constants";
 
 const ICON_NAMES: ServiceIconName[] = [
   "Globe",
@@ -30,14 +31,7 @@ export async function generateMetadata({
   return {
     title: t("meta_title"),
     description: t("meta_description"),
-    alternates: {
-      canonical: `https://luisserranomkt.com/${params.locale}/services`,
-      languages: {
-        es: "https://luisserranomkt.com/es/services",
-        en: "https://luisserranomkt.com/en/services",
-        "x-default": "https://luisserranomkt.com/es/services",
-      },
-    },
+    alternates: localeAlternates(params.locale, "/services"),
   };
 }
 
@@ -98,6 +92,16 @@ export default async function ServicesPage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <AnimatedSection>
           <ServiceCard {...services[0]} ctaLabel={t("cta_quote")} />
+          <p className="mt-5 text-sm">
+            <Link
+              href={locale === "es" ? "/diseno-web" : "/web-design"}
+              className="text-accent hover:underline underline-offset-4"
+            >
+              {locale === "es"
+                ? "Ver todo lo que incluye el diseño web y el precio →"
+                : "See everything the web design package includes and the price →"}
+            </Link>
+          </p>
         </AnimatedSection>
       </div>
 

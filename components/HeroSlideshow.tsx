@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export interface Slide {
@@ -29,6 +29,19 @@ export default function HeroSlideshow({
   tone,
   intervalMs = 6000,
 }: Props) {
+  // Only the first frame ships with the page. The rest mount as they are
+  // needed (plus the one after the current), so the hero costs one image on
+  // load instead of four.
+  const [mounted, setMounted] = useState<number[]>([0]);
+  useEffect(() => {
+    const next = (active + 1) % images.length;
+    setMounted((m) =>
+      m.includes(active) && m.includes(next)
+        ? m
+        : Array.from(new Set([...m, active, next]))
+    );
+  }, [active, images.length]);
+
   useEffect(() => {
     if (images.length < 2) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -49,14 +62,19 @@ export default function HeroSlideshow({
             i === active ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image
-            src={img.src}
-            alt=""
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+          {/* Decorative: the hero headline carries the meaning, so an empty
+              alt keeps screen readers from announcing a photo that adds
+              nothing. Deliberate, not an oversight. */}
+          {mounted.includes(i) && (
+            <Image
+              src={img.src}
+              alt=""
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          )}
         </div>
       ))}
 

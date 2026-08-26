@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Analytics from "@/components/Analytics";
+import { SITE_URL, CONTACT_EMAIL, WHATSAPP_NUMBER, SOCIAL_LINKS } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,11 +29,11 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   return {
-    metadataBase: new URL("https://luisserranomkt.com"),
-    title: {
-      default: "Luis Serrano Marketing Services",
-      template: "%s | Luis Serrano Marketing Services",
-    },
+    metadataBase: new URL(SITE_URL),
+    // Plain string, not a template: pages write their own full title in
+    // messages/*.json. The old `template` appended the brand a second time,
+    // pushing titles to 90 characters.
+    title: "Luis Serrano Marketing Services",
     description:
       params.locale === "es"
         ? "Sitios web que generan clientes. Marketing digital y branding para México y EE.UU."
@@ -59,16 +60,21 @@ export default async function LocaleLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Luis Serrano Marketing Services",
-    email: "serranoluis94.ls@gmail.com",
-    telephone: "+52-662-336-1906",
-    url: "https://luisserranomkt.com",
+    email: CONTACT_EMAIL,
+    telephone: `+${WHATSAPP_NUMBER}`,
+    url: SITE_URL,
+    image: `${SITE_URL}/images/luis-serrano.jpg`,
+    areaServed: [
+      { "@type": "Country", name: "MX" },
+      { "@type": "Country", name: "US" },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Juárez",
       addressRegion: "Chihuahua",
       addressCountry: "MX",
     },
-    sameAs: ["https://www.linkedin.com/in/luis-serrano-50b231138/"],
+    sameAs: SOCIAL_LINKS,
     description:
       "Sitios web y marketing digital diseñados para convertir. México y EE.UU.",
   };

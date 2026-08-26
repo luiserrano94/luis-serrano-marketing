@@ -16,6 +16,7 @@ export default function SectionBackdrop({
 }) {
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+      {/* Decorative backdrop behind section copy — empty alt on purpose. */}
       <Image
         src={src}
         alt=""

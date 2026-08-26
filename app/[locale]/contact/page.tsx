@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { localeAlternates } from "@/lib/constants";
 import { Mail, Phone, MapPin } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
@@ -16,14 +17,7 @@ export async function generateMetadata({
   return {
     title: t("meta_title"),
     description: t("meta_description"),
-    alternates: {
-      canonical: `https://luisserranomarketing.com/${params.locale}/contact`,
-      languages: {
-        es: "https://luisserranomarketing.com/es/contact",
-        en: "https://luisserranomarketing.com/en/contact",
-        "x-default": "https://luisserranomarketing.com/es/contact",
-      },
-    },
+    alternates: localeAlternates(params.locale, "/contact"),
   };
 }
 

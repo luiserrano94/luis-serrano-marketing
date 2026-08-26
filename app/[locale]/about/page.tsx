@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import {
+  SITE_URL,
+  CONTACT_EMAIL,
+  WHATSAPP_NUMBER,
+  SOCIAL_LINKS,
+  localeAlternates,
+} from "@/lib/constants";
 import { GraduationCap, Briefcase, Wrench } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ProtectedImage from "@/components/ProtectedImage";
@@ -15,14 +22,7 @@ export async function generateMetadata({
   return {
     title: t("meta_title"),
     description: t("meta_description"),
-    alternates: {
-      canonical: `https://luisserranomarketing.com/${params.locale}/about`,
-      languages: {
-        es: "https://luisserranomarketing.com/es/about",
-        en: "https://luisserranomarketing.com/en/about",
-        "x-default": "https://luisserranomarketing.com/es/about",
-      },
-    },
+    alternates: localeAlternates(params.locale, "/about"),
   };
 }
 
@@ -47,6 +47,34 @@ export default async function AboutPage({
   params: { locale: string };
 }) {
   const t = await getTranslations({ locale: params.locale, namespace: "about" });
+
+  // Makes "Luis Serrano" a resolvable entity for Google and for AI search.
+  // Every value below is already stated on this page.
+  const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Luis Serrano",
+    jobTitle:
+      params.locale === "es"
+        ? "Chief Marketing Officer y consultor de marketing digital"
+        : "Chief Marketing Officer and digital marketing consultant",
+    url: `${SITE_URL}/${params.locale}/about`,
+    image: `${SITE_URL}/images/luis-serrano.jpg`,
+    email: CONTACT_EMAIL,
+    telephone: `+${WHATSAPP_NUMBER}`,
+    knowsLanguage: ["es", "en"],
+    knowsAbout: SKILLS,
+    alumniOf: [
+      { "@type": "CollegeOrUniversity", name: t("edu_1_school") },
+      { "@type": "CollegeOrUniversity", name: t("edu_2_school") },
+    ],
+    worksFor: {
+      "@type": "ProfessionalService",
+      name: "Luis Serrano Marketing Services",
+      url: SITE_URL,
+    },
+    sameAs: SOCIAL_LINKS,
+  };
 
   const education = [
     {
@@ -107,6 +135,10 @@ export default async function AboutPage({
 
   return (
     <div className="pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+      />
       <PageTitleHero
         src={PAGE_BG.about}
         eyebrow={t("hero_tagline")}
@@ -144,9 +176,14 @@ export default async function AboutPage({
             {/* Profile photo - protected */}
             <ProtectedImage
               src="/images/luis-serrano.jpg"
-              alt="Luis Serrano - Chief Marketing Officer"
+              alt={
+                params.locale === "es"
+                  ? "Luis Serrano, CMO y consultor de marketing digital en México y Estados Unidos"
+                  : "Luis Serrano, CMO and digital marketing consultant in Mexico and the United States"
+              }
               className="w-full max-w-md mx-auto aspect-[4/5] rounded-sm"
               watermarkText="LS"
+              priority
             />
           </AnimatedSection>
         </div>

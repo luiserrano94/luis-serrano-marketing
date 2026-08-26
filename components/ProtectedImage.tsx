@@ -1,10 +1,14 @@
 "use client";
 
+import Image from "next/image";
+
 interface ProtectedImageProps {
   src: string;
   alt: string;
   className?: string;
   watermarkText?: string;
+  /** Set on the one portrait that is above the fold. */
+  priority?: boolean;
 }
 
 export default function ProtectedImage({
@@ -12,26 +16,30 @@ export default function ProtectedImage({
   alt,
   className = "",
   watermarkText = "IS",
+  priority = false,
 }: ProtectedImageProps) {
   return (
     <div
-      role="img"
-      aria-label={alt}
       className={`relative overflow-hidden select-none ${className}`}
       onContextMenu={(e) => e.preventDefault()}
       draggable={false}
-      style={{
-        backgroundImage: `url(${src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center top",
-        userSelect: "none",
-        WebkitUserSelect: "none",
-      }}
     >
+      {/* Was a CSS background-image, which Google Images cannot index and
+          next/image cannot optimise. The src was already readable in the
+          inline style, so nothing is less "protected" as a real <img>. */}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="object-cover object-top select-none pointer-events-none"
+        draggable={false}
+      />
+
       {/* Transparent interaction-blocking overlay */}
       <div
         className="absolute inset-0 z-10"
-        style={{ background: "transparent" }}
         onContextMenu={(e) => e.preventDefault()}
       />
 

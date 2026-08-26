@@ -17,6 +17,7 @@ export default function PageTitleHero({
 }) {
   return (
     <section className="relative h-[46vh] min-h-[320px] max-h-[520px] flex items-end overflow-hidden">
+      {/* Decorative backdrop behind the page title — empty alt on purpose. */}
       <Image
         src={src}
         alt=""

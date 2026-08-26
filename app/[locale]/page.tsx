@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { SITE_URL, localeAlternates } from "@/lib/constants";
 import Hero from "@/components/Hero";
 import FeaturedService from "@/components/sections/FeaturedService";
 import ServiceCategoriesGrid from "@/components/sections/ServiceCategoriesGrid";
@@ -16,18 +17,11 @@ export async function generateMetadata({
   return {
     title: t("meta_title"),
     description: t("meta_description"),
-    alternates: {
-      canonical: `https://luisserranomkt.com/${params.locale}`,
-      languages: {
-        es: "https://luisserranomkt.com/es",
-        en: "https://luisserranomkt.com/en",
-        "x-default": "https://luisserranomkt.com/es",
-      },
-    },
+    alternates: localeAlternates(params.locale),
     openGraph: {
       title: t("meta_title"),
       description: t("meta_description"),
-      url: `https://luisserranomkt.com/${params.locale}`,
+      url: `${SITE_URL}/${params.locale}`,
     },
   };
 }

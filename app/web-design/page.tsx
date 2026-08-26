@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "../globals.css";
 import LandingLeadForm from "@/components/LandingLeadForm";
 import Script from "next/script";
+import { SITE_URL, CONTACT_EMAIL } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,15 +20,58 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Professional Website Design — Live in 14 Days | Luis Serrano",
   description:
     "Get a custom, conversion-focused website built and live in 14 days. Starting at $2,599 USD. Contact us to get started.",
-  robots: { index: false, follow: false },
+  alternates: {
+    canonical: `${SITE_URL}/web-design`,
+    languages: {
+      es: `${SITE_URL}/diseno-web`,
+      en: `${SITE_URL}/web-design`,
+      "x-default": `${SITE_URL}/diseno-web`,
+    },
+  },
+  openGraph: {
+    title: "Professional Website Design — Live in 14 Days | Luis Serrano",
+    description:
+      "Get a custom, conversion-focused website built and live in 14 days. Starting at $2,599 USD. Contact us to get started.",
+    url: `${SITE_URL}/web-design`,
+    locale: "en_US",
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+// Priced, deliverable offer — the most citable thing on the site.
+const offerLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Professional website design",
+  description:
+    "A custom, conversion-focused website built and live in 14 days. Includes custom design, domain setup, hosting, contact form and basic SEO.",
+  serviceType: "Web design",
+  url: `${SITE_URL}/web-design`,
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Luis Serrano Marketing Services",
+    url: SITE_URL,
+  },
+  areaServed: [
+    { "@type": "Country", name: "MX" },
+    { "@type": "Country", name: "US" },
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "2599",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/web-design`,
+  },
 };
 
 const WA_LINK =
   "https://wa.me/526623361906?text=Hi%20Luis%2C%20I%20saw%20your%20website%20design%20service%20and%20I'm%20interested%20in%20getting%20started.";
-const EMAIL = "serranoluis94.ls@gmail.com";
+const EMAIL = CONTACT_EMAIL;
 const EMAIL_LINK = `mailto:${EMAIL}?subject=Custom%20Website%20Project`;
 
 const INCLUDED = [
@@ -123,6 +167,10 @@ export default function WebDesignPage() {
       className={`${inter.variable} ${playfair.variable}`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(offerLd) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-704568380"
           strategy="afterInteractive"
