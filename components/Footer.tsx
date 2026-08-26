@@ -86,7 +86,7 @@ export default async function Footer() {
                   className="text-mid-gray hover:text-ink transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail size={14} />
-                  serranoluis94.ls@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>

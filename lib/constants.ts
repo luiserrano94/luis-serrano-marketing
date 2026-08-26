@@ -5,7 +5,8 @@ export const SITE_URL = "https://www.luisserranomkt.com";
 
 export const WHATSAPP_NUMBER = "526623361906";
 
-export const CONTACT_EMAIL = "serranoluis94.ls@gmail.com";
+// Forwards to serranoluis94.ls@gmail.com via Cloudflare Email Routing.
+export const CONTACT_EMAIL = "contacto@luisserranomkt.com";
 
 export const SOCIAL_LINKS = [
   "https://www.linkedin.com/in/luis-serrano-50b231138/",
