@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Luis Serrano Marketing Services";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -16,7 +15,7 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FAFAF9",
+          backgroundColor: "#60212E",
           position: "relative",
           fontFamily: "sans-serif",
         }}
@@ -27,7 +26,9 @@ export default function OGImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(12,10,9,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(12,10,9,0.05) 1px, transparent 1px)",
+              // Satori needs an explicit direction. Without `to bottom` the
+              // whole image failed to render and the route served 0 bytes.
+              "linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
@@ -39,7 +40,7 @@ export default function OGImage() {
             width: 600,
             height: 400,
             borderRadius: "50%",
-            background: "rgba(132,204,22,0.16)",
+            background: "rgba(105,172,194,0.18)",
             filter: "blur(80px)",
             top: "50%",
             left: "50%",
@@ -56,11 +57,11 @@ export default function OGImage() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect width="44" height="44" rx="4" fill="#0C0A09" />
-            <rect x="10" y="10" width="5" height="24" fill="#84CC16" />
+            <rect width="44" height="44" rx="4" fill="#D8D1BD" />
+            <rect x="10" y="10" width="5" height="24" fill="#60212E" />
             <path
               d="M20 10H36V16H26L36 26V34H20V28H30L20 18V10Z"
-              fill="#84CC16"
+              fill="#60212E"
             />
           </svg>
         </div>
@@ -70,7 +71,7 @@ export default function OGImage() {
           style={{
             fontSize: 68,
             fontWeight: 700,
-            color: "#0C0A09",
+            color: "#FFFFFF",
             letterSpacing: "-1px",
             lineHeight: 1.1,
             textAlign: "center",
@@ -81,7 +82,7 @@ export default function OGImage() {
           }}
         >
           Luis Serrano{" "}
-          <span style={{ color: "#4D7C0F", marginLeft: 16 }}>
+          <span style={{ color: "#69ACC2", marginLeft: 16 }}>
             Marketing
           </span>
         </div>
@@ -90,7 +91,7 @@ export default function OGImage() {
         <div
           style={{
             fontSize: 26,
-            color: "#57534E",
+            color: "#D8D1BD",
             marginTop: 20,
             textAlign: "center",
           }}
@@ -102,11 +103,11 @@ export default function OGImage() {
         <div
           style={{
             marginTop: 40,
-            border: "1px solid rgba(77,124,15,0.35)",
+            border: "1px solid rgba(216,209,189,0.4)",
             borderRadius: 100,
             padding: "10px 28px",
             fontSize: 18,
-            color: "#4D7C0F",
+            color: "#D8D1BD",
           }}
         >
           luisserranomkt.com
