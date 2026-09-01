@@ -27,7 +27,7 @@ export default function HeroSlideshow({
   active,
   onChange,
   tone,
-  intervalMs = 6000,
+  intervalMs = 4000,
 }: Props) {
   // Only the first frame ships with the page. The rest mount as they are
   // needed (plus the one after the current), so the hero costs one image on
