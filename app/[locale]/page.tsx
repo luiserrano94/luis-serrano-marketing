@@ -1,42 +1,73 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { SITE_URL, localeAlternates } from "@/lib/constants";
-import Hero from "@/components/Hero";
-import FeaturedService from "@/components/sections/FeaturedService";
-import ServiceCategoriesGrid from "@/components/sections/ServiceCategoriesGrid";
-import ClientLogos from "@/components/sections/ClientLogos";
-import ResultsMetrics from "@/components/sections/ResultsMetrics";
-import HomeCTA from "@/components/sections/HomeCTA";
+import { getContent } from "@/lib/content";
+import SelectedWork from "@/components/home/SelectedWork";
+import InquiryForm from "@/components/home/InquiryForm";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: "home" });
-  return {
-    title: t("meta_title"),
-    description: t("meta_description"),
-    alternates: localeAlternates(params.locale),
-    openGraph: {
-      title: t("meta_title"),
-      description: t("meta_description"),
-      url: `${SITE_URL}/${params.locale}`,
-    },
-  };
-}
-
-export default function HomePage() {
+export default function Home({ params }: { params: { locale: string } }) {
+  const c = getContent(params.locale);
   return (
     <>
-      <Hero />
-      <div id="results">
-        <ResultsMetrics />
-      </div>
-      <ClientLogos />
-      <FeaturedService />
-      <ServiceCategoriesGrid />
-      <HomeCTA />
+      <header className="hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/work/hero-pacific.jpg"
+          alt="Interior of a 1970s coastal beach house at golden hour, with a floor-to-ceiling ocean view"
+        />
+        <div className="hero-scrim" />
+        <div className="hero-cap">
+          <p className="mono">{c.hero.eyebrow}</p>
+          <h1 className="display hero-h">{c.hero.title}</h1>
+          <p className="hero-sub">{c.hero.sub}</p>
+          <div className="hero-cta">
+            <a className="btn btn-solid" href="#work">{c.hero.viewWork}</a>
+            <a className="btn btn-line" href="#contact">{c.hero.startProject}</a>
+          </div>
+        </div>
+      </header>
+
+      <section id="work" className="wrap sec">
+        <p className="mono work-label reveal">{c.work.label}</p>
+        <SelectedWork c={c} />
+      </section>
+
+      <section className="sec pos wrap">
+        <h2 className="display reveal">{c.positioning.title}</h2>
+        <p className="reveal d1">{c.positioning.body}</p>
+      </section>
+
+      <section id="services" className="sec-tight">
+        <div className="wrap" style={{ marginBottom: "clamp(28px,4vw,50px)" }}>
+          <p className="mono reveal">{c.services.label}</p>
+        </div>
+        <hr className="rule" />
+        <div className="wrap svc">
+          <div className="svc-i reveal">
+            <h3>{c.services.sprint.name}</h3>
+            <span className="price">{c.services.sprint.price}</span>
+            <p>{c.services.sprint.desc}</p>
+          </div>
+          <div className="svc-i reveal d1">
+            <h3>{c.services.campaign.name}</h3>
+            <span className="price">{c.services.campaign.price}</span>
+            <p>{c.services.campaign.desc}</p>
+          </div>
+        </div>
+        <hr className="rule" />
+      </section>
+
+      <section id="about" className="sec-tight wrap">
+        <div className="about reveal">
+          <h2 className="display">{c.about.label}</h2>
+          <p>{c.about.body}</p>
+        </div>
+      </section>
+
+      <section id="contact" className="sec wrap">
+        <div className="contact-head reveal">
+          <h2 className="display">{c.contact.title}</h2>
+          <p>{c.contact.sub}</p>
+        </div>
+        <InquiryForm c={c} />
+      </section>
     </>
   );
 }

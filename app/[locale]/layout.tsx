@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "../globals.css";
@@ -7,18 +7,28 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Analytics from "@/components/Analytics";
+import RevealInit from "@/components/RevealInit";
 import { SITE_URL, CONTACT_EMAIL, WHATSAPP_NUMBER, SOCIAL_LINKS } from "@/lib/constants";
 
-const inter = Inter({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "600"],
+  style: ["normal", "italic"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const jetmono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
@@ -82,7 +92,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={params.locale}
-      className={`${inter.variable} ${playfair.variable}`}
+      className={`${sourceSerif.variable} ${playfair.variable} ${jetmono.variable}`}
     >
       <head>
         <script
@@ -92,6 +102,7 @@ export default async function LocaleLayout({
       </head>
       <body className="bg-background text-ink antialiased font-body">
         <NextIntlClientProvider messages={messages}>
+          <RevealInit />
           <Navbar />
           <main>{children}</main>
           <Footer />
