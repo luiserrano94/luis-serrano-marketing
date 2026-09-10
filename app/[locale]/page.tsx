@@ -13,8 +13,8 @@ export default function Home({ params }: { params: { locale: string } }) {
         <Image
           src="/work/hero-pacific.jpg"
           alt="Interior of a 1970s coastal beach house at golden hour, with a floor-to-ceiling ocean view"
-          width={1456}
-          height={816}
+          width={2912}
+          height={1632}
           priority
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
