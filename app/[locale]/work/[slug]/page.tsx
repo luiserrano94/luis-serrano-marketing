@@ -144,7 +144,7 @@ export default function ProjectPage({ params }: { params: { locale: string; slug
               const g = cell.g;
               const cap = pt.caps?.[g];
               return (
-                <figure className={`pcell reveal${cell.feature ? " pcell-feature" : ""}`} key={ci}>
+                <figure className="pcell reveal" key={ci}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.gallery[g]}
