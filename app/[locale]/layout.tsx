@@ -5,7 +5,6 @@ import { getMessages } from "next-intl/server";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import Analytics from "@/components/Analytics";
 import RevealInit from "@/components/RevealInit";
 import { SITE_URL, CONTACT_EMAIL, WHATSAPP_NUMBER, SOCIAL_LINKS } from "@/lib/constants";
@@ -106,7 +105,6 @@ export default async function LocaleLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <WhatsAppButton />
           <Analytics />
         </NextIntlClientProvider>
       </body>

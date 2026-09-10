@@ -10,6 +10,7 @@ const PAGES = [
   "/work/afterdark",
   "/work/animalprint",
   "/services",
+  "/resources",
   "/about",
   "/contact",
 ];

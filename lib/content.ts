@@ -48,6 +48,8 @@ export const CONTENT = {
       animalprint: { title: "Animal Print", category: "Fashion Editorial", line: "Instinct, indoors.", intro: "Wild animals in domestic interiors. A visual exploration of instinct and elegance, where untamed nature meets the familiar." },
     },
     footer: { descriptor: "AI + Creative", worldwide: "Working worldwide", location: "Ciudad Juárez, Mexico", instagram: "Instagram", email: "Email" },
+    whatsapp: { label: "WhatsApp", cta: "Message on WhatsApp", message: "Hi Luis, I have a project in mind." },
+    resources: { label: "Resources", title: "Resources", intro: "Tools, workflows and experiments from my AI creative process.", soon: "Coming soon." },
   },
   es: {
     nav: { work: "Trabajo", services: "Servicios", resources: "Recursos", about: "Acerca", contact: "Contacto" },
@@ -93,6 +95,8 @@ export const CONTENT = {
       animalprint: { title: "Animal Print", category: "Editorial de moda", line: "Instinto, de puertas adentro.", intro: "Animales salvajes en interiores domésticos. Una exploración visual del instinto y la elegancia, donde la naturaleza indómita se encuentra con lo familiar." },
     },
     footer: { descriptor: "AI + Creative", worldwide: "Trabajando en todo el mundo", location: "Ciudad Juárez, México", instagram: "Instagram", email: "Correo" },
+    whatsapp: { label: "WhatsApp", cta: "Escríbeme por WhatsApp", message: "Hola Luis, tengo un proyecto en mente." },
+    resources: { label: "Recursos", title: "Recursos", intro: "Herramientas, flujos y experimentos de mi proceso creativo con IA.", soon: "Muy pronto." },
   },
 } as const;
 

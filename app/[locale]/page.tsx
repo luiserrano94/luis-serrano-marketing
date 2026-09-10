@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { getContent } from "@/lib/content";
+import { waLink } from "@/lib/constants";
 import SelectedWork from "@/components/home/SelectedWork";
 import InquiryForm from "@/components/home/InquiryForm";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Home({ params }: { params: { locale: string } }) {
   const c = getContent(params.locale);
@@ -70,6 +72,11 @@ export default function Home({ params }: { params: { locale: string } }) {
         <div className="contact-head reveal">
           <h2 className="display">{c.contact.title}</h2>
           <p>{c.contact.sub}</p>
+          <div className="contact-wa">
+            <a className="btn btn-line" href={waLink(c.whatsapp.message)} target="_blank" rel="noopener noreferrer">
+              <WhatsAppIcon size={16} /> {c.whatsapp.cta}
+            </a>
+          </div>
         </div>
         <InquiryForm c={c} />
       </section>
