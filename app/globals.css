@@ -17,6 +17,8 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg)}
+/* clear the 66px sticky navbar when jumping to an in-page anchor */
+#work,#services,#about,#contact{scroll-margin-top:84px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.6;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 img{display:block;max-width:100%;height:auto;-webkit-user-drag:none;user-select:none}  /* no-crop + deterrent */

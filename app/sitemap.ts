@@ -9,8 +9,6 @@ const PAGES = [
   "/work/pacific",
   "/work/afterdark",
   "/work/animalprint",
-  "/services",
-  "/about",
   "/contact",
 ];
 
