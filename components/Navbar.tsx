@@ -23,7 +23,6 @@ export default function Navbar() {
       <div className="nav-links">
         <a href={`${base}/work`}>{c.nav.work}</a>
         <a href={`${base}/services`}>{c.nav.services}</a>
-        <a href={`${base}/resources`}>{c.nav.resources}</a>
         <a href={`${base}/about`}>{c.nav.about}</a>
         <a href={`${base}/contact`}>{c.nav.contact}</a>
       </div>

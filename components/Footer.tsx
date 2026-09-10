@@ -1,9 +1,11 @@
 "use client";
 import { useLocale } from "next-intl";
 import { getContent } from "@/lib/content";
+import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   const c = getContent(useLocale());
+  const instagram = SOCIAL_LINKS.find((u) => u.includes("instagram")) ?? "#";
   return (
     <footer className="foot">
       <div className="wrap foot-g">
@@ -16,9 +18,11 @@ export default function Footer() {
           {c.footer.location}
         </div>
         <div className="foot-c">
-          <a href="#">{c.footer.instagram}</a>
+          <a href={instagram} target="_blank" rel="noopener noreferrer">
+            {c.footer.instagram}
+          </a>
           <br />
-          <a href="#">{c.footer.email}</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{c.footer.email}</a>
         </div>
         <div className="foot-c">© 2026 Luis Serrano</div>
       </div>
