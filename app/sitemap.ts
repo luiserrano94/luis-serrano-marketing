@@ -5,6 +5,7 @@ const LOCALES = ["es", "en"];
 const PAGES = [
   "",
   "/work",
+  "/work/hant-xepe-hamiime",
   "/work/jaguars",
   "/work/pacific",
   "/work/afterdark",

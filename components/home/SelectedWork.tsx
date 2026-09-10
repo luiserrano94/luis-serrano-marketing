@@ -8,7 +8,7 @@ type C = {
   projects: Record<string, ProjText>;
 };
 
-const POS = ["c-1", "c-2", "c-3", "c-4"];
+const POS = ["c-feat", "c-1", "c-2", "c-3", "c-4"];
 
 export default function SelectedWork({ c, locale }: { c: C; locale: string }) {
   const base = `/${locale}`;

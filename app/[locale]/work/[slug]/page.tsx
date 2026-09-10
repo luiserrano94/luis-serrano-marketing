@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
 import { PROJECTS } from "@/lib/projects";
 import Lightbox from "@/components/Lightbox";
+import HantXepe from "@/components/work/HantXepe";
 
 type Cap = { n: string; label: string; line: string };
 type Rail = { lines?: readonly string[]; italic?: string; words?: readonly string[] };
@@ -51,6 +52,19 @@ export default function ProjectPage({ params }: { params: { locale: string; slug
   const prev = PROJECTS[(i - 1 + PROJECTS.length) % PROJECTS.length];
   const next = PROJECTS[(i + 1) % PROJECTS.length];
   const base = `/${params.locale}`;
+
+  // Flagship editorial project renders its own bespoke page.
+  if (p.kind === "editorial") {
+    return (
+      <HantXepe
+        locale={params.locale}
+        num={p.num}
+        total={PROJECTS.length}
+        prev={{ slug: prev.slug, title: proj[prev.slug].title }}
+        next={{ slug: next.slug, title: proj[next.slug].title }}
+      />
+    );
+  }
 
   // Gallery images in display order → lightbox list + each image's zoom index.
   const shown: number[] = [];
@@ -171,7 +185,7 @@ export default function ProjectPage({ params }: { params: { locale: string; slug
           <span className="lbl">← {nav.prev}</span>
           <span className="nm display">{proj[prev.slug].title}</span>
         </Link>
-        <span className="proj-count">{p.num} / 04</span>
+        <span className="proj-count">{p.num} / {String(PROJECTS.length).padStart(2, "0")}</span>
         <Link className="next" href={`${base}/work/${next.slug}`}>
           <span className="lbl">{nav.next} →</span>
           <span className="nm display">{proj[next.slug].title}</span>

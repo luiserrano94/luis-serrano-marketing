@@ -13,6 +13,7 @@ export type Project = {
   coverH: number;
   gallery: string[];
   hasNote?: boolean; // shows the Cartier disclaimer (Jaguars)
+  kind?: "editorial"; // bespoke editorial page (HANT · XEPE · HAMÍIME) instead of the rows template
   rows: Row[];
 };
 
@@ -21,8 +22,29 @@ const gal = (slug: string, n: number): string[] =>
 
 export const PROJECTS: Project[] = [
   {
-    slug: "jaguars",
+    // Flagship editorial project — bespoke page (see components/work/HantXepe.tsx).
+    // Cover / thumbnail / representative image is always the submerged moon (iizax).
+    slug: "hant-xepe-hamiime",
     num: "01",
+    cover: "/work/cover-hant-xepe-hamiime.jpg",
+    coverW: 1456,
+    coverH: 816,
+    gallery: [
+      "/work/hxh/iizax.jpg",
+      "/work/hxh/azoj.jpg",
+      "/work/hxh/xepe.jpg",
+      "/work/hxh/hax.jpg",
+      "/work/hxh/azojcpoc.jpg",
+      "/work/hxh/moosni.jpg",
+      "/work/hxh/footprint.jpg",
+      "/work/hxh/hantxepe.jpg",
+    ],
+    kind: "editorial",
+    rows: [],
+  },
+  {
+    slug: "jaguars",
+    num: "02",
     cover: "/work/cover-jaguars.jpg",
     coverW: 960,
     coverH: 1200,
@@ -35,7 +57,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "pacific",
-    num: "02",
+    num: "03",
     cover: "/work/cover-pacific.jpg",
     coverW: 1456,
     coverH: 816,
@@ -50,7 +72,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "afterdark",
-    num: "03",
+    num: "04",
     cover: "/work/cover-afterdark.jpg",
     coverW: 941,
     coverH: 1672,
@@ -65,7 +87,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "animalprint",
-    num: "04",
+    num: "05",
     cover: "/work/cover-animalprint.jpg",
     coverW: 960,
     coverH: 1200,
