@@ -2,7 +2,17 @@ import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
 
 const LOCALES = ["es", "en"];
-const PAGES = ["", "/services", "/about", "/contact"];
+const PAGES = [
+  "",
+  "/work",
+  "/work/jaguars",
+  "/work/pacific",
+  "/work/afterdark",
+  "/work/animalprint",
+  "/services",
+  "/about",
+  "/contact",
+];
 
 // Landing pages live outside /[locale]
 const LANDINGS = ["/diseno-web", "/web-design"];

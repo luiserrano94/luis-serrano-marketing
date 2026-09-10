@@ -1,259 +1,27 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import {
-  SITE_URL,
-  CONTACT_EMAIL,
-  WHATSAPP_NUMBER,
-  SOCIAL_LINKS,
-  localeAlternates,
-} from "@/lib/constants";
-import { GraduationCap, Briefcase, Wrench } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
-import ProtectedImage from "@/components/ProtectedImage";
-import PageTitleHero from "@/components/PageTitleHero";
-import { PAGE_BG } from "@/lib/images";
+import Link from "next/link";
+import { getContent } from "@/lib/content";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: "about" });
-  return {
-    title: t("meta_title"),
-    description: t("meta_description"),
-    alternates: localeAlternates(params.locale, "/about"),
-  };
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const c = getContent(params.locale);
+  return { title: `${c.about.label} · Luis Serrano`, description: c.about.body.slice(0, 160) };
 }
 
-const SKILLS = [
-  "Meta Ads Manager",
-  "Google Ads",
-  "HubSpot",
-  "Hootsuite",
-  "Photoshop",
-  "Illustrator",
-  "Lightroom",
-  "Premiere",
-  "CapCut",
-  "Canva",
-  "Microsoft Office",
-  "Google Analytics",
-];
-
-export default async function AboutPage({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const t = await getTranslations({ locale: params.locale, namespace: "about" });
-
-  // Makes "Luis Serrano" a resolvable entity for Google and for AI search.
-  // Every value below is already stated on this page.
-  const personLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Luis Serrano",
-    jobTitle:
-      params.locale === "es"
-        ? "Chief Marketing Officer y consultor de marketing digital"
-        : "Chief Marketing Officer and digital marketing consultant",
-    url: `${SITE_URL}/${params.locale}/about`,
-    image: `${SITE_URL}/images/luis-serrano.jpg`,
-    email: CONTACT_EMAIL,
-    telephone: `+${WHATSAPP_NUMBER}`,
-    knowsLanguage: ["es", "en"],
-    knowsAbout: SKILLS,
-    alumniOf: [
-      { "@type": "CollegeOrUniversity", name: t("edu_1_school") },
-      { "@type": "CollegeOrUniversity", name: t("edu_2_school") },
-    ],
-    worksFor: {
-      "@type": "ProfessionalService",
-      name: "Luis Serrano Marketing Services",
-      url: SITE_URL,
-    },
-    sameAs: SOCIAL_LINKS,
-  };
-
-  const education = [
-    {
-      school: t("edu_1_school"),
-      degree: t("edu_1_degree"),
-      year: t("edu_1_year"),
-    },
-    {
-      school: t("edu_2_school"),
-      degree: t("edu_2_degree"),
-      year: t("edu_2_year"),
-    },
-    {
-      school: t("edu_3_school"),
-      degree: t("edu_3_degree"),
-      year: t("edu_3_year"),
-    },
-  ];
-
-  const experience = [
-    {
-      company: t("exp_1_company"),
-      role: t("exp_1_role"),
-      period: t("exp_1_period"),
-      desc: t("exp_1_desc"),
-    },
-    {
-      company: t("exp_2_company"),
-      role: t("exp_2_role"),
-      period: t("exp_2_period"),
-      desc: t("exp_2_desc"),
-    },
-    {
-      company: t("exp_3_company"),
-      role: t("exp_3_role"),
-      period: t("exp_3_period"),
-      desc: t("exp_3_desc"),
-    },
-    {
-      company: t("exp_4_company"),
-      role: t("exp_4_role"),
-      period: t("exp_4_period"),
-      desc: t("exp_4_desc"),
-    },
-    {
-      company: t("exp_5_company"),
-      role: t("exp_5_role"),
-      period: t("exp_5_period"),
-      desc: t("exp_5_desc"),
-    },
-    {
-      company: t("exp_6_company"),
-      role: t("exp_6_role"),
-      period: t("exp_6_period"),
-      desc: t("exp_6_desc"),
-    },
-  ];
-
+export default function AboutPage({ params }: { params: { locale: string } }) {
+  const c = getContent(params.locale);
+  const base = `/${params.locale}`;
   return (
-    <div className="pb-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
-      />
-      <PageTitleHero
-        src={PAGE_BG.about}
-        eyebrow={t("hero_tagline")}
-        title={t("hero_title")}
-      />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        {/* Bio + portrait */}
-        <div className="grid lg:grid-cols-2 gap-14 items-start mb-24">
-          <AnimatedSection direction="left">
-            <div className="space-y-4">
-              <p className="text-light-gray leading-relaxed">{t("bio_p1")}</p>
-              <p className="text-mid-gray leading-relaxed">{t("bio_p2")}</p>
-            </div>
-
-            {/* Skills sit here so the column matches the portrait's height */}
-            <div className="mt-10">
-              <div className="flex items-center gap-3 mb-5">
-                <Wrench className="text-accent" size={20} />
-                <h2 className="font-display text-2xl text-ink">{t("skills_title")}</h2>
-              </div>
-              <div className="flex flex-wrap gap-2.5">
-                {SKILLS.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3.5 py-1.5 bg-surface border border-line text-light-gray text-xs rounded-full hover:border-accent/40 hover:text-ink transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection direction="right" delay={0.1}>
-            {/* Profile photo - protected */}
-            <ProtectedImage
-              src="/images/luis-serrano.jpg"
-              alt={
-                params.locale === "es"
-                  ? "Luis Serrano, CMO y consultor de marketing digital en México y Estados Unidos"
-                  : "Luis Serrano, CMO and digital marketing consultant in Mexico and the United States"
-              }
-              className="w-full max-w-md mx-auto aspect-[4/5] rounded-sm"
-              watermarkText="LS"
-              priority
-            />
-          </AnimatedSection>
+    <section className="wrap sec">
+      <div className="about reveal">
+        <p className="mono" style={{ marginBottom: 22 }}>{c.about.label}</p>
+        <h1 className="display" style={{ fontWeight: 700, fontSize: "clamp(38px,6vw,80px)", letterSpacing: "-.02em", margin: "0 0 .5em" }}>
+          Luis Serrano
+        </h1>
+        <p style={{ fontSize: 22 }}>{c.about.body}</p>
+        <div style={{ marginTop: "clamp(40px,5vw,64px)" }}>
+          <Link className="btn btn-line" href={`${base}/contact`}>{c.hero.startProject}</Link>
         </div>
-
-        {/* Experience timeline */}
-        <AnimatedSection className="mb-20">
-          <div className="flex items-center gap-3 mb-10">
-            <Briefcase className="text-accent" size={24} />
-            <h2 className="font-display text-4xl text-ink">{t("experience_title")}</h2>
-          </div>
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-surface-2 hidden sm:block" />
-            <div className="space-y-8">
-              {experience.map((exp, i) => (
-                <AnimatedSection key={i} delay={i * 0.07}>
-                  <div className="sm:pl-12 relative">
-                    {/* Dot */}
-                    <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-accent hidden sm:block" />
-                    <div className="bg-surface rounded-sm p-6 border border-line hover:border-accent/20 transition-colors">
-                      <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                        <div>
-                          <h3 className="text-ink font-semibold text-lg">{exp.company}</h3>
-                          <p className="text-accent text-sm font-medium">{exp.role}</p>
-                        </div>
-                        <span className="text-mid-gray text-sm shrink-0 bg-surface-2 px-3 py-1 rounded-full">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <p className="text-mid-gray text-sm leading-relaxed">{exp.desc}</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Education */}
-        <AnimatedSection className="mb-20">
-          <div className="flex items-center gap-3 mb-10">
-            <GraduationCap className="text-accent" size={24} />
-            <h2 className="font-display text-4xl text-ink">{t("education_title")}</h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {education.map((edu, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="bg-surface rounded-sm p-6 border border-line hover:border-accent/20 transition-colors h-full">
-                  <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">
-                    {edu.year}
-                  </p>
-                  <h3 className="text-ink font-semibold mb-1">{edu.school}</h3>
-                  <p className="text-mid-gray text-sm">{edu.degree}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </AnimatedSection>
-
-        {/* Philosophy */}
-        <AnimatedSection>
-          <div className="bg-surface rounded-sm p-10 border border-line">
-            <h2 className="font-display text-4xl text-ink mb-6">{t("philosophy_title")}</h2>
-            <div className="space-y-4">
-              <p className="text-light-gray leading-relaxed">{t("philosophy_p1")}</p>
-              <p className="text-mid-gray leading-relaxed">{t("philosophy_p2")}</p>
-            </div>
-          </div>
-        </AnimatedSection>
       </div>
-    </div>
+    </section>
   );
 }

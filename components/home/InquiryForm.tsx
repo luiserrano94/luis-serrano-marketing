@@ -5,16 +5,18 @@ type C = {
   contact: {
     fields: { name: string; email: string; company: string; assets: string; brief: string; timeline: string; budget: string };
     submit: string;
+    sending: string;
     thanksTitle: string;
     thanksNote: string;
+    errorNote: string;
   };
 };
 
 export default function InquiryForm({ c }: { c: C }) {
-  const [done, setDone] = useState(false);
+  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   const f = c.contact.fields;
 
-  if (done) {
+  if (state === "done") {
     return (
       <div className="inq-done">
         <p className="display">{c.contact.thanksTitle}</p>
@@ -27,15 +29,30 @@ export default function InquiryForm({ c }: { c: C }) {
     <form
       className="inq"
       noValidate
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
         }
-        // TODO(build phase D): wire to Web3Forms for real email delivery.
-        setDone(true);
+        setState("sending");
+        try {
+          const data = Object.fromEntries(new FormData(form).entries());
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+              subject: "New project inquiry from luisserrano.ai",
+              from_name: String(data.name || "Website inquiry"),
+              ...data,
+            }),
+          });
+          setState(res.ok ? "done" : "error");
+        } catch {
+          setState("error");
+        }
       }}
     >
       <div className="fgrid">
@@ -47,7 +64,12 @@ export default function InquiryForm({ c }: { c: C }) {
         <label className="field"><span>{f.timeline}</span><input name="timeline" type="text" /></label>
         <label className="field"><span>{f.budget}</span><input name="budget" type="text" /></label>
       </div>
-      <button className="btn btn-solid" type="submit">{c.contact.submit}</button>
+      <button className="btn btn-solid" type="submit" disabled={state === "sending"}>
+        {state === "sending" ? c.contact.sending : c.contact.submit}
+      </button>
+      {state === "error" && (
+        <p className="dp" style={{ marginTop: 18, color: "var(--muted)" }}>{c.contact.errorNote}</p>
+      )}
     </form>
   );
 }

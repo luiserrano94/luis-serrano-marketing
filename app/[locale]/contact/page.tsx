@@ -1,126 +1,21 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { localeAlternates } from "@/lib/constants";
-import { Mail, Phone, MapPin } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
-import ContactForm from "@/components/ContactForm";
-import { LinkedInIcon } from "@/components/SocialIcons";
-import SectionBackdrop from "@/components/SectionBackdrop";
-import { CONTACT_BG } from "@/lib/images";
+import { getContent } from "@/lib/content";
+import InquiryForm from "@/components/home/InquiryForm";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: "contact" });
-  return {
-    title: t("meta_title"),
-    description: t("meta_description"),
-    alternates: localeAlternates(params.locale, "/contact"),
-  };
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const c = getContent(params.locale);
+  return { title: `${c.contact.title} · Luis Serrano`, description: c.contact.sub };
 }
 
-export default async function ContactPage({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const t = await getTranslations({ locale: params.locale, namespace: "contact" });
-
+export default function ContactPage({ params }: { params: { locale: string } }) {
+  const c = getContent(params.locale);
   return (
-    <div className="relative min-h-screen pt-32 pb-20">
-      <SectionBackdrop src={CONTACT_BG} />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-14">
-          <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl text-ink mb-4">
-            {t("hero_title")}
-          </h1>
-          <p className="text-sand text-xl max-w-xl mx-auto">{t("hero_subtitle")}</p>
-        </AnimatedSection>
-
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Form (wider) */}
-          <AnimatedSection direction="left" className="lg:col-span-3">
-            <div className="bg-surface rounded-sm p-8 border border-line">
-              <h2 className="text-ink font-semibold text-xl mb-8">{t("form_title")}</h2>
-              <ContactForm />
-            </div>
-          </AnimatedSection>
-
-          {/* Direct contact */}
-          <AnimatedSection direction="right" delay={0.1} className="lg:col-span-2">
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-ink font-semibold text-xl mb-6">{t("direct_title")}</h2>
-              </div>
-
-              {[
-                {
-                  icon: Mail,
-                  label: "Email",
-                  value: t("direct_email"),
-                  href: `mailto:${t("direct_email")}`,
-                },
-                {
-                  icon: Phone,
-                  label: "WhatsApp",
-                  value: t("direct_whatsapp"),
-                  href: "https://wa.me/526623361906",
-                },
-                {
-                  icon: MapPin,
-                  label: t("direct_location"),
-                  value: t("direct_location_sub"),
-                  href: null,
-                },
-                {
-                  icon: LinkedInIcon,
-                  label: "LinkedIn",
-                  value: "luis-serrano-50b231138",
-                  href: "https://www.linkedin.com/in/luis-serrano-50b231138/",
-                },
-              ].map(({ icon: Icon, label, value, href }) => (
-                <div
-                  key={label}
-                  className="flex items-start gap-4 p-5 bg-surface rounded-sm border border-line hover:border-accent/20 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <Icon size={18} className="text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-mid-gray text-xs uppercase tracking-wider mb-0.5">
-                      {label}
-                    </p>
-                    {href ? (
-                      <a
-                        href={href}
-                        target={href.startsWith("http") ? "_blank" : undefined}
-                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="text-ink hover:text-accent transition-colors text-sm"
-                      >
-                        {value}
-                      </a>
-                    ) : (
-                      <p className="text-ink text-sm">{value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-
-              {/* Response time */}
-              <div className="mt-4 p-4 bg-accent/5 border border-accent/10 rounded-sm">
-                <p className="text-accent text-sm font-medium">
-                  ⚡{" "}
-                  {params.locale === "es"
-                    ? "Tiempo de respuesta: menos de 24 horas"
-                    : "Response time: under 24 hours"}
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
+    <section className="wrap sec">
+      <div className="contact-head reveal">
+        <h2 className="display" style={{ fontSize: "clamp(42px,6.4vw,92px)" }}>{c.contact.title}</h2>
+        <p>{c.contact.sub}</p>
       </div>
-    </div>
+      <InquiryForm c={c} />
+    </section>
   );
 }

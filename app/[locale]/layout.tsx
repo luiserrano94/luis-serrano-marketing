@@ -43,13 +43,13 @@ export async function generateMetadata({
     // Plain string, not a template: pages write their own full title in
     // messages/*.json. The old `template` appended the brand a second time,
     // pushing titles to 90 characters.
-    title: "Luis Serrano Marketing Services",
+    title: "Luis Serrano · AI + Creative",
     description:
       params.locale === "es"
-        ? "Sitios web que generan clientes. Marketing digital y branding para México y EE.UU."
-        : "Websites that generate clients. Digital marketing and branding for Mexico and the U.S.",
+        ? "Dirección creativa hecha con IA. Visuales, conceptos de campaña y mundos visuales para marcas, productos e ideas."
+        : "Creative direction, built with AI. AI-generated visuals, campaign concepts and visual worlds for brands, products and ideas.",
     openGraph: {
-      siteName: "Luis Serrano Marketing Services",
+      siteName: "Luis Serrano · AI + Creative",
       locale: params.locale === "es" ? "es_MX" : "en_US",
     },
     twitter: {
@@ -69,7 +69,7 @@ export default async function LocaleLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "Luis Serrano Marketing Services",
+    name: "Luis Serrano",
     email: CONTACT_EMAIL,
     telephone: `+${WHATSAPP_NUMBER}`,
     url: SITE_URL,
@@ -86,7 +86,7 @@ export default async function LocaleLayout({
     },
     sameAs: SOCIAL_LINKS,
     description:
-      "Sitios web y marketing digital diseñados para convertir. México y EE.UU.",
+      "Creative direction, built with AI. Visuals, campaigns and visual worlds for brands, products and ideas.",
   };
 
   return (

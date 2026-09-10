@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getContent } from "@/lib/content";
 import SelectedWork from "@/components/home/SelectedWork";
 import InquiryForm from "@/components/home/InquiryForm";
@@ -7,10 +8,14 @@ export default function Home({ params }: { params: { locale: string } }) {
   return (
     <>
       <header className="hero">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/work/hero-pacific.jpg"
           alt="Interior of a 1970s coastal beach house at golden hour, with a floor-to-ceiling ocean view"
+          width={1456}
+          height={816}
+          priority
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
         />
         <div className="hero-scrim" />
         <div className="hero-cap">
@@ -26,7 +31,7 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       <section id="work" className="wrap sec">
         <p className="mono work-label reveal">{c.work.label}</p>
-        <SelectedWork c={c} />
+        <SelectedWork c={c} locale={params.locale} />
       </section>
 
       <section className="sec pos wrap">
