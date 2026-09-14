@@ -7,9 +7,9 @@ export const CONTENT = {
   en: {
     nav: { work: "Work", services: "Services", resources: "Resources", about: "About", contact: "Contact" },
     hero: {
-      eyebrow: "AI + Creative",
-      title: "Creative direction, built with AI.",
-      sub: "AI-generated visuals, campaign concepts and visual worlds for brands, products and ideas.",
+      eyebrow: "Creative Director · Visual Artist",
+      title: "Creative direction and visual art.",
+      sub: "Visual concepts, image series and creative worlds for brands, spaces and cultural projects, with AI as one production tool.",
       viewWork: "View Selected Work",
       startProject: "Start a Project",
     },
@@ -17,7 +17,7 @@ export const CONTENT = {
     projectNav: { prev: "Previous project", next: "Next project", back: "Back to work", viewGallery: "View gallery", project: "Project", scroll: "Scroll to explore", concept: "The concept" },
     positioning: {
       title: "Not prompts. Creative direction.",
-      body: "AI is used as a production medium to develop visual concepts, campaigns and imagery that would traditionally require much larger productions.",
+      body: "Concept development, art direction, visual production and careful selection, from first reference to final image. AI is one of the production tools, not the practice itself.",
     },
     services: {
       label: "Services",
@@ -27,7 +27,7 @@ export const CONTENT = {
     },
     about: {
       label: "About",
-      body: "Luis Serrano is a marketer and creative working at the intersection of AI, visual culture and brand building. His work explores how emerging creative tools can turn ideas into fully realized visual worlds.",
+      body: "Luis Serrano is a creative director and visual artist. He develops visual concepts and image series for brands, spaces and cultural projects, drawing on a decade in brand and marketing that gives the work its structure and intent. AI is part of the production process, not the whole of it.",
     },
     contact: {
       title: "Have something in mind?",
@@ -64,14 +64,14 @@ export const CONTENT = {
         conceptBody: ["Pacific, 1978 explores the atmosphere of a coastal home through light, materials and everyday moments.", "A visual study of how architecture, nature and lifestyle come together to create a sense of freedom, warmth and timelessness."],
       },
       afterdark: {
-        title: "After Dark",
-        titleLines: ["After", "Dark"],
+        title: "Vintage Party",
+        titleLines: ["Vintage", "Party"],
         category: "Editorial Photography",
         line: "Fragments from one night.",
         intro: "An intimate study of nightlife, where elegance, desire and human connection exist in a world of golden light, deep shadows and endless possibility.",
         rail: { lines: ["Same night,", "different", "stories."] },
         conceptTitle: ["Night as", "a canvas."],
-        conceptBody: ["After Dark captures fragmented moments from a single night: strangers, lovers, rituals and reflections. A visual exploration of atmosphere, intimacy and the timeless allure of nightlife."],
+        conceptBody: ["Vintage Party captures fragmented moments from a single night: strangers, lovers, rituals and reflections. A visual exploration of atmosphere, intimacy and the timeless allure of nightlife."],
         // indexed by gallery file: g0 toast, g1 piano, g2 red pour, g3 motion,
         // g4 pour, g5 cocktail tray, g6 couple (g7 banquette = unused)
         caps: [
@@ -166,16 +166,16 @@ export const CONTENT = {
         },
       },
     },
-    footer: { descriptor: "AI + Creative", worldwide: "Working worldwide", location: "Ciudad Juárez, Mexico", instagram: "Instagram", email: "Email" },
+    footer: { descriptor: "Creative Director · Visual Artist", worldwide: "Working worldwide", location: "Ciudad Juárez, Mexico", instagram: "Instagram", email: "Email" },
     whatsapp: { label: "WhatsApp", cta: "Message on WhatsApp", message: "Hi Luis, I have a project in mind." },
     resources: { label: "Resources", title: "Resources", intro: "Tools, workflows and experiments from my AI creative process.", soon: "Coming soon." },
   },
   es: {
     nav: { work: "Trabajo", services: "Servicios", resources: "Recursos", about: "Acerca", contact: "Contacto" },
     hero: {
-      eyebrow: "AI + Creative",
-      title: "Dirección creativa, hecha con IA.",
-      sub: "Visuales generados con IA, conceptos de campaña y mundos visuales para marcas, productos e ideas.",
+      eyebrow: "Director creativo · Artista visual",
+      title: "Dirección creativa y arte visual.",
+      sub: "Conceptos visuales, series de imágenes y mundos creativos para marcas, espacios y proyectos culturales, con la IA como una herramienta de producción más.",
       viewWork: "Ver trabajo seleccionado",
       startProject: "Iniciar un proyecto",
     },
@@ -183,7 +183,7 @@ export const CONTENT = {
     projectNav: { prev: "Proyecto anterior", next: "Proyecto siguiente", back: "Volver al trabajo", viewGallery: "Ver galería", project: "Proyecto", scroll: "Desliza para explorar", concept: "El concepto" },
     positioning: {
       title: "No prompts. Dirección creativa.",
-      body: "La IA se usa como medio de producción para desarrollar conceptos visuales, campañas e imágenes que tradicionalmente exigirían producciones mucho mayores.",
+      body: "Desarrollo de concepto, dirección de arte, producción visual y una selección cuidadosa, de la primera referencia a la imagen final. La IA es una de las herramientas de producción, no la práctica en sí.",
     },
     services: {
       label: "Servicios",
@@ -193,7 +193,7 @@ export const CONTENT = {
     },
     about: {
       label: "Acerca",
-      body: "Luis Serrano es mercadólogo y creativo que trabaja en la intersección de la IA, la cultura visual y la construcción de marca. Su trabajo explora cómo las herramientas creativas emergentes convierten ideas en mundos visuales completos.",
+      body: "Luis Serrano es director creativo y artista visual. Desarrolla conceptos visuales y series de imágenes para marcas, espacios y proyectos culturales, apoyándose en una década en marca y marketing que le da estructura e intención al trabajo. La IA es parte del proceso de producción, no todo el trabajo.",
     },
     contact: {
       title: "¿Tienes algo en mente?",
@@ -230,14 +230,14 @@ export const CONTENT = {
         conceptBody: ["Pacific, 1978 explora la atmósfera de una casa costera a través de la luz, los materiales y los momentos cotidianos.", "Un estudio visual de cómo la arquitectura, la naturaleza y el estilo de vida se unen para crear una sensación de libertad, calidez y atemporalidad."],
       },
       afterdark: {
-        title: "After Dark",
-        titleLines: ["After", "Dark"],
+        title: "Vintage Party",
+        titleLines: ["Vintage", "Party"],
         category: "Fotografía editorial",
         line: "Fragmentos de una noche.",
         intro: "Un estudio íntimo de la vida nocturna, donde la elegancia, el deseo y la conexión humana existen en un mundo de luz dorada, sombras profundas y posibilidades infinitas.",
         rail: { lines: ["La misma noche,", "distintas", "historias."] },
         conceptTitle: ["La noche", "como lienzo."],
-        conceptBody: ["After Dark captura momentos fragmentados de una sola noche: desconocidos, amantes, rituales y reflejos. Una exploración visual de la atmósfera, la intimidad y el encanto atemporal de la vida nocturna."],
+        conceptBody: ["Vintage Party captura momentos fragmentados de una sola noche: desconocidos, amantes, rituales y reflejos. Una exploración visual de la atmósfera, la intimidad y el encanto atemporal de la vida nocturna."],
         caps: [
           { n: "06", label: "Celebración", line: "Momentos que perduran." },
           { n: "05", label: "Sonido", line: "Otro tipo de conversación." },
@@ -329,7 +329,7 @@ export const CONTENT = {
         },
       },
     },
-    footer: { descriptor: "AI + Creative", worldwide: "Trabajando en todo el mundo", location: "Ciudad Juárez, México", instagram: "Instagram", email: "Correo" },
+    footer: { descriptor: "Director creativo · Artista visual", worldwide: "Trabajando en todo el mundo", location: "Ciudad Juárez, México", instagram: "Instagram", email: "Correo" },
     whatsapp: { label: "WhatsApp", cta: "Escríbeme por WhatsApp", message: "Hola Luis, tengo un proyecto en mente." },
     resources: { label: "Recursos", title: "Recursos", intro: "Herramientas, flujos y experimentos de mi proceso creativo con IA.", soon: "Muy pronto." },
   },

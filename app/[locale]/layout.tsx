@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import RevealInit from "@/components/RevealInit";
 import ImageGuard from "@/components/ImageGuard";
-import { SITE_URL, CONTACT_EMAIL, WHATSAPP_NUMBER, SOCIAL_LINKS } from "@/lib/constants";
+import { SITE_URL, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -43,13 +43,13 @@ export async function generateMetadata({
     // Plain string, not a template: pages write their own full title in
     // messages/*.json. The old `template` appended the brand a second time,
     // pushing titles to 90 characters.
-    title: "Luis Serrano · AI + Creative",
+    title: "Luis Serrano · Creative Direction & Visual Art",
     description:
       params.locale === "es"
-        ? "Dirección creativa hecha con IA. Visuales, conceptos de campaña y mundos visuales para marcas, productos e ideas."
-        : "Creative direction, built with AI. AI-generated visuals, campaign concepts and visual worlds for brands, products and ideas.",
+        ? "Dirección creativa y arte visual. Conceptos visuales y series de imágenes para marcas, espacios y proyectos culturales."
+        : "Creative direction and visual art. Visual concepts and image series for brands, spaces and cultural projects.",
     openGraph: {
-      siteName: "Luis Serrano · AI + Creative",
+      siteName: "Luis Serrano",
       locale: params.locale === "es" ? "es_MX" : "en_US",
     },
     twitter: {
@@ -68,25 +68,20 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "Person",
     name: "Luis Serrano",
+    jobTitle:
+      params.locale === "es"
+        ? "Director creativo y artista visual"
+        : "Creative Director and Visual Artist",
     email: CONTACT_EMAIL,
-    telephone: `+${WHATSAPP_NUMBER}`,
     url: SITE_URL,
     image: `${SITE_URL}/images/luis-serrano.jpg`,
-    areaServed: [
-      { "@type": "Country", name: "MX" },
-      { "@type": "Country", name: "US" },
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Juárez",
-      addressRegion: "Chihuahua",
-      addressCountry: "MX",
-    },
     sameAs: SOCIAL_LINKS,
     description:
-      "Creative direction, built with AI. Visuals, campaigns and visual worlds for brands, products and ideas.",
+      params.locale === "es"
+        ? "Dirección creativa y arte visual. Conceptos visuales y series de imágenes para marcas, espacios y proyectos culturales."
+        : "Creative direction and visual art. Visual concepts and image series for brands, spaces and cultural projects.",
   };
 
   return (

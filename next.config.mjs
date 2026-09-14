@@ -10,6 +10,14 @@ const nextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
+  async redirects() {
+    // Retired marketing Ads landings. 301 to the home services section so any
+    // existing backlinks/traffic survive.
+    return [
+      { source: "/web-design", destination: "/en#services", permanent: true },
+      { source: "/diseno-web", destination: "/es#services", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

@@ -22,7 +22,7 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
-      aria-label="Luis Serrano Marketing Services"
+      aria-label="Luis Serrano, Creative Director and Visual Artist"
     >
       {/* Monogram in a hairline square */}
       <rect
@@ -70,9 +70,9 @@ export default function Logo({ size = "md", className = "" }: LogoProps) {
         fontFamily="system-ui, sans-serif"
         fontWeight="500"
         fontSize="6.5"
-        letterSpacing="2.6"
+        letterSpacing="2.2"
       >
-        MARKETING SERVICES
+        CREATIVE DIRECTION
       </text>
     </svg>
   );

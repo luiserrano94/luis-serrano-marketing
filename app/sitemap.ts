@@ -13,9 +13,6 @@ const PAGES = [
   "/contact",
 ];
 
-// Landing pages live outside /[locale]
-const LANDINGS = ["/diseno-web", "/web-design"];
-
 export default function sitemap(): MetadataRoute.Sitemap {
   // Build time — every deploy tells Google there is something new to recrawl.
   const lastModified = new Date();
@@ -30,15 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: page === "" ? 1 : 0.8,
       });
     }
-  }
-
-  for (const landing of LANDINGS) {
-    entries.push({
-      url: `${SITE_URL}${landing}`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    });
   }
 
   return entries;
