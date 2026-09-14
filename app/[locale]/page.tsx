@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Suspense } from "react";
 import { getContent } from "@/lib/content";
 import { waLink } from "@/lib/constants";
 import SelectedWork from "@/components/home/SelectedWork";
@@ -44,19 +46,26 @@ export default function Home({ params }: { params: { locale: string } }) {
       <section id="services" className="sec-tight">
         <div className="wrap" style={{ marginBottom: "clamp(28px,4vw,50px)" }}>
           <p className="mono reveal">{c.services.label}</p>
+          <h2 className="display reveal svc-h">{c.services.title}</h2>
         </div>
         <hr className="rule" />
-        <div className="wrap svc">
-          <div className="svc-i reveal">
-            <h3>{c.services.sprint.name}</h3>
-            <span className="price">{c.services.sprint.price}</span>
-            <p>{c.services.sprint.desc}</p>
-          </div>
-          <div className="svc-i reveal d1">
-            <h3>{c.services.campaign.name}</h3>
-            <span className="price">{c.services.campaign.price}</span>
-            <p>{c.services.campaign.desc}</p>
-          </div>
+        <div className="wrap svc-list">
+          {c.services.items.map((it) => (
+            <div
+              key={it.slug}
+              id={it.slug}
+              className={`svc-row reveal${it.secondary ? " secondary" : ""}`}
+            >
+              <div className="svc-row-h">
+                <h3>{it.name}</h3>
+                <span className="price">{c.services.quote}</span>
+              </div>
+              <p>{it.desc}</p>
+              <Link className="svc-cta" href={`/${params.locale}?type=${it.inquiry}#contact`}>
+                {c.services.cta} →
+              </Link>
+            </div>
+          ))}
         </div>
         <hr className="rule" />
       </section>
@@ -78,7 +87,9 @@ export default function Home({ params }: { params: { locale: string } }) {
             </a>
           </div>
         </div>
-        <InquiryForm c={c} />
+        <Suspense>
+          <InquiryForm c={c} />
+        </Suspense>
       </section>
     </>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getContent } from "@/lib/content";
 import { waLink } from "@/lib/constants";
 import InquiryForm from "@/components/home/InquiryForm";
@@ -22,7 +23,9 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
           </a>
         </div>
       </div>
-      <InquiryForm c={c} />
+      <Suspense>
+        <InquiryForm c={c} />
+      </Suspense>
     </section>
   );
 }
