@@ -1,15 +1,17 @@
 import { PROJECTS, type Project } from "@/lib/projects";
 
 /**
- * Works available as fine-art prints. A curated subset of the portfolio: the
- * four single-hero series. The HANT · XEPE · HAMÍIME editorial series is a
- * multi-image body of work, so it's left out of the print catalog for now.
+ * Works available as fine-art prints. Every portfolio series is eligible —
+ * prints are sold as individual artworks selected from a series, not as whole
+ * series, so a multi-image series like HANT · XEPE · HAMÍIME is represented by
+ * a chosen image (its cover for now). The exact image(s) offered per series are
+ * finalized separately.
  *
  * Prices/sizes/edition are uniform and live in lib/content.ts under `prints`.
- * Purchasing is intentionally disabled until physical print QA is approved
- * (plan §20); the catalog is browse-only.
+ * Purchasing is disabled until physical print QA is approved (plan §20); the
+ * catalog is browse-only.
  */
-export const PRINT_SLUGS = ["pacific", "jaguars", "afterdark", "animalprint"] as const;
+export const PRINT_SLUGS = ["hant-xepe-hamiime", "jaguars", "pacific", "afterdark", "animalprint"] as const;
 
 export const isPrintSlug = (s: string): boolean =>
   (PRINT_SLUGS as readonly string[]).includes(s);
