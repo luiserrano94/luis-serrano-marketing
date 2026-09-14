@@ -6,6 +6,7 @@ import { getContent } from "@/lib/content";
 import { PROJECTS } from "@/lib/projects";
 import Lightbox from "@/components/Lightbox";
 import HantXepe from "@/components/work/HantXepe";
+import TrackView from "@/components/TrackView";
 
 type Cap = { n: string; label: string; line: string };
 type Rail = { lines?: readonly string[]; italic?: string; words?: readonly string[] };
@@ -56,13 +57,16 @@ export default function ProjectPage({ params }: { params: { locale: string; slug
   // Flagship editorial project renders its own bespoke page.
   if (p.kind === "editorial") {
     return (
-      <HantXepe
-        locale={params.locale}
-        num={p.num}
-        total={PROJECTS.length}
-        prev={{ slug: prev.slug, title: proj[prev.slug].title }}
-        next={{ slug: next.slug, title: proj[next.slug].title }}
-      />
+      <>
+        <TrackView event="project_view" params={{ project: p.slug }} />
+        <HantXepe
+          locale={params.locale}
+          num={p.num}
+          total={PROJECTS.length}
+          prev={{ slug: prev.slug, title: proj[prev.slug].title }}
+          next={{ slug: next.slug, title: proj[next.slug].title }}
+        />
+      </>
     );
   }
 
@@ -96,6 +100,7 @@ export default function ProjectPage({ params }: { params: { locale: string; slug
 
   return (
     <>
+      <TrackView event="project_view" params={{ project: p.slug }} />
       <header className="phero">
         <div className="phero-txt">
           <Link className="proj-back" href={`${base}/work`}>← {nav.back}</Link>

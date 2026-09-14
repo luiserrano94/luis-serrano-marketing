@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import RevealInit from "@/components/RevealInit";
 import ImageGuard from "@/components/ImageGuard";
+import AttributionInit from "@/components/AttributionInit";
 import { SITE_URL, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
 
 const sourceSerif = Source_Serif_4({
@@ -99,6 +100,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <RevealInit />
           <ImageGuard />
+          <AttributionInit />
           <Navbar />
           <main>{children}</main>
           <Footer />

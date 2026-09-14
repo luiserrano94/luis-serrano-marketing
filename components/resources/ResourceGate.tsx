@@ -9,7 +9,7 @@ type Gate = {
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export default function ResourceGate({ slug, gate }: { slug: string; gate: Gate }) {
+export default function ResourceGate({ slug, category, gate }: { slug: string; category?: string; gate: Gate }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "error" | "unavailable" | "invalid">("idle");
@@ -29,7 +29,7 @@ export default function ResourceGate({ slug, gate }: { slug: string; gate: Gate 
       });
       if (r.ok) {
         const w = window as Window & { gtag?: (...a: unknown[]) => void };
-        if (typeof w.gtag === "function") w.gtag("event", "resource_unlock", { resource: slug });
+        if (typeof w.gtag === "function") w.gtag("event", "resource_unlock", { resource: slug, category });
         // Cookie is set; re-render the server component so the body appears.
         router.refresh();
         return;

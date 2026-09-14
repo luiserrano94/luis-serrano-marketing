@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { track } from "@/lib/analytics";
 
 type Fields = {
   name: string; email: string; company: string;
@@ -30,6 +31,7 @@ export default function InquiryForm({ c }: { c: C }) {
   useEffect(() => { if (isType(q)) setType(q); }, [q]);
 
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [started, setStarted] = useState(false);
   const t = c.contact;
   const f = t.fields;
   const opt = (label: string) => (
@@ -49,6 +51,12 @@ export default function InquiryForm({ c }: { c: C }) {
     <form
       className="inq"
       noValidate
+      onFocusCapture={() => {
+        if (!started) {
+          setStarted(true);
+          track("inquiry_start", { inquiry_type: type });
+        }
+      }}
       onSubmit={async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
@@ -69,7 +77,12 @@ export default function InquiryForm({ c }: { c: C }) {
               ...data,
             }),
           });
-          setState(res.ok ? "done" : "error");
+          if (res.ok) {
+            setState("done");
+            track("inquiry_submit", { inquiry_type: type });
+          } else {
+            setState("error");
+          }
         } catch {
           setState("error");
         }

@@ -7,9 +7,11 @@ const GOOGLE_ADS_ID = "AW-704568380";
 export default function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
   const hasGa = gaId && gaId !== "G-XXXXXXXXXX";
   const hasPixel = pixelId && pixelId !== "XXXXXXXXXXXXXXX";
+  const hasClarity = clarityId && clarityId !== "";
 
   // Use GA4 id as primary gtag.js loader when available, otherwise Ads id
   const primaryId = hasGa ? gaId : GOOGLE_ADS_ID;
@@ -38,6 +40,15 @@ export default function Analytics() {
           t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
           document,'script','https://connect.facebook.net/en_US/fbevents.js');
           fbq('init','${pixelId}');fbq('track','PageView');
+        `}</Script>
+      )}
+
+      {/* Microsoft Clarity */}
+      {hasClarity && (
+        <Script id="clarity" strategy="afterInteractive">{`
+          (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${clarityId}");
         `}</Script>
       )}
     </>

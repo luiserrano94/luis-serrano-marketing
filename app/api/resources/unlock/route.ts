@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { upsertSubscriber } from "@/lib/mailerlite";
 import { COOKIE, MAX_AGE, issueToken } from "@/lib/resourceAccess";
+import { FT_COOKIE, parseFirstTouch } from "@/lib/attribution";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -28,9 +30,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
 
+  // First-touch attribution (best-effort) captured client-side into a cookie.
+  const ft = parseFirstTouch(cookies().get(FT_COOKIE)?.value);
+  const fields = {
+    first_resource: resource || undefined,
+    first_source: ft.source,
+    first_medium: ft.medium,
+    first_campaign: ft.campaign,
+    first_content: ft.content,
+    first_acquired_at: ft.acquired_at,
+  };
+
   const hasKey = !!process.env.MAILERLITE_API_KEY;
   if (hasKey) {
-    const { ok } = await upsertSubscriber(email, resource);
+    const { ok } = await upsertSubscriber(email, fields);
     if (!ok) {
       // Capture failed: keep the resource locked so the lead isn't lost.
       return NextResponse.json({ error: "signup_failed" }, { status: 502 });

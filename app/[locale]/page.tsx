@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import { Suspense } from "react";
 import { getContent } from "@/lib/content";
 import { waLink } from "@/lib/constants";
@@ -61,9 +62,14 @@ export default function Home({ params }: { params: { locale: string } }) {
                 <span className="price">{c.services.quote}</span>
               </div>
               <p>{it.desc}</p>
-              <Link className="svc-cta" href={`/${params.locale}?type=${it.inquiry}#contact`}>
+              <TrackedLink
+                event="service_view"
+                params={{ service: it.slug }}
+                className="svc-cta"
+                href={`/${params.locale}?type=${it.inquiry}#contact`}
+              >
                 {c.services.cta} →
-              </Link>
+              </TrackedLink>
             </div>
           ))}
         </div>

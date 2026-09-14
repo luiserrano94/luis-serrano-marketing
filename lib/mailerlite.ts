@@ -5,18 +5,23 @@
  * can decide policy: the unlock route treats a missing key as a hard failure
  * in production (stay locked, don't lose the lead) and a no-op in development.
  *
- * ponytail: MailerLite's POST /subscribers is idempotent on email (upsert), so
- * no lookup-then-update dance is needed. Group ids + richer first-touch fields
- * land once the account provides them (handoff); email + first_resource is the
- * minimum that captures the lead now.
+ * ponytail: MailerLite's POST /subscribers is idempotent on email (upsert).
+ * First-touch fields are best-effort — if the account hasn't defined them yet
+ * the request is retried with email only, so a missing field config can never
+ * cost the lead.
  */
 export async function upsertSubscriber(
   email: string,
-  resource: string
+  fields?: Record<string, string | undefined>
 ): Promise<{ ok: boolean; skipped?: boolean }> {
   const key = process.env.MAILERLITE_API_KEY;
   if (!key) return { ok: false, skipped: true };
-  try {
+
+  const clean = fields
+    ? Object.fromEntries(Object.entries(fields).filter(([, v]) => v != null && v !== ""))
+    : undefined;
+
+  const send = async (body: Record<string, unknown>): Promise<boolean> => {
     const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
       method: "POST",
       headers: {
@@ -24,14 +29,17 @@ export async function upsertSubscriber(
         Accept: "application/json",
         Authorization: `Bearer ${key}`,
       },
-      body: JSON.stringify({
-        email,
-        fields: resource ? { first_resource: resource } : undefined,
-      }),
-      // Don't let a slow CRM hang the request forever.
+      body: JSON.stringify(body),
       signal: AbortSignal.timeout(8000),
     });
-    return { ok: res.ok };
+    return res.ok;
+  };
+
+  try {
+    const hasFields = !!clean && Object.keys(clean).length > 0;
+    let ok = await send(hasFields ? { email, fields: clean } : { email });
+    if (!ok && hasFields) ok = await send({ email }); // never lose the lead over field config
+    return { ok };
   } catch {
     return { ok: false };
   }

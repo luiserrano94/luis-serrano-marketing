@@ -7,6 +7,7 @@ import { getResource } from "@/lib/resources";
 import { COOKIE, verifyToken } from "@/lib/resourceAccess";
 import { localeAlternates } from "@/lib/constants";
 import ResourceGate from "@/components/resources/ResourceGate";
+import TrackView from "@/components/TrackView";
 
 type Item = { title: string; desc: string; includes: readonly string[] };
 
@@ -36,6 +37,10 @@ export default function ResourcePage({ params }: { params: { locale: string; slu
 
   return (
     <article className="wrap sec res-article">
+      <TrackView
+        event={unlocked ? "resource_view" : "resource_gate_view"}
+        params={{ resource: slug, category: meta.category }}
+      />
       <Link className="proj-back" href={`${base}/resources`}>← {r.title}</Link>
       <p className="res-meta">{r.categories[meta.category]} · {r.formats[meta.format]}</p>
       <h1 className="display res-title">{it.title}</h1>
@@ -60,6 +65,7 @@ export default function ResourcePage({ params }: { params: { locale: string; slu
         // locked client, so an unauthenticated request can't receive it.
         <ResourceGate
           slug={slug}
+          category={meta.category}
           gate={{
             heading: r.gate.heading,
             body: r.gate.body,
