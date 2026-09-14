@@ -51,27 +51,34 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
         <hr className="rule" />
         <div className="wrap svc-list">
-          {c.services.items.map((it) => (
-            <div
-              key={it.slug}
-              id={it.slug}
-              className={`svc-row reveal${it.secondary ? " secondary" : ""}`}
-            >
-              <div className="svc-row-h">
-                <h3>{it.name}</h3>
-                <span className="price">{c.services.quote}</span>
-              </div>
-              <p>{it.desc}</p>
-              <TrackedLink
-                event="service_view"
-                params={{ service: it.slug }}
-                className="svc-cta"
-                href={`/${params.locale}?type=${it.inquiry}#contact`}
+          {c.services.items.map((it) => {
+            const isPrints = it.slug === "fine-art-prints";
+            const href = isPrints
+              ? `/${params.locale}/prints`
+              : `/${params.locale}?type=${it.inquiry}#contact`;
+            const label = isPrints ? c.prints.explore : c.services.cta;
+            return (
+              <div
+                key={it.slug}
+                id={it.slug}
+                className={`svc-row reveal${it.secondary ? " secondary" : ""}`}
               >
-                {c.services.cta} →
-              </TrackedLink>
-            </div>
-          ))}
+                <div className="svc-row-h">
+                  <h3>{it.name}</h3>
+                  <span className="price">{c.services.quote}</span>
+                </div>
+                <p>{it.desc}</p>
+                <TrackedLink
+                  event="service_view"
+                  params={{ service: it.slug }}
+                  className="svc-cta"
+                  href={href}
+                >
+                  {label} →
+                </TrackedLink>
+              </div>
+            );
+          })}
         </div>
         <hr className="rule" />
       </section>

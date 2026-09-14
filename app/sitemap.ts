@@ -1,33 +1,32 @@
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
+import { PROJECTS } from "@/lib/projects";
+import { RESOURCES } from "@/lib/resources";
+import { PRINT_SLUGS } from "@/lib/prints";
 
 const LOCALES = ["es", "en"];
-const PAGES = [
-  "",
-  "/work",
-  "/work/hant-xepe-hamiime",
-  "/work/jaguars",
-  "/work/pacific",
-  "/work/afterdark",
-  "/work/animalprint",
-  "/contact",
-];
+const STATIC = ["", "/work", "/resources", "/prints", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Build time — every deploy tells Google there is something new to recrawl.
   const lastModified = new Date();
-  const entries: MetadataRoute.Sitemap = [];
+  const paths = [
+    ...STATIC,
+    ...PROJECTS.map((p) => `/work/${p.slug}`),
+    ...RESOURCES.map((r) => `/resources/${r.slug}`),
+    ...PRINT_SLUGS.map((s) => `/prints/${s}`),
+  ];
 
+  const entries: MetadataRoute.Sitemap = [];
   for (const locale of LOCALES) {
-    for (const page of PAGES) {
+    for (const path of paths) {
       entries.push({
-        url: `${SITE_URL}/${locale}${page}`,
+        url: `${SITE_URL}/${locale}${path}`,
         lastModified,
-        changeFrequency: page === "" ? "weekly" : "monthly",
-        priority: page === "" ? 1 : 0.8,
+        changeFrequency: path === "" ? "weekly" : "monthly",
+        priority: path === "" ? 1 : 0.7,
       });
     }
   }
-
   return entries;
 }
