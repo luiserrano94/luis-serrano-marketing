@@ -77,6 +77,17 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
       </section>
 
+      <section id="resources" className="sec-tight wrap res-teaser">
+        <div className="res-teaser-h reveal">
+          <p className="mono">{c.resources.label}</p>
+          <h2 className="display">{c.resources.title}</h2>
+          <p>{c.resources.intro}</p>
+          <Link className="btn btn-line" href={`/${params.locale}/resources`}>
+            {c.resources.teaserCta}
+          </Link>
+        </div>
+      </section>
+
       <section id="contact" className="sec wrap">
         <div className="contact-head reveal">
           <h2 className="display">{c.contact.title}</h2>
