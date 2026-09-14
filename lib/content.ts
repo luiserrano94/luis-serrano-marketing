@@ -183,7 +183,7 @@ export const CONTENT = {
         },
       },
     },
-    footer: { descriptor: "Creative Director · Visual Artist", worldwide: "Working worldwide", location: "Ciudad Juárez, Mexico", instagram: "Instagram", email: "Email" },
+    footer: { descriptor: "Creative Director · Visual Artist", worldwide: "Working worldwide", location: "Ciudad Juárez, Mexico", instagram: "Instagram", email: "Email", privacy: "Privacy", terms: "Terms", shipping: "Shipping" },
     whatsapp: { label: "WhatsApp", cta: "Message on WhatsApp", message: "Hi Luis, I have a project in mind." },
     prints: {
       label: "Prints",
@@ -431,7 +431,7 @@ export const CONTENT = {
         },
       },
     },
-    footer: { descriptor: "Director creativo · Artista visual", worldwide: "Trabajando en todo el mundo", location: "Ciudad Juárez, México", instagram: "Instagram", email: "Correo" },
+    footer: { descriptor: "Director creativo · Artista visual", worldwide: "Trabajando en todo el mundo", location: "Ciudad Juárez, México", instagram: "Instagram", email: "Correo", privacy: "Privacidad", terms: "Términos", shipping: "Envíos" },
     whatsapp: { label: "WhatsApp", cta: "Escríbeme por WhatsApp", message: "Hola Luis, tengo un proyecto en mente." },
     prints: {
       label: "Prints",

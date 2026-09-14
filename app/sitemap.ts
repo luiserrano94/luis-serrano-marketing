@@ -5,7 +5,7 @@ import { RESOURCES } from "@/lib/resources";
 import { PRINT_SLUGS } from "@/lib/prints";
 
 const LOCALES = ["es", "en"];
-const STATIC = ["", "/work", "/resources", "/prints", "/contact"];
+const STATIC = ["", "/work", "/resources", "/prints", "/contact", "/terms", "/shipping"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Build time — every deploy tells Google there is something new to recrawl.

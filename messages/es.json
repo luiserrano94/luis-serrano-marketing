@@ -9,7 +9,7 @@
   "home": {
     "meta_title": "Sitios web que generan clientes | Luis Serrano",
     "meta_description": "Sitios web profesionales listos en 14 días, diseñados para convertir visitas en ventas. Marketing digital y branding para negocios en México y Estados Unidos.",
-    "hero_badge": "Luis Serrano Marketing Services",
+    "hero_badge": "Luis Serrano",
     "hero_title": "Tu sitio web. Vivo en 14 días. Listo para generar clientes.",
     "hero_subtitle": "No vendo páginas bonitas. Construyo activos digitales que convierten visitas en ventas para negocios en México y Estados Unidos.",
     "hero_cta_primary": "Empezar mi proyecto",
@@ -203,7 +203,7 @@
     "meta_title": "Política de privacidad | Luis Serrano",
     "title": "Política de Privacidad",
     "last_updated": "Última actualización: enero 2026",
-    "intro": "Luis Serrano Marketing Services (en adelante, \"el Responsable\") se compromete a proteger la privacidad de sus usuarios y clientes. La presente Política de Privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas.",
+    "intro": "Luis Serrano (en adelante, \"el Responsable\") se compromete a proteger la privacidad de sus usuarios y clientes. La presente Política de Privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas.",
     "s1_title": "1. Datos que recopilamos",
     "s1_body": "A través del formulario de contacto de este sitio web recopilamos: nombre completo, correo electrónico, número de teléfono, nombre de empresa (opcional), país de residencia, servicio de interés y mensaje. No recopilamos datos sensibles como información financiera, datos biométricos ni información de categorías especiales.",
     "s2_title": "2. Finalidad del tratamiento",
@@ -211,7 +211,7 @@
     "s3_title": "3. Base legal del tratamiento",
     "s3_body": "El tratamiento de tus datos se basa en tu consentimiento explícito otorgado al momento de enviar el formulario de contacto, y en la ejecución de medidas precontractuales a tu solicitud.",
     "s4_title": "4. Compartición de datos",
-    "s4_body": "No compartimos tus datos personales con terceros, salvo obligación legal. Utilizamos Web3Forms como servicio de envío de formularios, el cual procesa los datos de manera segura y los transmite directamente a nuestra dirección de correo electrónico.",
+    "s4_body": "No compartimos tus datos personales con terceros, salvo obligación legal. Utilizamos Web3Forms como servicio de envío de formularios, el cual procesa los datos de manera segura y los transmite directamente a nuestra dirección de correo electrónico. Para la entrega de Recursos y correos usamos MailerLite, que almacena tu correo de forma segura y te permite darte de baja en cualquier momento.",
     "s5_title": "5. Conservación de datos",
     "s5_body": "Conservamos tus datos personales por el tiempo necesario para cumplir con la finalidad para la que fueron recopilados, o hasta que solicites su eliminación.",
     "s6_title": "6. Derechos ARCO (México - LFPDPPP)",
@@ -219,14 +219,16 @@
     "s7_title": "7. Derechos GDPR (Unión Europea)",
     "s7_body": "Si eres residente de la Unión Europea, también tienes derechos adicionales bajo el RGPD: derecho de acceso, rectificación, supresión, limitación del tratamiento, portabilidad de datos y oposición. Contáctanos en serranoluis94.ls@gmail.com para ejercer cualquiera de estos derechos.",
     "s8_title": "8. Propiedad intelectual",
-    "s8_body": "Todas las imágenes, textos y elementos gráficos de este sitio son propiedad de Luis Serrano Marketing Services y están protegidos por derechos de autor. Su descarga, copia o uso no autorizado está prohibido. Las fotografías del propietario del sitio están protegidas por medidas técnicas y legales.",
+    "s8_body": "Todas las imágenes, textos y elementos gráficos de este sitio son propiedad de Luis Serrano y están protegidos por derechos de autor. Su descarga, copia o uso no autorizado está prohibido. Las fotografías del propietario del sitio están protegidas por medidas técnicas y legales.",
     "s9_title": "9. Cookies y Analytics",
-    "s9_body": "Este sitio puede utilizar cookies de Google Analytics y Meta Pixel para analizar el tráfico web de forma anónima. Puedes desactivar estas cookies desde la configuración de tu navegador.",
+    "s9_body": "Este sitio puede utilizar cookies de Google Analytics, Microsoft Clarity y Meta Pixel para analizar el tráfico web de forma anónima. Puedes desactivar estas cookies desde la configuración de tu navegador.",
     "s10_title": "10. Cambios a esta política",
     "s10_body": "Nos reservamos el derecho de modificar esta política en cualquier momento. Te notificaremos de cambios significativos publicando la nueva política en esta página con la fecha de actualización.",
     "s11_title": "11. Contacto",
     "s11_body": "Para cualquier pregunta sobre esta política de privacidad o para ejercer tus derechos, contáctanos en: serranoluis94.ls@gmail.com"
   },
+  "terms": {"meta_title":"Términos · Luis Serrano","title":"Términos","last_updated":"Última actualización: septiembre 2026","intro":"Estos términos rigen el uso de este sitio web y los servicios creativos o de impresión ofrecidos a través de él.","s1_title":"1. Uso del sitio","s1_body":"Puedes navegar y compartir este sitio para uso personal y no comercial. El trabajo, las imágenes y los textos son propiedad de Luis Serrano y no pueden reproducirse sin autorización.","s2_title":"2. Servicios y cotizaciones","s2_body":"Los precios mostrados para servicios son indicativos. Los proyectos visuales a medida, la creación de obra y el trabajo web se cotizan por proyecto; una cotización no es una oferta vinculante hasta que ambas partes confirmen el alcance por escrito.","s3_title":"3. Propiedad intelectual","s3_body":"Salvo acuerdo distinto en un proyecto, Luis Serrano conserva la autoría y los derechos de autor del trabajo. Los derechos de uso otorgados a un cliente se definen en cada acuerdo de proyecto.","s4_title":"4. Prints y pedidos","s4_body":"Los prints de fine art son ediciones limitadas producidas bajo pedido a través de un socio de impresión. La disponibilidad, los tamaños y los precios pueden cambiar hasta confirmar un pedido.","s5_title":"5. Limitación de responsabilidad","s5_body":"El sitio y su contenido se ofrecen tal cual. En la medida permitida por la ley, Luis Serrano no es responsable de daños indirectos o incidentales derivados del uso del sitio.","s6_title":"6. Ley aplicable y contacto","s6_body":"Estos términos se rigen por las leyes de México. Dudas: contacto@luisserranomkt.com."},
+  "shipping": {"meta_title":"Envíos y devoluciones · Luis Serrano","title":"Envíos y devoluciones","last_updated":"Última actualización: septiembre 2026","intro":"Cómo se producen y envían los prints de edición limitada, y qué pasa si algo sale mal.","s1_title":"1. Hechos bajo pedido","s1_body":"Los prints se producen bajo pedido con un socio de impresión fine-art en papel de museo. La producción comienza después de confirmar tu pedido.","s2_title":"2. Envío y entrega","s2_body":"Los prints se envían a todo el mundo con seguimiento. Los tiempos de producción y entrega varían según el destino; recibirás el seguimiento cuando tu pedido se envíe.","s3_title":"3. Aranceles e impuestos","s3_body":"Cualquier arancel o impuesto de importación en pedidos internacionales corre por cuenta del destinatario.","s4_title":"4. Daños o pérdida en tránsito","s4_body":"Si un print llega dañado, envía una foto dentro de los 14 días posteriores a la entrega y coordinamos un reemplazo sin costo.","s5_title":"5. Devoluciones","s5_body":"Como los prints se hacen bajo pedido, no aceptamos devoluciones por cambio de opinión. Cualquier problema de calidad o condición siempre se resuelve."},
   "footer": {
     "tagline": "Sitios web y marketing diseñados para convertir.",
     "col1_title": "Navegación",
@@ -242,7 +244,7 @@
     "service_digital": "Estrategia digital",
     "service_ads": "Manejo de Ads",
     "privacy": "Política de privacidad",
-    "copyright": "© 2026 Luis Serrano Marketing Services. Todos los derechos reservados."
+    "copyright": "© 2026 Luis Serrano. Todos los derechos reservados."
   },
   "common": {
     "cta_quote": "Empezar",

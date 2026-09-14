@@ -4,7 +4,8 @@ import { getContent } from "@/lib/content";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Footer() {
-  const c = getContent(useLocale());
+  const locale = useLocale();
+  const c = getContent(locale);
   const instagram = SOCIAL_LINKS.find((u) => u.includes("instagram")) ?? "#";
   return (
     <footer className="foot">
@@ -23,6 +24,13 @@ export default function Footer() {
           </a>
           <br />
           <a href={`mailto:${CONTACT_EMAIL}`}>{c.footer.email}</a>
+        </div>
+        <div className="foot-c">
+          <a href={`/${locale}/privacy`}>{c.footer.privacy}</a>
+          <br />
+          <a href={`/${locale}/terms`}>{c.footer.terms}</a>
+          <br />
+          <a href={`/${locale}/shipping`}>{c.footer.shipping}</a>
         </div>
         <div className="foot-c">© 2026 Luis Serrano</div>
       </div>

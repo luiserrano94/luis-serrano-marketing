@@ -9,7 +9,7 @@
   "home": {
     "meta_title": "Websites that generate clients | Luis Serrano",
     "meta_description": "Professional websites live in 14 days, built to convert visits into sales. Digital marketing and branding for businesses in Mexico and the United States.",
-    "hero_badge": "Luis Serrano Marketing Services",
+    "hero_badge": "Luis Serrano",
     "hero_title": "Your website. Live in 14 days. Built to generate clients.",
     "hero_subtitle": "I don't sell pretty pages. I build digital assets that turn visits into sales for businesses in Mexico and the United States.",
     "hero_cta_primary": "Start my project",
@@ -203,7 +203,7 @@
     "meta_title": "Privacy policy | Luis Serrano",
     "title": "Privacy Policy",
     "last_updated": "Last updated: January 2026",
-    "intro": "Luis Serrano Marketing Services (hereinafter, \"the Controller\") is committed to protecting the privacy of its users and clients. This Privacy Policy describes how we collect, use and protect the personal information you provide.",
+    "intro": "Luis Serrano (hereinafter, \"the Controller\") is committed to protecting the privacy of its users and clients. This Privacy Policy describes how we collect, use and protect the personal information you provide.",
     "s1_title": "1. Data we collect",
     "s1_body": "Through this website's contact form we collect: full name, email, phone number, company name (optional), country of residence, service of interest and message. We do not collect sensitive data such as financial information, biometric data or special category information.",
     "s2_title": "2. Purpose of processing",
@@ -211,7 +211,7 @@
     "s3_title": "3. Legal basis for processing",
     "s3_body": "The processing of your data is based on your explicit consent given when submitting the contact form, and on the execution of pre-contractual measures at your request.",
     "s4_title": "4. Data sharing",
-    "s4_body": "We do not share your personal data with third parties, except as required by law. We use Web3Forms as our form delivery service, which processes data securely and transmits it directly to our email address.",
+    "s4_body": "We do not share your personal data with third parties, except as required by law. We use Web3Forms as our form delivery service, which processes data securely and transmits it directly to our email address. For delivering Resources and emails we use MailerLite, which stores your email securely and lets you unsubscribe at any time.",
     "s5_title": "5. Data retention",
     "s5_body": "We retain your personal data for the time necessary to fulfill the purpose for which it was collected, or until you request its deletion.",
     "s6_title": "6. ARCO Rights (Mexico - LFPDPPP)",
@@ -219,14 +219,16 @@
     "s7_title": "7. GDPR Rights (European Union)",
     "s7_body": "If you are an EU resident, you also have additional rights under GDPR: right to access, rectification, erasure, restriction of processing, data portability and objection. Contact us at serranoluis94.ls@gmail.com to exercise any of these rights.",
     "s8_title": "8. Intellectual property",
-    "s8_body": "All images, texts and graphic elements on this site are property of Luis Serrano Marketing Services and are protected by copyright. Unauthorized download, copying or use is prohibited. Photographs of the site owner are protected by technical and legal measures.",
+    "s8_body": "All images, texts and graphic elements on this site are property of Luis Serrano and are protected by copyright. Unauthorized download, copying or use is prohibited. Photographs of the site owner are protected by technical and legal measures.",
     "s9_title": "9. Cookies and Analytics",
-    "s9_body": "This site may use Google Analytics and Meta Pixel cookies to analyze web traffic anonymously. You can disable these cookies from your browser settings.",
+    "s9_body": "This site may use Google Analytics, Microsoft Clarity and Meta Pixel cookies to analyze web traffic anonymously. You can disable these cookies from your browser settings.",
     "s10_title": "10. Changes to this policy",
     "s10_body": "We reserve the right to modify this policy at any time. We will notify you of significant changes by posting the new policy on this page with the update date.",
     "s11_title": "11. Contact",
     "s11_body": "For any questions about this privacy policy or to exercise your rights, contact us at: serranoluis94.ls@gmail.com"
   },
+  "terms": {"meta_title":"Terms · Luis Serrano","title":"Terms","last_updated":"Last updated: September 2026","intro":"These terms govern your use of this website and any creative or print services offered through it.","s1_title":"1. Using this site","s1_body":"You may browse and share this site for personal, non-commercial use. The work, images and text remain the property of Luis Serrano and may not be reproduced without permission.","s2_title":"2. Services and quotes","s2_body":"Prices shown for services are indicative. Custom visual projects, print creation and web work are quoted per project; a quote is not a binding offer until both sides confirm scope in writing.","s3_title":"3. Intellectual property","s3_body":"Unless agreed otherwise in a project, Luis Serrano retains authorship and copyright of the work. Usage rights granted to a client are defined in each project agreement.","s4_title":"4. Prints and orders","s4_body":"Fine-art prints are limited editions produced to order through a print partner. Availability, sizes and pricing may change until an order is confirmed.","s5_title":"5. Limitation of liability","s5_body":"The site and its content are provided as is. To the extent permitted by law, Luis Serrano is not liable for indirect or incidental damages arising from use of the site.","s6_title":"6. Governing law and contact","s6_body":"These terms are governed by the laws of Mexico. Questions: contacto@luisserranomkt.com."},
+  "shipping": {"meta_title":"Shipping & Returns · Luis Serrano","title":"Shipping & Returns","last_updated":"Last updated: September 2026","intro":"How limited fine-art prints are produced, shipped and handled if something goes wrong.","s1_title":"1. Made to order","s1_body":"Prints are produced to order by a fine-art print partner on museum-grade paper. Production begins after your order is confirmed.","s2_title":"2. Shipping and delivery","s2_body":"Prints ship worldwide with tracking. Production and delivery times vary by destination; you'll receive tracking when your order ships.","s3_title":"3. Duties and taxes","s3_body":"Any import duties or taxes on international orders are the responsibility of the recipient.","s4_title":"4. Damaged or lost in transit","s4_body":"If a print arrives damaged, send a photo within 14 days of delivery and we'll arrange a replacement at no cost.","s5_title":"5. Returns","s5_body":"Because prints are made to order, we don't accept returns for change of mind. Issues with quality or condition are always made right."},
   "footer": {
     "tagline": "Websites and marketing built to convert.",
     "col1_title": "Navigation",
@@ -242,7 +244,7 @@
     "service_digital": "Digital strategy",
     "service_ads": "Ads management",
     "privacy": "Privacy policy",
-    "copyright": "© 2026 Luis Serrano Marketing Services. All rights reserved."
+    "copyright": "© 2026 Luis Serrano. All rights reserved."
   },
   "common": {
     "cta_quote": "Start",
