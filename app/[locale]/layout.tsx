@@ -10,6 +10,7 @@ import RevealInit from "@/components/RevealInit";
 import ImageGuard from "@/components/ImageGuard";
 import AttributionInit from "@/components/AttributionInit";
 import { SITE_URL, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/constants";
+import { getContent } from "@/lib/content";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   const messages = await getMessages();
+  const c = getContent(params.locale);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -101,8 +103,9 @@ export default async function LocaleLayout({
           <RevealInit />
           <ImageGuard />
           <AttributionInit />
+          <a href="#main" className="skip-link">{c.skipToContent}</a>
           <Navbar />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
           <Analytics />
         </NextIntlClientProvider>

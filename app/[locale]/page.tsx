@@ -40,7 +40,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       </header>
 
       <section id="work" className="wrap sec">
-        <p className="mono work-label reveal">{c.work.label}</p>
+        <h2 className="mono work-label reveal">{c.work.label}</h2>
         <SelectedWork c={c} locale={params.locale} />
       </section>
 

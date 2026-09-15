@@ -4,7 +4,11 @@ import { localeAlternates } from "@/lib/constants";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: "terms" });
-  return { title: t("meta_title"), alternates: localeAlternates(params.locale, "/terms") };
+  return {
+    title: t("meta_title"),
+    description: t("meta_description"),
+    alternates: localeAlternates(params.locale, "/terms"),
+  };
 }
 
 export default async function TermsPage({ params }: { params: { locale: string } }) {

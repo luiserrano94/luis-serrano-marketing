@@ -5,7 +5,15 @@ const CARTIER =
 
 export const CONTENT = {
   en: {
-    nav: { work: "Work", services: "Services", resources: "Resources", about: "About", contact: "Contact" },
+    nav: { work: "Work", services: "Services", resources: "Resources", about: "About", contact: "Contact", menu: "Menu", close: "Close" },
+    skipToContent: "Skip to content",
+    notFound: {
+      eyebrow: "404",
+      title: "This page doesn't exist.",
+      body: "The page you're looking for may have moved or no longer exists.",
+      ctaHome: "Back to Home",
+      ctaWork: "View Work",
+    },
     hero: {
       eyebrow: "Creative Director · Visual Artist",
       title: "Creative direction and visual art.",
@@ -256,7 +264,15 @@ export const CONTENT = {
     },
   },
   es: {
-    nav: { work: "Trabajo", services: "Servicios", resources: "Recursos", about: "Acerca", contact: "Contacto" },
+    nav: { work: "Trabajo", services: "Servicios", resources: "Recursos", about: "Acerca", contact: "Contacto", menu: "Menú", close: "Cerrar" },
+    skipToContent: "Saltar al contenido",
+    notFound: {
+      eyebrow: "404",
+      title: "Esta página no existe.",
+      body: "La página que buscas pudo haberse movido o ya no existe.",
+      ctaHome: "Volver al inicio",
+      ctaWork: "Ver trabajo",
+    },
     hero: {
       eyebrow: "Director creativo · Artista visual",
       title: "Dirección creativa y arte visual.",

@@ -20,12 +20,13 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { locale: string; slug: string } }): Metadata {
   const c = getContent(params.locale);
   const t = (c.projects as unknown as Record<string, Proj>)[params.slug];
-  if (!t || !isPrintSlug(params.slug)) return {};
+  const art = PROJECTS.find((x) => x.slug === params.slug);
+  if (!t || !art || !isPrintSlug(params.slug)) return {};
   return {
     title: `${t.title} — ${c.prints.title} · Luis Serrano`,
     description: t.intro,
     alternates: localeAlternates(params.locale, `/prints/${params.slug}`),
-    openGraph: { title: t.title, description: t.intro },
+    openGraph: { title: t.title, description: t.intro, images: [art.cover] },
   };
 }
 
