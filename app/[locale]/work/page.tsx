@@ -18,6 +18,7 @@ export default function WorkIndex({ params }: { params: { locale: string } }) {
         <p>{c.work.indexIntro}</p>
       </div>
       <section className="wrap sec-tight">
+        <h2 className="sr-only">{c.work.label}</h2>
         <SelectedWork c={c} locale={params.locale} />
       </section>
     </>
