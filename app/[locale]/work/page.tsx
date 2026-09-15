@@ -18,6 +18,7 @@ export default function WorkIndex({ params }: { params: { locale: string } }) {
         <p>{c.work.indexIntro}</p>
       </div>
       <section className="wrap sec-tight">
+        {/* sr-only: H1 already shows this text above, a visible repeat (like Home's h2) would triple it on screen */}
         <h2 className="sr-only">{c.work.label}</h2>
         <SelectedWork c={c} locale={params.locale} />
       </section>
