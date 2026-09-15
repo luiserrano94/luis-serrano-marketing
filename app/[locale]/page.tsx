@@ -1,12 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import TrackedLink from "@/components/TrackedLink";
 import { Suspense } from "react";
 import { getContent } from "@/lib/content";
-import { waLink } from "@/lib/constants";
+import { waLink, localeAlternates } from "@/lib/constants";
 import SelectedWork from "@/components/home/SelectedWork";
 import InquiryForm from "@/components/home/InquiryForm";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  return { alternates: localeAlternates(params.locale, "") };
+}
 
 export default function Home({ params }: { params: { locale: string } }) {
   const c = getContent(params.locale);

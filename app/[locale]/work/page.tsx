@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { localeAlternates } from "@/lib/constants";
 import SelectedWork from "@/components/home/SelectedWork";
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const c = getContent(params.locale);
-  return { title: `${c.work.indexTitle} · Luis Serrano`, description: c.work.indexIntro };
+  return { title: `${c.work.indexTitle} · Luis Serrano`, description: c.work.indexIntro, alternates: localeAlternates(params.locale, "/work") };
 }
 
 export default function WorkIndex({ params }: { params: { locale: string } }) {

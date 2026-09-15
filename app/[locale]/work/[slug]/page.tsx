@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { getContent } from "@/lib/content";
+import { localeAlternates } from "@/lib/constants";
 import { PROJECTS } from "@/lib/projects";
 import Lightbox from "@/components/Lightbox";
 import HantXepe from "@/components/work/HantXepe";
@@ -38,6 +39,7 @@ export function generateMetadata({ params }: { params: { locale: string; slug: s
   return {
     title: `${pt.title} · Luis Serrano`,
     description: pt.intro,
+    alternates: localeAlternates(params.locale, `/work/${params.slug}`),
     openGraph: { title: pt.title, description: pt.intro, images: [p.cover] },
   };
 }
