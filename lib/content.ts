@@ -134,6 +134,32 @@ export const CONTENT = {
         line: "Earth · Sea · Sky",
         intro: "A contemporary visual series inspired by documented Cmiique Iitom language and Comcaac oral tradition, exploring the boundaries between earth, sea and sky.",
       },
+      "under-glass": {
+        title: "UNDER GLASS",
+        titleLines: ["UNDER", "GLASS"],
+        category: "Conceptual Architectural Series",
+        line: "Where architecture becomes garden.",
+        intro: "A greenhouse imagined as a place to slow down, gather and disappear into nature.",
+        rail: { lines: ["Slow down,", "gather,", "disappear"] },
+        conceptTitle: ["A landscape,", "not a building."],
+        conceptBody: [
+          "UNDER GLASS imagines a nursery and café as a landscape rather than a building.",
+          "A monumental greenhouse becomes an ecosystem of elevated rooms, suspended paths, water, vegetation and quiet gathering spaces. Architecture recedes into the garden until it becomes difficult to tell where one ends and the other begins.",
+          "The project explores a simple idea: what if a café wasn't somewhere you went to consume, but somewhere you went to disconnect and reconnect?",
+        ],
+        // Subtle, secondary image titles (no descriptive lines) — indexed by
+        // gallery order: Exterior, Floating Rooms, Among the Garden, Glass Nest,
+        // The Forum, Falling Water, The Bar.
+        caps: [
+          { n: "01", label: "Exterior" },
+          { n: "02", label: "Floating Rooms" },
+          { n: "03", label: "Among the Garden" },
+          { n: "04", label: "Glass Nest" },
+          { n: "05", label: "The Forum" },
+          { n: "06", label: "Falling Water" },
+          { n: "07", label: "The Bar" },
+        ],
+      },
     },
     hxh: {
       title: "HANT · XEPE · HAMÍIME",
@@ -389,6 +415,29 @@ export const CONTENT = {
         category: "Ficción visual contemporánea",
         line: "Tierra · Mar · Cielo",
         intro: "Una serie visual contemporánea inspirada en la lengua Cmiique Iitom documentada y la tradición oral Comcaac, que explora los límites entre la tierra, el mar y el cielo.",
+      },
+      "under-glass": {
+        title: "UNDER GLASS",
+        titleLines: ["UNDER", "GLASS"],
+        category: "Serie visual arquitectónica",
+        line: "Donde la arquitectura se vuelve jardín.",
+        intro: "Un invernadero imaginado como un lugar para bajar el ritmo, reunirse y desaparecer entre la naturaleza.",
+        rail: { lines: ["Baja el ritmo,", "reúnete,", "desaparece"] },
+        conceptTitle: ["Un paisaje,", "no un edificio."],
+        conceptBody: [
+          "UNDER GLASS imagina un vivero y café como un paisaje, más que como un edificio.",
+          "Un invernadero monumental se convierte en un ecosistema de espacios elevados, caminos suspendidos, agua, vegetación y lugares para reunirse con calma. La arquitectura desaparece poco a poco dentro del jardín, hasta que resulta difícil distinguir dónde termina una y comienza el otro.",
+          "El proyecto parte de una idea sencilla: ¿qué pasaría si un café no fuera solamente un lugar para consumir, sino un lugar para desconectarse y volver a conectar?",
+        ],
+        caps: [
+          { n: "01", label: "Exterior" },
+          { n: "02", label: "Cuartos flotantes" },
+          { n: "03", label: "Entre el jardín" },
+          { n: "04", label: "Nido de cristal" },
+          { n: "05", label: "El foro" },
+          { n: "06", label: "Agua que cae" },
+          { n: "07", label: "La barra" },
+        ],
       },
     },
     hxh: {

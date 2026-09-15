@@ -3,7 +3,9 @@
 // cells are the concept block, the bottom rail, or a gallery image by index.
 // Images always render at intrinsic ratio (height:auto) — never cropped.
 export type Cell = "concept" | "rail" | { g: number };
-export type Row = { cols: string; cells: Cell[] };
+// `size` is an optional per-row scale: "full" breaks the row out to the maxw
+// edges (immersive); "quiet" caps and centers it (breathing room / human-scale).
+export type Row = { cols: string; cells: Cell[]; size?: "full" | "quiet" };
 
 export type Project = {
   slug: string;
@@ -97,6 +99,27 @@ export const PROJECTS: Project[] = [
     rows: [
       { cols: "1.2fr 1fr 1fr", cells: ["concept", { g: 0 }, { g: 2 }] },
       { cols: "1fr 1fr", cells: [{ g: 3 }, { g: 1 }] },
+    ],
+  },
+  {
+    // Conceptual greenhouse nursery-café read as a landscape. Continuous,
+    // image-led editorial rhythm (no bespoke page). The hero "The Canopy"
+    // lives in .phero and is not repeated in the body. Gallery = body order:
+    // g0 Exterior, g1 Floating Rooms, g2 Among the Garden, g3 Glass Nest,
+    // g4 The Forum, g5 Falling Water, g6 The Bar.
+    slug: "under-glass",
+    num: "06",
+    cover: "/work/cover-under-glass.jpg",
+    coverW: 960,
+    coverH: 1200,
+    gallery: gal("under-glass", 7),
+    rows: [
+      { cols: "1fr", cells: [{ g: 0 }], size: "full" },                    // Exterior — monumental scale
+      { cols: "1fr 1.15fr", cells: ["concept", { g: 1 }] },                // concept + Floating Rooms
+      { cols: "1fr 1fr", cells: [{ g: 2 }, { g: 3 }], size: "quiet" },     // Among the Garden + Glass Nest — intimate, breathing room
+      { cols: "1fr", cells: [{ g: 4 }] },                                  // The Forum — spatial discovery
+      { cols: "1fr", cells: [{ g: 5 }], size: "full" },                    // Falling Water — immersive climax
+      { cols: "1fr", cells: [{ g: 6 }], size: "quiet" },                   // The Bar — quiet human-scale close
     ],
   },
 ];

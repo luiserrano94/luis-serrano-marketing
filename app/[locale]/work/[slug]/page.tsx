@@ -147,7 +147,7 @@ export default function ProjectPage({ params }: { params: { locale: string; slug
 
       <div id="concept" className="pbody">
         {p.rows.map((row, ri) => (
-          <div className="prow" key={ri} style={{ gridTemplateColumns: row.cols }}>
+          <div className={`prow${row.size ? ` prow-${row.size}` : ""}`} key={ri} style={{ gridTemplateColumns: row.cols }}>
             {row.cells.map((cell, ci) => {
               if (cell === "concept") return <div className="pconcept-w reveal" key={ci}>{Concept}</div>;
               if (cell === "rail")
