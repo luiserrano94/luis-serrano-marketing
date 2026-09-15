@@ -1,7 +1,7 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from "next/font/google";
-import { usePathname } from "next/navigation";
-import { getContent } from "@/lib/content";
+import { getContent, type Locale } from "@/lib/content";
 import "./globals.css";
 
 // Next.js 14's App Router routes a genuinely-unmatched URL (as opposed to an
@@ -15,10 +15,23 @@ const sourceSerif = Source_Serif_4({ subsets: ["latin"], weight: ["300", "400", 
 const jetmono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-display", display: "swap" });
 
+const DEFAULT_LOCALE: Locale = "es"; // matches defaultLocale in middleware.ts
+
 export default function RootNotFound() {
-  const pathname = usePathname() || "";
-  const seg = pathname.split("/")[1];
-  const locale = seg === "en" ? "en" : "es"; // defaultLocale in middleware.ts is "es"
+  // usePathname() resolves differently between this page's SSR pass and its
+  // client hydration (a Next 14 quirk specific to the root not-found
+  // boundary), which was throwing real hydration-mismatch errors (React
+  // #425/418/423) even though the recovered render looked fine. Rendering a
+  // fixed default on first paint and correcting the locale only after mount
+  // keeps server and client output identical, so there is nothing to
+  // reconcile — at the cost of a brief flash of default-locale text on a
+  // non-default-locale 404, which is an acceptable trade for a page that
+  // fires this rarely and this is not one Google indexes anyway.
+  const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
+  useEffect(() => {
+    const seg = window.location.pathname.split("/")[1];
+    if (seg === "en") setLocale("en");
+  }, []);
   const c = getContent(locale);
   const base = `/${locale}`;
 
