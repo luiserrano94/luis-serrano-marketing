@@ -1,20 +1,26 @@
 "use client";
 
+
 import Script from "next/script";
 
+
 const GOOGLE_ADS_ID = "AW-704568380";
+
 
 export default function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
+
   const hasGa = gaId && gaId !== "G-XXXXXXXXXX";
   const hasPixel = pixelId && pixelId !== "XXXXXXXXXXXXXXX";
   const hasClarity = clarityId && clarityId !== "";
 
+
   // Use GA4 id as primary gtag.js loader when available, otherwise Ads id
   const primaryId = hasGa ? gaId : GOOGLE_ADS_ID;
+
 
   return (
     <>
@@ -31,6 +37,7 @@ export default function Analytics() {
         gtag('config', '${GOOGLE_ADS_ID}');
       `}</Script>
 
+
       {/* Meta Pixel */}
       {hasPixel && (
         <Script id="meta-pixel" strategy="afterInteractive">{`
@@ -43,9 +50,10 @@ export default function Analytics() {
         `}</Script>
       )}
 
+
       {/* Microsoft Clarity */}
       {hasClarity && (
-        <Script id="clarity" strategy="afterInteractive">{`
+        <Script id="clarity-init" strategy="afterInteractive">{`
           (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${clarityId}");
@@ -54,3 +62,4 @@ export default function Analytics() {
     </>
   );
 }
+
